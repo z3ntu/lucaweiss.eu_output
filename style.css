@@ -63,6 +63,12 @@ header {
   margin-left: 25%;
   margin-right: 25%;
   width: 50%;
+
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  -o-user-select: none;       /* Opera some */
+  user-select: none;          /* Likely future */
 }
 
 .leftHeader {
@@ -70,7 +76,7 @@ header {
   text-align: left;
   width: 40%;
   font-family: 'Slabo 27px';
-  font-size: 2.2em;
+  font-size: 2.3em;
 }
 
 .rightHeader {
@@ -78,6 +84,7 @@ header {
   text-align: right;
   width: 40%;
   margin-top: 2em;
+  font-size: 1em;
 }
 
 footer {
