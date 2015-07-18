@@ -35,20 +35,20 @@ function sendRequest(pageToken) {
 }
 
 function handleResponse(response) {
+  //TODO: Error handling
   $.each(response.items, foreachCallback);
-  // downloadArray = $.merge(downloadArray, response.items);
-    console.log(response);
-    console.log(downloadArray);
-    if(typeof response.nextPageToken === 'undefined'){
-      $('#spinTarget').spin(false);
-      console.log("spinner should stop; last one :(");
-      $('#downloadA').attr("download", "youtubesubscriptions.json");
-      $('#downloadA').attr('href', "data:application/json,"+JSON.stringify(downloadArray));
-      $('#downloadA').show();
-    } else {
-      sendRequest(response.nextPageToken);
-    }
-    console.log(response.nextPageToken);
+  console.log(response);
+  console.log(downloadArray);
+  if(typeof response.nextPageToken === 'undefined'){
+    $('#spinTarget').spin(false);
+    console.log("spinner should stop; last one :(");
+    $('#downloadA').attr("download", "youtubesubscriptions.json");
+    $('#downloadA').attr('href', "data:application/json,"+JSON.stringify(downloadArray));
+    $('#downloadA').show();
+  } else {
+    sendRequest(response.nextPageToken);
+  }
+  console.log(response.nextPageToken);
 }
 
 function foreachCallback(key, value) {
@@ -57,8 +57,8 @@ function foreachCallback(key, value) {
 }
 
 function spin() {
-// var target = document.getElementById('spinTarget')
-// var spinner = new Spinner(opts).spin(target);
-// $('#spinTarget').spin('small', '#fff');
-$('#spinTarget').spin( {lines: 8, length: 4, width: 3, radius: 5, position: 'relative' });
+  // var target = document.getElementById('spinTarget')
+  // var spinner = new Spinner(opts).spin(target);
+  // $('#spinTarget').spin('small', '#fff');
+  $('#spinTarget').spin({ lines: 8, length: 4, width: 3, radius: 5, position: 'relative' });
 }
