@@ -4,10 +4,10 @@
     <title>z3ntu</title>
     <description>This is my blog where I write about different things.
 </description>
-    <link>https://z3ntu.github.io/blog/</link>
-    <atom:link href="https://z3ntu.github.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 31 Oct 2015 19:23:15 +0100</pubDate>
-    <lastBuildDate>Sat, 31 Oct 2015 19:23:15 +0100</lastBuildDate>
+    <link>https://z3ntu.github.io//</link>
+    <atom:link href="https://z3ntu.github.io//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 31 Oct 2015 19:26:18 +0100</pubDate>
+    <lastBuildDate>Sat, 31 Oct 2015 19:26:18 +0100</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
@@ -28,8 +28,8 @@
 
 </description>
         <pubDate>Sat, 31 Oct 2015 12:25:57 +0100</pubDate>
-        <link>https://z3ntu.github.io/blog/jekyll/update/2015/10/31/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">https://z3ntu.github.io/blog/jekyll/update/2015/10/31/welcome-to-jekyll.html</guid>
+        <link>https://z3ntu.github.io//jekyll/update/2015/10/31/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">https://z3ntu.github.io//jekyll/update/2015/10/31/welcome-to-jekyll.html</guid>
         
         
         <category>jekyll</category>
@@ -42,9 +42,9 @@
         <title>Deploying Unity WebGL with Apache</title>
         <description>&lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js&quot;&gt;&lt;/script&gt;
 
-&lt;link rel=&quot;stylesheet&quot; href=&quot;/blog/css/jquery.fancybox.css&quot; type=&quot;text/css&quot; media=&quot;screen&quot; /&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;//css/jquery.fancybox.css&quot; type=&quot;text/css&quot; media=&quot;screen&quot; /&gt;
 
-&lt;script type=&quot;text/javascript&quot; src=&quot;/blog/js/jquery.fancybox.pack.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;//js/jquery.fancybox.pack.js&quot;&gt;&lt;/script&gt;
 
 &lt;script&gt;
         $(document).ready(function() {
@@ -69,7 +69,7 @@
 &lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;Export your Unity project as WebGL (probably already did this).
-&lt;a href=&quot;/blog/images/unity_webgl_export.png&quot; class=&quot;fancybox&quot; title=&quot;Export settings&quot;&gt;Click for a screenshot of my Build Settings&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;//images/unity_webgl_export.png&quot; class=&quot;fancybox&quot; title=&quot;Export settings&quot;&gt;Click for a screenshot of my Build Settings&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Move every file from the &lt;code&gt;Release&lt;/code&gt; folder into the &lt;code&gt;Compressed&lt;/code&gt; folder. You can now delete the &lt;code&gt;Release&lt;/code&gt; folder.
@@ -100,8 +100,8 @@ TemplateData
 &lt;p&gt;I hope this helped you!&lt;/p&gt;
 </description>
         <pubDate>Sat, 31 Oct 2015 12:25:57 +0100</pubDate>
-        <link>https://z3ntu.github.io/blog/unity3d/tutorial/2015/10/31/deploying-unity-webgl-with-apache.html</link>
-        <guid isPermaLink="true">https://z3ntu.github.io/blog/unity3d/tutorial/2015/10/31/deploying-unity-webgl-with-apache.html</guid>
+        <link>https://z3ntu.github.io//unity3d/tutorial/2015/10/31/deploying-unity-webgl-with-apache.html</link>
+        <guid isPermaLink="true">https://z3ntu.github.io//unity3d/tutorial/2015/10/31/deploying-unity-webgl-with-apache.html</guid>
         
         
         <category>unity3d</category>
