@@ -6,8 +6,8 @@
 </description>
     <link>https://z3ntu.github.io/</link>
     <atom:link href="https://z3ntu.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 31 Oct 2015 19:30:05 +0100</pubDate>
-    <lastBuildDate>Sat, 31 Oct 2015 19:30:05 +0100</lastBuildDate>
+    <pubDate>Sat, 31 Oct 2015 21:19:24 +0100</pubDate>
+    <lastBuildDate>Sat, 31 Oct 2015 21:19:24 +0100</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
@@ -40,7 +40,7 @@
     
       <item>
         <title>Deploying Unity WebGL with Apache</title>
-        <description>&lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js&quot;&gt;&lt;/script&gt;
+        <description>&lt;script type=&quot;text/javascript&quot; src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js&quot;&gt;&lt;/script&gt;
 
 &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/jquery.fancybox.css&quot; type=&quot;text/css&quot; media=&quot;screen&quot; /&gt;
 
