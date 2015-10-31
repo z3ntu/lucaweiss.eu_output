@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>z3ntu</title>
+    <description>This is my blog where I write about different things.
+</description>
+    <link>https://z3ntu.github.io/blog/</link>
+    <atom:link href="https://z3ntu.github.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 31 Oct 2015 19:23:15 +0100</pubDate>
+    <lastBuildDate>Sat, 31 Oct 2015 19:23:15 +0100</lastBuildDate>
+    <generator>Jekyll v3.0.0</generator>
+    
+      <item>
+        <title>Welcome to Jekyll!</title>
+        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Tom&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &#39;Hi, Tom&#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 31 Oct 2015 12:25:57 +0100</pubDate>
+        <link>https://z3ntu.github.io/blog/jekyll/update/2015/10/31/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">https://z3ntu.github.io/blog/jekyll/update/2015/10/31/welcome-to-jekyll.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Deploying Unity WebGL with Apache</title>
+        <description>&lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/blog/css/jquery.fancybox.css&quot; type=&quot;text/css&quot; media=&quot;screen&quot; /&gt;
+
+&lt;script type=&quot;text/javascript&quot; src=&quot;/blog/js/jquery.fancybox.pack.js&quot;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+        $(document).ready(function() {
+            $(&#39;.fancybox&#39;).fancybox();
+        });
+    &lt;/script&gt;
+
+&lt;h1 id=&quot;deploying-unity-webgl-on-apache&quot;&gt;Deploying Unity WebGL on Apache&lt;/h1&gt;
+
+&lt;p&gt;Have you had troubles getting your exported Unity WebGL project to work?&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;GET /Release/UnityConfig.js &lt;strong&gt;404 (Not Found)&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;GET /Release/fileloader.js &lt;strong&gt;404 (Not Found)&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;GET /Release/1446299115.js &lt;strong&gt;404 (Not Found)&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I got the instructions here:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Export your Unity project as WebGL (probably already did this).
+&lt;a href=&quot;/blog/images/unity_webgl_export.png&quot; class=&quot;fancybox&quot; title=&quot;Export settings&quot;&gt;Click for a screenshot of my Build Settings&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Move every file from the &lt;code&gt;Release&lt;/code&gt; folder into the &lt;code&gt;Compressed&lt;/code&gt; folder. You can now delete the &lt;code&gt;Release&lt;/code&gt; folder.
+Your folder structure should look like this:&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.htaccess
+index.html
+Compressed
+- many files (.datagz, .jsgz, .memgz)
+TemplateData
+- many image files, 1 .css &amp;amp; 1 .js file&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Enter &lt;code&gt;sudo a2enmod rewrite&lt;/code&gt; in the terminal (to activate the &lt;code&gt;rewrite&lt;/code&gt; Apache module).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Open &lt;code&gt;/etc/apache2/apache2.conf&lt;/code&gt; with your favorite text editor and find the following part:
+&lt;code&gt;&amp;lt;Directory /var/www/&amp;gt;&lt;/code&gt; / &lt;code&gt;&amp;lt;Directory /var/www/html/&amp;gt;&lt;/code&gt; (or wherever your “main” folder is)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Change &lt;code&gt;AllowOverride&lt;/code&gt; from &lt;code&gt;None&lt;/code&gt; to &lt;code&gt;All&lt;/code&gt; and save the file.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I hope this helped you!&lt;/p&gt;
+</description>
+        <pubDate>Sat, 31 Oct 2015 12:25:57 +0100</pubDate>
+        <link>https://z3ntu.github.io/blog/unity3d/tutorial/2015/10/31/deploying-unity-webgl-with-apache.html</link>
+        <guid isPermaLink="true">https://z3ntu.github.io/blog/unity3d/tutorial/2015/10/31/deploying-unity-webgl-with-apache.html</guid>
+        
+        
+        <category>unity3d</category>
+        
+        <category>tutorial</category>
+        
+      </item>
+    
+  </channel>
+</rss>

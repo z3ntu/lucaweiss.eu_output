@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>z3ntu</title>
-  <meta name="description" content="This is my blog where I write about different things.
-">
+  <title>Deploying Unity WebGL with Apache</title>
+  <meta name="description" content="Deploying Unity WebGL on Apache">
 
   <link rel="stylesheet" href="/blog/css/main.css">
-  <link rel="canonical" href="https://z3ntu.github.io/blog/">
+  <link rel="canonical" href="https://z3ntu.github.io/blog/unity3d/tutorial/2015/10/31/deploying-unity-webgl-with-apache.html">
   <link rel="alternate" type="application/rss+xml" title="z3ntu" href="https://z3ntu.github.io/blog/feed.xml">
 </head>
 
@@ -55,33 +54,76 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="home">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <h1 class="page-heading">Posts</h1>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Deploying Unity WebGL with Apache</h1>
+    <p class="post-meta"><time datetime="2015-10-31T12:25:57+01:00" itemprop="datePublished">Oct 31, 2015</time></p>
+  </header>
 
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Oct 31, 2015</span>
+  <div class="post-content" itemprop="articleBody">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 
-        <h2>
-          <a class="post-link" href="/blog/jekyll/update/2015/10/31/welcome-to-jekyll.html">Welcome to Jekyll!</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 31, 2015</span>
+<link rel="stylesheet" href="/blog/css/jquery.fancybox.css" type="text/css" media="screen" />
 
-        <h2>
-          <a class="post-link" href="/blog/unity3d/tutorial/2015/10/31/deploying-unity-webgl-with-apache.html">Deploying Unity WebGL with Apache</a>
-        </h2>
-      </li>
-    
-  </ul>
+<script type="text/javascript" src="/blog/js/jquery.fancybox.pack.js"></script>
 
-  <p class="rss-subscribe">subscribe <a href="/blog/feed.xml">via RSS</a></p>
+<script>
+        $(document).ready(function() {
+            $('.fancybox').fancybox();
+        });
+    </script>
 
-</div>
+<h1 id="deploying-unity-webgl-on-apache">Deploying Unity WebGL on Apache</h1>
+
+<p>Have you had troubles getting your exported Unity WebGL project to work?</p>
+
+<blockquote>
+  <p>GET /Release/UnityConfig.js <strong>404 (Not Found)</strong></p>
+
+  <p>GET /Release/fileloader.js <strong>404 (Not Found)</strong></p>
+
+  <p>GET /Release/1446299115.js <strong>404 (Not Found)</strong></p>
+</blockquote>
+
+<p>I got the instructions here:</p>
+
+<ul>
+  <li>
+    <p>Export your Unity project as WebGL (probably already did this).
+<a href="/blog/images/unity_webgl_export.png" class="fancybox" title="Export settings">Click for a screenshot of my Build Settings</a></p>
+  </li>
+  <li>
+    <p>Move every file from the <code>Release</code> folder into the <code>Compressed</code> folder. You can now delete the <code>Release</code> folder.
+Your folder structure should look like this:</p>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">.htaccess
+index.html
+Compressed
+- many files (.datagz, .jsgz, .memgz)
+TemplateData
+- many image files, 1 .css &amp; 1 .js file</code></pre></figure>
+
+<ul>
+  <li>
+    <p>Enter <code>sudo a2enmod rewrite</code> in the terminal (to activate the <code>rewrite</code> Apache module).</p>
+  </li>
+  <li>
+    <p>Open <code>/etc/apache2/apache2.conf</code> with your favorite text editor and find the following part:
+<code>&lt;Directory /var/www/&gt;</code> / <code>&lt;Directory /var/www/html/&gt;</code> (or wherever your “main” folder is)</p>
+  </li>
+  <li>
+    <p>Change <code>AllowOverride</code> from <code>None</code> to <code>All</code> and save the file.</p>
+  </li>
+</ul>
+
+<p>I hope this helped you!</p>
+
+  </div>
+
+</article>
 
       </div>
     </div>
