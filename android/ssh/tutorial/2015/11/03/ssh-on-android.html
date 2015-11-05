@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="This is my blog where I write about different things.
-">
+  <title>SSH on Android</title>
+  <meta name="description" content="Installing the SSH binary on Android (for use with adb shell)">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://z3ntu.github.io/about/">
+  <link rel="canonical" href="https://z3ntu.github.io/android/ssh/tutorial/2015/11/03/ssh-on-android.html">
   <link rel="alternate" type="application/rss+xml" title="z3ntu" href="https://z3ntu.github.io/feed.xml">
 </head>
 
@@ -55,18 +54,27 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <article class="post">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title">About</h1>
+    <h1 class="post-title" itemprop="name headline">SSH on Android</h1>
+    <p class="post-meta"><time datetime="2015-11-03T00:00:00+01:00" itemprop="datePublished">Nov 3, 2015</time></p>
   </header>
 
-  <div class="post-content">
-    <p>I am a 16-year-old student who likes programming.</p>
+  <div class="post-content" itemprop="articleBody">
+    <h1 id="installing-the-ssh-binary-on-android-for-use-with-adb-shell">Installing the SSH binary on Android (for use with <code>adb shell</code>)</h1>
 
-<p>I publish most of my “work” on GitHub.</p>
+<p>Install <a href="https://play.google.com/store/apps/details?id=berserker.android.apps.sshdroid">SSHDroid</a></p>
 
-<p>If you would like to donate me some Satoshis (=smallest unit of Bitcoin): <a href="bitcoin:1z3ntuC4fYSLawSQu153kia9FuL4i2e4M">1z3ntuC4fYSLawSQu153kia9FuL4i2e4M</a></p>
+<p>Launch SSHDroid and accept the superuser request</p>
+
+<p>Then make sure you have your Android device connected with access to adb!</p>
+
+<figure class="highlight"><pre><code class="language-console" data-lang="console">adb shell
+su
+mount -o rw,remount /system
+cp /data/data/berserker.android.apps.sshdroid/dropbear/ssh /system/bin/ssh</code></pre></figure>
+
 
   </div>
 
