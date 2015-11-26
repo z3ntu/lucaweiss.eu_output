@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>z3ntu</title>
-    <description>This is my blog where I write about different things.
+    <description>This is my blog and website, where I write about different things and present my projects.
 </description>
     <link>https://z3ntu.github.io/</link>
     <atom:link href="https://z3ntu.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 15 Nov 2015 13:25:38 +0100</pubDate>
-    <lastBuildDate>Sun, 15 Nov 2015 13:25:38 +0100</lastBuildDate>
+    <pubDate>Thu, 26 Nov 2015 15:31:56 +0100</pubDate>
+    <lastBuildDate>Thu, 26 Nov 2015 15:31:56 +0100</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
