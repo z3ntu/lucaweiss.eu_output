@@ -6,9 +6,93 @@
 </description>
     <link>https://z3ntu.github.io/</link>
     <atom:link href="https://z3ntu.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 17 Dec 2015 15:23:42 +0100</pubDate>
-    <lastBuildDate>Thu, 17 Dec 2015 15:23:42 +0100</lastBuildDate>
+    <pubDate>Thu, 17 Dec 2015 15:53:23 +0100</pubDate>
+    <lastBuildDate>Thu, 17 Dec 2015 15:53:23 +0100</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>Native Linux applications on Android</title>
+        <description>&lt;h1 id=&quot;how-do-you-compile-normal-applications-for-android&quot;&gt;How do you compile normal applications for Android?&lt;/h1&gt;
+&lt;p&gt;### &lt;em&gt;Post will be updated soon!&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;For the &lt;code class=&quot;highlighter-rouge&quot;&gt;android_configure&lt;/code&gt; script download &lt;a href=&quot;https://gist.github.com/z3ntu/57b95b02ebe8e153d5a8&quot;&gt;this script&lt;/a&gt;, place it in your ~/bin` folder and (if not already) add it to your PATH variable.&lt;/p&gt;
+
+&lt;h2 id=&quot;ncurses&quot;&gt;Ncurses&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+android_configure --enable-widec
+make
+make install
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;htop&quot;&gt;Htop&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+android_configure
+make
+make install
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;gnutls&quot;&gt;GnuTLS&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+android_configure --without-p11-kit
+make
+make install
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;wget&quot;&gt;Wget&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+android_configure
+patch src/gnutls.c &amp;lt; ../TOOLS/gnutls.c.patch
+make
+make install
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;curl&quot;&gt;Curl&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+android_configure
+make
+make install
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;libiconv&quot;&gt;Libiconv&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+android_configure --host=arm-linux
+make
+make install
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;git&quot;&gt;Git&lt;/h2&gt;
+&lt;p&gt;Comment out the parts with &lt;code class=&quot;highlighter-rouge&quot;&gt;ac_cv_fread_reads_directories&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;ac_cv_snprintf_returns_bogus&lt;/code&gt;. Currently on Line 854.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+make configure
+android_configure
+make NO_NSEC=1
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;binutils&quot;&gt;Binutils&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+android_configure
+make
+make install
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;python-not-complete&quot;&gt;Python (not complete)&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+android_configure --host=arm-linux --build=arm
+not complete!
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Thanks for reading!&lt;/p&gt;
+</description>
+        <pubDate>Sat, 12 Dec 2015 20:23:00 +0100</pubDate>
+        <link>https://z3ntu.github.io/2015/12/12/Native-linux-applications-on-android.html</link>
+        <guid isPermaLink="true">https://z3ntu.github.io/2015/12/12/Native-linux-applications-on-android.html</guid>
+        
+        <category>android</category>
+        
+        <category>tutorial</category>
+        
+        
+      </item>
     
       <item>
         <title>Google Play Services with Android 6.0 Marshmallow and Genymotion</title>
