@@ -6,13 +6,66 @@
 </description>
     <link>https://z3ntu.github.io/</link>
     <atom:link href="https://z3ntu.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 09 Dec 2015 22:40:15 +0100</pubDate>
-    <lastBuildDate>Wed, 09 Dec 2015 22:40:15 +0100</lastBuildDate>
-    <generator>Jekyll v3.0.0</generator>
+    <pubDate>Thu, 17 Dec 2015 15:23:42 +0100</pubDate>
+    <lastBuildDate>Thu, 17 Dec 2015 15:23:42 +0100</lastBuildDate>
+    <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>Google Play Services with Android 6.0 Marshmallow and Genymotion</title>
+        <description>&lt;p&gt;So, I think you want to install the Google Play Store &amp;amp; Services with an Android 6.0 Marshmallow Emulator?&lt;/p&gt;
+
+&lt;p&gt;To do that, follow either the long or the short version.&lt;/p&gt;
+
+&lt;p&gt;You need the following three files:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.mirrorcreator.com/files/0ZIO8PME/Genymotion-ARM-Translation_v1.1.zip_links&quot;&gt;Genymotion-ARM-Translation_v1.1.zip&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.androidfilehost.com/?fid=96042739161891406&quot;&gt;gapps-L-4-21-15.zip&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.androidfilehost.com/?fid=24052804347835438&quot;&gt;benzo-gapps-M-20151011-signed-chroma-r3.zip&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Short version:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Download all three files.&lt;/li&gt;
+  &lt;li&gt;Create an emulator with the &lt;code class=&quot;highlighter-rouge&quot;&gt;Nexus 5X&lt;/code&gt; image and start it.&lt;/li&gt;
+  &lt;li&gt;Flash &lt;code class=&quot;highlighter-rouge&quot;&gt;Genymotion-ARM-Translation_v1.1.zip&lt;/code&gt; and reboot.&lt;/li&gt;
+  &lt;li&gt;Flash &lt;code class=&quot;highlighter-rouge&quot;&gt;gapps-L-4-21-15.zip&lt;/code&gt; and reboot.&lt;/li&gt;
+  &lt;li&gt;Sign into your Google Account.&lt;/li&gt;
+  &lt;li&gt;Flash &lt;code class=&quot;highlighter-rouge&quot;&gt;benzo-gapps-M-20151011-signed-chroma-r3.zip&lt;/code&gt; and reboot.&lt;/li&gt;
+  &lt;li&gt;You are finished!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Long version:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Then start GenyMotion and add an emulator with the preset &lt;code class=&quot;highlighter-rouge&quot;&gt;!! PREVIEW - Google Nexus 5X - 6.0.0 - API 23 - 1080x1920&lt;/code&gt;. Start it and wait until you see the homescreen.&lt;/p&gt;
+
+&lt;p&gt;The next step is to flash the &lt;code class=&quot;highlighter-rouge&quot;&gt;Genymotion-ARM-Translation_v1.1.zip&lt;/code&gt;. To do that, just drap &amp;amp; drop the .zip file onto the emulator.&lt;/p&gt;
+
+&lt;p&gt;Turn the emulator off with the power button and wait until it is powered off. Then turn it on again.&lt;/p&gt;
+
+&lt;p&gt;Now repeat the last two steps with &lt;code class=&quot;highlighter-rouge&quot;&gt;gapps-L-4-21-15.zip&lt;/code&gt; (flash, reboot).&lt;/p&gt;
+
+&lt;p&gt;If you are finished with that, sign into your Google account (you can do that when opening the Play Store). If you are successfully logged in, flash the &lt;code class=&quot;highlighter-rouge&quot;&gt;benzo-gapps-M-20151011-signed-chroma-r3.zip&lt;/code&gt; file and reboot again.&lt;/p&gt;
+
+&lt;p&gt;Have fun with your working Google Play Store!&lt;/p&gt;
+
+&lt;p&gt;Source: &lt;a href=&quot;https://gist.github.com/wbroek/9321145&quot;&gt;gist.github.com&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 10 Dec 2015 12:24:00 +0100</pubDate>
+        <link>https://z3ntu.github.io/2015/12/10/play-services-with-genymotion.html</link>
+        <guid isPermaLink="true">https://z3ntu.github.io/2015/12/10/play-services-with-genymotion.html</guid>
+        
+        <category>android</category>
+        
+        <category>tutorial</category>
+        
+        
+      </item>
     
       <item>
         <title>SSH on Android</title>
-        <description>&lt;h1 id=&quot;installing-the-ssh-binary-on-android-for-use-with-adb-shell&quot;&gt;Installing the SSH binary on Android (for use with &lt;code&gt;adb shell&lt;/code&gt;)&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;installing-the-ssh-binary-on-android-for-use-with-adb-shell&quot;&gt;Installing the SSH binary on Android (for use with &lt;code class=&quot;highlighter-rouge&quot;&gt;adb shell&lt;/code&gt;)&lt;/h1&gt;
 
 &lt;p&gt;Install &lt;a href=&quot;https://play.google.com/store/apps/details?id=berserker.android.apps.sshdroid&quot;&gt;SSHDroid&lt;/a&gt;&lt;/p&gt;
 
@@ -27,15 +80,15 @@ cp /data/data/berserker.android.apps.sshdroid/dropbear/ssh /system/bin/ssh&lt;/c
 
 </description>
         <pubDate>Tue, 03 Nov 2015 00:00:00 +0100</pubDate>
-        <link>https://z3ntu.github.io/android/ssh/tutorial/2015/11/03/ssh-on-android.html</link>
-        <guid isPermaLink="true">https://z3ntu.github.io/android/ssh/tutorial/2015/11/03/ssh-on-android.html</guid>
-        
+        <link>https://z3ntu.github.io/2015/11/03/SSH-on-Android.html</link>
+        <guid isPermaLink="true">https://z3ntu.github.io/2015/11/03/SSH-on-Android.html</guid>
         
         <category>android</category>
         
         <category>ssh</category>
         
         <category>tutorial</category>
+        
         
       </item>
     
@@ -73,7 +126,7 @@ cp /data/data/berserker.android.apps.sshdroid/dropbear/ssh /system/bin/ssh&lt;/c
 &lt;a href=&quot;/images/unity_webgl_export.png&quot; class=&quot;fancybox&quot; title=&quot;Export settings&quot;&gt;Click for a screenshot of my Build Settings&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Move every file from the &lt;code&gt;Release&lt;/code&gt; folder into the &lt;code&gt;Compressed&lt;/code&gt; folder. You can now delete the &lt;code&gt;Release&lt;/code&gt; folder.
+    &lt;p&gt;Move every file from the &lt;code class=&quot;highlighter-rouge&quot;&gt;Release&lt;/code&gt; folder into the &lt;code class=&quot;highlighter-rouge&quot;&gt;Compressed&lt;/code&gt; folder. You can now delete the &lt;code class=&quot;highlighter-rouge&quot;&gt;Release&lt;/code&gt; folder.
 Your folder structure should look like this:&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -87,27 +140,27 @@ TemplateData
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;Enter &lt;code&gt;sudo a2enmod rewrite&lt;/code&gt; in the terminal (to activate the &lt;code&gt;rewrite&lt;/code&gt; Apache module).&lt;/p&gt;
+    &lt;p&gt;Enter &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo a2enmod rewrite&lt;/code&gt; in the terminal (to activate the &lt;code class=&quot;highlighter-rouge&quot;&gt;rewrite&lt;/code&gt; Apache module).&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Open &lt;code&gt;/etc/apache2/apache2.conf&lt;/code&gt; with your favorite text editor and find the following part:
-&lt;code&gt;&amp;lt;Directory /var/www/&amp;gt;&lt;/code&gt; / &lt;code&gt;&amp;lt;Directory /var/www/html/&amp;gt;&lt;/code&gt; (or wherever your “main” folder is)&lt;/p&gt;
+    &lt;p&gt;Open &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/apache2/apache2.conf&lt;/code&gt; with your favorite text editor and find the following part:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;Directory /var/www/&amp;gt;&lt;/code&gt; / &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;Directory /var/www/html/&amp;gt;&lt;/code&gt; (or wherever your “main” folder is)&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Change &lt;code&gt;AllowOverride&lt;/code&gt; from &lt;code&gt;None&lt;/code&gt; to &lt;code&gt;All&lt;/code&gt; and save the file.&lt;/p&gt;
+    &lt;p&gt;Change &lt;code class=&quot;highlighter-rouge&quot;&gt;AllowOverride&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;None&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;All&lt;/code&gt; and save the file.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;I hope this helped you!&lt;/p&gt;
 </description>
         <pubDate>Sat, 31 Oct 2015 12:25:57 +0100</pubDate>
-        <link>https://z3ntu.github.io/unity3d/tutorial/2015/10/31/deploying-unity-webgl-with-apache.html</link>
-        <guid isPermaLink="true">https://z3ntu.github.io/unity3d/tutorial/2015/10/31/deploying-unity-webgl-with-apache.html</guid>
-        
+        <link>https://z3ntu.github.io/2015/10/31/Deploying-Unity-WebGL-with-Apache.html</link>
+        <guid isPermaLink="true">https://z3ntu.github.io/2015/10/31/Deploying-Unity-WebGL-with-Apache.html</guid>
         
         <category>unity3d</category>
         
         <category>tutorial</category>
+        
         
       </item>
     
