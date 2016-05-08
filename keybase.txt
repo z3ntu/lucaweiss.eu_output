@@ -1,7 +1,3 @@
-==================================================================
-https://keybase.io/z3ntu
---------------------------------------------------------------------
-
 I hereby claim:
 
   * I am an admin of https://z3ntu.github.io
@@ -51,4 +47,3 @@ appending to this document.
 
 View my publicly-auditable identity here: https://keybase.io/z3ntu
 
-=================================================================
