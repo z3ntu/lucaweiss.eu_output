@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Schaukuchl Android App</title>
-  <meta name="description" content="This is my blog and website, where I write about different things and present my projects.
-">
+  <title>Building Ubuntu Touch on Arch Linux</title>
+  <meta name="description" content="For building Ubuntu Touch on Arch Linux we need a virtual environment (chroot), because building Ubuntu Touch requires gcc 4.8 right now.">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://z3ntu.github.io/projects/schaukuchl/">
+  <link rel="canonical" href="https://z3ntu.github.io/2016/02/20/Building-ubuntu-touch-on-archlinux.html">
   <link rel="alternate" type="application/rss+xml" title="z3ntu" href="https://z3ntu.github.io/feed.xml">
   <meta name="google-site-verification" content="lRwe0qGfXZl9HSQKeG0NkNrOAlJFdNqGtyzs6FLRs9k" />
   
@@ -85,21 +84,123 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <article class="post">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title">Schaukuchl Android App</h1>
+    <h1 class="post-title" itemprop="name headline">Building Ubuntu Touch on Arch Linux</h1>
+    <p class="post-meta"><time datetime="2016-02-20T21:37:00+01:00" itemprop="datePublished">Feb 20, 2016</time></p>
   </header>
 
-  <div class="post-content">
-    <p>During my summer internship in 2015, I was at a restaurant called Schaukuchl to eat nearly every day. I noticed that they still advertised their Android app, although it was no longer available in the Google Play Store. When I searched the internet and finally found a working download link, it was pretty bad. In short, it was just a WebView displaying a webpage (design was Android 2.X), and so I decided to create my own and so I did.</p>
+  <div class="post-content" itemprop="articleBody">
+    <p>For building Ubuntu Touch on Arch Linux we need a virtual environment (chroot), because building Ubuntu Touch requires gcc 4.8 right now.</p>
 
-<p>The result is an app that parses the “beautiful” MS-Word generated HTML structure (no seriously, it is very bad!) and displays it in a mobile-readable fontsize. Even an offline-mode is implemented.</p>
+<p><strong>Requirements:</strong>
+* <code class="highlighter-rouge">devtools</code>
+<code class="highlighter-rouge">
+mkdir &lt;somewhere&gt;
+CHROOT=&lt;somewhere&gt;
+mkarchroot -C /path/to/pacman.mkarchroot.conf $CHROOT/root base-devel
+# Go into the chroot environment with:
+arch-nspawn $CHROOT/root /bin/bash
+</code>
+The <code class="highlighter-rouge">pacman.mkarchroot.conf</code>:
+<script src="https://gist.github.com/z3ntu/d557ea8ea54c84dbd2ef.js"></script>
+Explanation:
+<code class="highlighter-rouge">SigLevel = Never</code> because many of the archive packages’ packager PGP signatures are now invalid.
+The <code class="highlighter-rouge">Server</code> entries are a link to the archive from the 1st May of 2014.
+The <code class="highlighter-rouge">vps</code> entry is my personal server which runs my personal program <a href="https://github.com/z3ntu/aaurbs">aaurbs</a> to build AUR packages, which is used for downloading <code class="highlighter-rouge">phablet-tools</code>.</p>
 
-<p>When I showed the App to the “boss” of the restaurant
-<a href="https://github.com/z3ntu/Schaukuchl">Link to GitHub</a></p>
+<p><strong>Requirements in the chroot:</strong></p>
+
+<p><em>From personal repository:</em>
+* <code class="highlighter-rouge">phablet-tools</code>
+* <code class="highlighter-rouge">esound</code>
+* <code class="highlighter-rouge">dpkg</code>
+* <code class="highlighter-rouge">launchpadlib</code> (manually install <code class="highlighter-rouge">python2-keyring</code> from <a href="http://seblu.net/a/archive/repos/2014/09/10/community/os/x86_64/python2-keyring-4.0-2-any.pkg.tar.xz">the mirror</a> and then do some hacking… //TODO: DOCUMENT!)</p>
+
+<p><em>From normal repositories:</em>
+* <code class="highlighter-rouge">python2</code>
+* <code class="highlighter-rouge">zip</code>
+* <code class="highlighter-rouge">gcc-multilib</code>
+* <code class="highlighter-rouge">lib32-glibc</code>
+* <code class="highlighter-rouge">libxml2</code>
+* <code class="highlighter-rouge">libx11</code>
+* <code class="highlighter-rouge">libxext</code>
+* <code class="highlighter-rouge">alsa-lib</code>
+* <code class="highlighter-rouge">libpulse</code>
+* <code class="highlighter-rouge">mesa</code>
+* <code class="highlighter-rouge">mesa-libgl</code>
+* <code class="highlighter-rouge">lib32-libx11</code>
+* <code class="highlighter-rouge">cpio</code>
+* Manually install <a href="https://pypi.python.org/pypi/oauth/1.0.1">oauth</a> (will probably make an AUR package for that)</p>
+
+<p><strong>Guide</strong>
+* Symlink some programs to work correctly with Ubuntu Touch
+<code class="highlighter-rouge">
+ln -s /usr/bin/python2 /usr/bin/python
+ln -s /usr/bin/gcc /usr/bin/gcc-4.8
+ln -s /usr/bin/g++ /usr/bin/g++-4.8
+</code>
+* Change the working directory somewhere (I just used <code class="highlighter-rouge">/home</code>)
+<code class="highlighter-rouge">
+cd &lt;somewhere&gt;
+</code>
+* Create a <code class="highlighter-rouge">phablet</code> directory and do the initial bootstrap (<strong>NOTE: This will take a LONG time and download/use up about 17GB of storage.</strong>)
+<code class="highlighter-rouge">
+mkdir phablet
+phablet-dev-bootstrap phablet
+</code>
+* Enable caching and source the envsetup.sh file
+<code class="highlighter-rouge">
+#export USE_CCACHE=1 # doesn't work right now
+source build/envsetup.sh
+</code>
+* Choose the lunch combo (you can test your environment by using the <code class="highlighter-rouge">aosp_mako_userdebug</code> combo).
+<code class="highlighter-rouge">
+lunch
+</code>
+* Finally compile Ubuntu Touch with the wanted number of threads (eg <code class="highlighter-rouge">-j4</code>)
+<code class="highlighter-rouge">
+make -j7
+</code>
+And then get coffee and pray :)</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>'/home/phablet/out/target/product/generic/ubuntu/kernel/boot/vmlinuz-3.4.0-4-goldfish' -&gt; '/home/phablet/out/target/product/generic/ubuntu/kernel/vmlinuz'
+</code></pre>
+</div>
+
+<p><strong>For Fairphone 2</strong>
+Clone device repo into devices/fairphone/fp2/
+Clone kernel repo into kernel/fairphone/fp2/
+Clone devices/qcom repo into devices/qcom/common/</p>
+
+<p><strong>Reference:</strong>
+* <a href="https://wiki.archlinux.org/index.php/Android#Building_Android">ArchWiki (Building Android)</a>
+* <a href="https://developer.ubuntu.com/en/start/ubuntu-for-devices/porting-new-device/">Ubuntu Touch (Porting new device)</a></p>
 
   </div>
+
+  
+    <div id="disqus_thread"></div>
+<script>
+
+    var disqus_config = function () {
+        this.page.url = 'https://z3ntu.github.io/2016/02/20/Building-ubuntu-touch-on-archlinux.html';
+        this.page.identifier = '/2016/02/20/Building-ubuntu-touch-on-archlinux.html';
+    };
+    
+    (function() {
+        var d = document, s = d.createElement('script');
+        
+        s.src = '//z3ntu.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+  
 
 </article>
 

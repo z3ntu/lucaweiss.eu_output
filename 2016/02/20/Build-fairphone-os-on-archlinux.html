@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Schaukuchl Android App</title>
-  <meta name="description" content="This is my blog and website, where I write about different things and present my projects.
-">
+  <title>Building Ubuntu Touch on Arch Linux</title>
+  <meta name="description" content="Requirements:* jdk7-openjdk* gperf* unzip* lib32-zlib">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://z3ntu.github.io/projects/schaukuchl/">
+  <link rel="canonical" href="https://z3ntu.github.io/2016/02/20/Build-fairphone-os-on-archlinux.html">
   <link rel="alternate" type="application/rss+xml" title="z3ntu" href="https://z3ntu.github.io/feed.xml">
   <meta name="google-site-verification" content="lRwe0qGfXZl9HSQKeG0NkNrOAlJFdNqGtyzs6FLRs9k" />
   
@@ -85,21 +84,47 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <article class="post">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title">Schaukuchl Android App</h1>
+    <h1 class="post-title" itemprop="name headline">Building Ubuntu Touch on Arch Linux</h1>
+    <p class="post-meta"><time datetime="2016-02-20T21:37:00+01:00" itemprop="datePublished">Feb 20, 2016</time></p>
   </header>
 
-  <div class="post-content">
-    <p>During my summer internship in 2015, I was at a restaurant called Schaukuchl to eat nearly every day. I noticed that they still advertised their Android app, although it was no longer available in the Google Play Store. When I searched the internet and finally found a working download link, it was pretty bad. In short, it was just a WebView displaying a webpage (design was Android 2.X), and so I decided to create my own and so I did.</p>
+  <div class="post-content" itemprop="articleBody">
+    <p><strong>Requirements:</strong>
+* <code class="highlighter-rouge">jdk7-openjdk</code>
+* <code class="highlighter-rouge">gperf</code>
+* <code class="highlighter-rouge">unzip</code>
+* <code class="highlighter-rouge">lib32-zlib</code></p>
 
-<p>The result is an app that parses the “beautiful” MS-Word generated HTML structure (no seriously, it is very bad!) and displays it in a mobile-readable fontsize. Even an offline-mode is implemented.</p>
-
-<p>When I showed the App to the “boss” of the restaurant
-<a href="https://github.com/z3ntu/Schaukuchl">Link to GitHub</a></p>
+<p><strong>Reference:</strong>
+* <a href="https://wiki.archlinux.org/index.php/Android#Building_Android">ArchWiki (Building Android)</a>
+* <a href="http://code.fairphone.com/projects/fp-osos/dev/fairphone-os-build-instructions.html">Fairphone Build Instructions</a></p>
 
   </div>
+
+  
+    <div id="disqus_thread"></div>
+<script>
+
+    var disqus_config = function () {
+        this.page.url = 'https://z3ntu.github.io/2016/02/20/Build-fairphone-os-on-archlinux.html';
+        this.page.identifier = '/2016/02/20/Build-fairphone-os-on-archlinux.html';
+    };
+    
+    (function() {
+        var d = document, s = d.createElement('script');
+        
+        s.src = '//z3ntu.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+  
 
 </article>
 

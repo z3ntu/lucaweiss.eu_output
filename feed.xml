@@ -6,9 +6,135 @@
 </description>
     <link>https://z3ntu.github.io/</link>
     <atom:link href="https://z3ntu.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 20 Dec 2015 00:10:03 +0100</pubDate>
-    <lastBuildDate>Sun, 20 Dec 2015 00:10:03 +0100</lastBuildDate>
-    <generator>Jekyll v3.0.1</generator>
+    <pubDate>Tue, 17 May 2016 09:37:11 +0200</pubDate>
+    <lastBuildDate>Tue, 17 May 2016 09:37:11 +0200</lastBuildDate>
+    <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>Building Ubuntu Touch on Arch Linux</title>
+        <description>&lt;p&gt;&lt;strong&gt;Requirements:&lt;/strong&gt;
+* &lt;code class=&quot;highlighter-rouge&quot;&gt;jdk7-openjdk&lt;/code&gt;
+* &lt;code class=&quot;highlighter-rouge&quot;&gt;gperf&lt;/code&gt;
+* &lt;code class=&quot;highlighter-rouge&quot;&gt;unzip&lt;/code&gt;
+* &lt;code class=&quot;highlighter-rouge&quot;&gt;lib32-zlib&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Reference:&lt;/strong&gt;
+* &lt;a href=&quot;https://wiki.archlinux.org/index.php/Android#Building_Android&quot;&gt;ArchWiki (Building Android)&lt;/a&gt;
+* &lt;a href=&quot;http://code.fairphone.com/projects/fp-osos/dev/fairphone-os-build-instructions.html&quot;&gt;Fairphone Build Instructions&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 20 Feb 2016 21:37:00 +0100</pubDate>
+        <link>https://z3ntu.github.io/2016/02/20/Build-fairphone-os-on-archlinux.html</link>
+        <guid isPermaLink="true">https://z3ntu.github.io/2016/02/20/Build-fairphone-os-on-archlinux.html</guid>
+        
+        <category>arch-linux</category>
+        
+        <category>ubuntu-touch</category>
+        
+        <category>tutorial</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Building Ubuntu Touch on Arch Linux</title>
+        <description>&lt;p&gt;For building Ubuntu Touch on Arch Linux we need a virtual environment (chroot), because building Ubuntu Touch requires gcc 4.8 right now.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Requirements:&lt;/strong&gt;
+* &lt;code class=&quot;highlighter-rouge&quot;&gt;devtools&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+mkdir &amp;lt;somewhere&amp;gt;
+CHROOT=&amp;lt;somewhere&amp;gt;
+mkarchroot -C /path/to/pacman.mkarchroot.conf $CHROOT/root base-devel
+# Go into the chroot environment with:
+arch-nspawn $CHROOT/root /bin/bash
+&lt;/code&gt;
+The &lt;code class=&quot;highlighter-rouge&quot;&gt;pacman.mkarchroot.conf&lt;/code&gt;:
+&lt;script src=&quot;https://gist.github.com/z3ntu/d557ea8ea54c84dbd2ef.js&quot;&gt;&lt;/script&gt;
+Explanation:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;SigLevel = Never&lt;/code&gt; because many of the archive packages’ packager PGP signatures are now invalid.
+The &lt;code class=&quot;highlighter-rouge&quot;&gt;Server&lt;/code&gt; entries are a link to the archive from the 1st May of 2014.
+The &lt;code class=&quot;highlighter-rouge&quot;&gt;vps&lt;/code&gt; entry is my personal server which runs my personal program &lt;a href=&quot;https://github.com/z3ntu/aaurbs&quot;&gt;aaurbs&lt;/a&gt; to build AUR packages, which is used for downloading &lt;code class=&quot;highlighter-rouge&quot;&gt;phablet-tools&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Requirements in the chroot:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;From personal repository:&lt;/em&gt;
+* &lt;code class=&quot;highlighter-rouge&quot;&gt;phablet-tools&lt;/code&gt;
+* &lt;code class=&quot;highlighter-rouge&quot;&gt;esound&lt;/code&gt;
+* &lt;code class=&quot;highlighter-rouge&quot;&gt;dpkg&lt;/code&gt;
+* &lt;code class=&quot;highlighter-rouge&quot;&gt;launchpadlib&lt;/code&gt; (manually install &lt;code class=&quot;highlighter-rouge&quot;&gt;python2-keyring&lt;/code&gt; from &lt;a href=&quot;http://seblu.net/a/archive/repos/2014/09/10/community/os/x86_64/python2-keyring-4.0-2-any.pkg.tar.xz&quot;&gt;the mirror&lt;/a&gt; and then do some hacking… //TODO: DOCUMENT!)&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;From normal repositories:&lt;/em&gt;
+* &lt;code class=&quot;highlighter-rouge&quot;&gt;python2&lt;/code&gt;
+* &lt;code class=&quot;highlighter-rouge&quot;&gt;zip&lt;/code&gt;
+* &lt;code class=&quot;highlighter-rouge&quot;&gt;gcc-multilib&lt;/code&gt;
+* &lt;code class=&quot;highlighter-rouge&quot;&gt;lib32-glibc&lt;/code&gt;
+* &lt;code class=&quot;highlighter-rouge&quot;&gt;libxml2&lt;/code&gt;
+* &lt;code class=&quot;highlighter-rouge&quot;&gt;libx11&lt;/code&gt;
+* &lt;code class=&quot;highlighter-rouge&quot;&gt;libxext&lt;/code&gt;
+* &lt;code class=&quot;highlighter-rouge&quot;&gt;alsa-lib&lt;/code&gt;
+* &lt;code class=&quot;highlighter-rouge&quot;&gt;libpulse&lt;/code&gt;
+* &lt;code class=&quot;highlighter-rouge&quot;&gt;mesa&lt;/code&gt;
+* &lt;code class=&quot;highlighter-rouge&quot;&gt;mesa-libgl&lt;/code&gt;
+* &lt;code class=&quot;highlighter-rouge&quot;&gt;lib32-libx11&lt;/code&gt;
+* &lt;code class=&quot;highlighter-rouge&quot;&gt;cpio&lt;/code&gt;
+* Manually install &lt;a href=&quot;https://pypi.python.org/pypi/oauth/1.0.1&quot;&gt;oauth&lt;/a&gt; (will probably make an AUR package for that)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Guide&lt;/strong&gt;
+* Symlink some programs to work correctly with Ubuntu Touch
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+ln -s /usr/bin/python2 /usr/bin/python
+ln -s /usr/bin/gcc /usr/bin/gcc-4.8
+ln -s /usr/bin/g++ /usr/bin/g++-4.8
+&lt;/code&gt;
+* Change the working directory somewhere (I just used &lt;code class=&quot;highlighter-rouge&quot;&gt;/home&lt;/code&gt;)
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+cd &amp;lt;somewhere&amp;gt;
+&lt;/code&gt;
+* Create a &lt;code class=&quot;highlighter-rouge&quot;&gt;phablet&lt;/code&gt; directory and do the initial bootstrap (&lt;strong&gt;NOTE: This will take a LONG time and download/use up about 17GB of storage.&lt;/strong&gt;)
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+mkdir phablet
+phablet-dev-bootstrap phablet
+&lt;/code&gt;
+* Enable caching and source the envsetup.sh file
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+#export USE_CCACHE=1 # doesn&#39;t work right now
+source build/envsetup.sh
+&lt;/code&gt;
+* Choose the lunch combo (you can test your environment by using the &lt;code class=&quot;highlighter-rouge&quot;&gt;aosp_mako_userdebug&lt;/code&gt; combo).
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+lunch
+&lt;/code&gt;
+* Finally compile Ubuntu Touch with the wanted number of threads (eg &lt;code class=&quot;highlighter-rouge&quot;&gt;-j4&lt;/code&gt;)
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+make -j7
+&lt;/code&gt;
+And then get coffee and pray :)&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&#39;/home/phablet/out/target/product/generic/ubuntu/kernel/boot/vmlinuz-3.4.0-4-goldfish&#39; -&amp;gt; &#39;/home/phablet/out/target/product/generic/ubuntu/kernel/vmlinuz&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;For Fairphone 2&lt;/strong&gt;
+Clone device repo into devices/fairphone/fp2/
+Clone kernel repo into kernel/fairphone/fp2/
+Clone devices/qcom repo into devices/qcom/common/&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Reference:&lt;/strong&gt;
+* &lt;a href=&quot;https://wiki.archlinux.org/index.php/Android#Building_Android&quot;&gt;ArchWiki (Building Android)&lt;/a&gt;
+* &lt;a href=&quot;https://developer.ubuntu.com/en/start/ubuntu-for-devices/porting-new-device/&quot;&gt;Ubuntu Touch (Porting new device)&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 20 Feb 2016 21:37:00 +0100</pubDate>
+        <link>https://z3ntu.github.io/2016/02/20/Building-ubuntu-touch-on-archlinux.html</link>
+        <guid isPermaLink="true">https://z3ntu.github.io/2016/02/20/Building-ubuntu-touch-on-archlinux.html</guid>
+        
+        <category>arch-linux</category>
+        
+        <category>ubuntu-touch</category>
+        
+        <category>tutorial</category>
+        
+        
+      </item>
     
       <item>
         <title>Fixing the Unity3D 5.3 startup error on Linux</title>
