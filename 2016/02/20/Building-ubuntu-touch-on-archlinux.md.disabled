@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Monstercat Connect</title>
-  <meta name="description" content="This is my blog and website, where I write about different things and present my projects.
-">
+  <title>Building Ubuntu Touch on Arch Linux</title>
+  <meta name="description" content="For building Ubuntu Touch on Arch Linux we need a virtual environment (chroot), because building Ubuntu Touch requires gcc 4.8 right now.">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://z3ntu.github.io/projects/monstercatconnect/">
+  <link rel="canonical" href="https://z3ntu.github.io/2016/02/20/Building-ubuntu-touch-on-archlinux.md.disabled">
   <link rel="alternate" type="application/rss+xml" title="z3ntu" href="https://z3ntu.github.io/feed.xml">
   <meta name="google-site-verification" content="lRwe0qGfXZl9HSQKeG0NkNrOAlJFdNqGtyzs6FLRs9k" />
   
@@ -71,6 +70,10 @@
         
           
         
+          
+        
+          
+        
       </div>
     </nav>
 
@@ -81,38 +84,123 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <article class="post">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title">Monstercat Connect</h1>
+    <h1 class="post-title" itemprop="name headline">Building Ubuntu Touch on Arch Linux</h1>
+    <p class="post-meta"><time datetime="2016-02-20T21:37:00+01:00" itemprop="datePublished">Feb 20, 2016</time></p>
   </header>
 
-  <div class="post-content">
-    <p>My different projects with/for Monstercat Connect, a streaming platform from Monstercat.</p>
+  <div class="post-content" itemprop="articleBody">
+    For building Ubuntu Touch on Arch Linux we need a virtual environment (chroot), because building Ubuntu Touch requires gcc 4.8 right now.
 
-<h2 id="monstercatconnectnotifierhttpsgithubcomz3ntumonstercatconnectnotifiertargetblank"><a href="https://github.com/z3ntu/MonstercatConnectNotifier" target="_blank">MonstercatConnectNotifier</a></h2>
-<p>Checks for new songs on Monstercat Connect and sends the cover &amp; title to a Telegram channel.</p>
+__Requirements:__
+* `devtools`
+```
+mkdir <somewhere>
+CHROOT=<somewhere>
+mkarchroot -C /path/to/pacman.mkarchroot.conf $CHROOT/root base-devel
+# Go into the chroot environment with:
+arch-nspawn $CHROOT/root /bin/bash
+```
+The `pacman.mkarchroot.conf`:
+<script src="https://gist.github.com/z3ntu/d557ea8ea54c84dbd2ef.js"></script>
+Explanation:
+`SigLevel = Never` because many of the archive packages' packager PGP signatures are now invalid.
+The `Server` entries are a link to the archive from the 1st May of 2014.
+The `vps` entry is my personal server which runs my personal program [aaurbs](https://github.com/z3ntu/aaurbs) to build AUR packages, which is used for downloading `phablet-tools`.
 
-<p>Telegram channel: <a href="https://telegram.me/ConnectNotifier" target="_blank">@ConnectNotifier</a></p>
+__Requirements in the chroot:__
 
-<h2 id="monstercatyoutubenotifierhttpsgithubcomz3ntumonstercatyoutubenotifiertargetblank"><a href="https://github.com/z3ntu/MonstercatYoutubeNotifier" target="_blank">MonstercatYoutubeNotifier</a></h2>
-<p>Checks for new videos on the Monstercat YouTube channel and sends a message to a Telegram channel. Requested by <a href="https://telegram.me/monsterlyrics" target="_blank">@monsterlyrics</a> on Telegram.</p>
+_From personal repository:_
+* `phablet-tools`
+* `esound`
+* `dpkg`
+* `launchpadlib` (manually install `python2-keyring` from [the mirror](http://seblu.net/a/archive/repos/2014/09/10/community/os/x86_64/python2-keyring-4.0-2-any.pkg.tar.xz) and then do some hacking... //TODO: DOCUMENT!)
 
-<p>Telegram channel: <a href="https://telegram.me/mcatyoutube" target="_blank">@mcatyoutube</a></p>
+_From normal repositories:_
+* `python2`
+* `zip`
+* `gcc-multilib`
+* `lib32-glibc`
+* `libxml2`
+* `libx11`
+* `libxext`
+* `alsa-lib`
+* `libpulse`
+* `mesa`
+* `mesa-libgl`
+* `lib32-libx11`
+* `cpio`
+* Manually install [oauth](https://pypi.python.org/pypi/oauth/1.0.1) (will probably make an AUR package for that)
 
-<h2 id="monstercatconnectdownloaderhttpsgithubcomz3ntumonstercatconnectdownloadertargetblank"><a href="https://github.com/z3ntu/MonstercatConnectDownloader" target="_blank">MonstercatConnectDownloader</a></h2>
-<p>Batch-downloads music from Monstercat Connect in the desired quality. Should be replaced by the new desktop client.</p>
+__Guide__
+* Symlink some programs to work correctly with Ubuntu Touch
+```
+ln -s /usr/bin/python2 /usr/bin/python
+ln -s /usr/bin/gcc /usr/bin/gcc-4.8
+ln -s /usr/bin/g++ /usr/bin/g++-4.8
+```
+* Change the working directory somewhere (I just used `/home`)
+```
+cd <somewhere>
+```
+* Create a `phablet` directory and do the initial bootstrap (__NOTE: This will take a LONG time and download/use up about 17GB of storage.__)
+```
+mkdir phablet
+phablet-dev-bootstrap phablet
+```
+* Enable caching and source the envsetup.sh file
+```
+#export USE_CCACHE=1 # doesn't work right now
+source build/envsetup.sh
+```
+* Choose the lunch combo (you can test your environment by using the `aosp_mako_userdebug` combo).
+```
+lunch
+```
+* Finally compile Ubuntu Touch with the wanted number of threads (eg `-j4`)
+```
+make -j7
+```
+And then get coffee and pray :)
 
-<h2 id="monstercatconnectdesktophttpsgithubcomz3ntumonstercatconnectdesktoptargetblank"><a href="https://github.com/z3ntu/MonstercatConnectDesktop" target="_blank">MonstercatConnectDesktop</a></h2>
-<p>Desktop client for Monstercat Connect with a (mass-)download function. Not finished yet.</p>
+```
+'/home/phablet/out/target/product/generic/ubuntu/kernel/boot/vmlinuz-3.4.0-4-goldfish' -> '/home/phablet/out/target/product/generic/ubuntu/kernel/vmlinuz'
+```
 
-<h2 id="connectconverterhttpsgithubcomz3ntuconnectconvertertargetblank"><a href="https://github.com/z3ntu/ConnectConverter" target="_blank">ConnectConverter</a></h2>
-<p>Downloads a *.wav file from Monstercat Connect, converts it to MP3 and FLAC and applies meta-tags.</p>
+**For Fairphone 2**
+Clone device repo into devices/fairphone/fp2/
+Clone kernel repo into kernel/fairphone/fp2/
+Clone devices/qcom repo into devices/qcom/common/
 
-<h2 id="monstercatconnecthelperhttpsgithubcomz3ntumonstercatconnecthelpertargetblank"><a href="https://github.com/z3ntu/MonstercatConnectHelper" target="_blank">MonstercatConnectHelper</a></h2>
-<p>Chrome (and Opera) extension to enable FLAC download and scrape the release IDs.</p>
+__Reference:__
+* [ArchWiki (Building Android)](https://wiki.archlinux.org/index.php/Android#Building_Android)
+* [Ubuntu Touch (Porting new device)](https://developer.ubuntu.com/en/start/ubuntu-for-devices/porting-new-device/)
 
   </div>
+
+  
+    <div id="disqus_thread"></div>
+<script>
+
+    var disqus_config = function () {
+        this.page.url = 'https://z3ntu.github.io/2016/02/20/Building-ubuntu-touch-on-archlinux.md.disabled';
+        this.page.identifier = '/2016/02/20/Building-ubuntu-touch-on-archlinux.md.disabled';
+    };
+    
+    (function() {
+        var d = document, s = d.createElement('script');
+        
+        s.src = '//z3ntu.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+  
 
 </article>
 
