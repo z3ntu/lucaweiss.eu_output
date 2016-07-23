@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Deploying Unity WebGL with Apache</title>
-  <meta name="description" content="Deploying Unity WebGL on Apache">
+  <title>SDDM login with a Yubikey on Arch Linux</title>
+  <meta name="description" content="If you are wondering how you can login with a Yubikey into your system with SDDM, here are the steps:">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://z3ntu.github.io/2015/10/31/Deploying-Unity-WebGL-with-Apache.html">
+  <link rel="canonical" href="https://z3ntu.github.io/2016/07/23/SDDM-login-with-yubikey.html">
   <link rel="alternate" type="application/rss+xml" title="z3ntu" href="https://z3ntu.github.io/feed.xml">
   <meta name="google-site-verification" content="lRwe0qGfXZl9HSQKeG0NkNrOAlJFdNqGtyzs6FLRs9k" />
 </head>
@@ -34,61 +34,41 @@
       <div class="wrapper">
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Deploying Unity WebGL with Apache</h1>
-    <p class="post-meta"><time datetime="2015-10-31T12:25:57+01:00" itemprop="datePublished">Oct 31, 2015</time></p>
+    <h1 class="post-title" itemprop="name headline">SDDM login with a Yubikey on Arch Linux</h1>
+    <p class="post-meta"><time datetime="2016-07-23T11:56:00+02:00" itemprop="datePublished">Jul 23, 2016</time></p>
   </header>
   <div class="post-content" itemprop="articleBody">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-<link rel="stylesheet" href="/css/jquery.fancybox.css" type="text/css" media="screen" />
-<script type="text/javascript" src="/js/jquery.fancybox.pack.js"></script>
-<script>
-        $(document).ready(function() {
-            $('.fancybox').fancybox();
-        });
-    </script>
-<h1 id="deploying-unity-webgl-on-apache">Deploying Unity WebGL on Apache</h1>
-<p>Have you had troubles getting your exported Unity WebGL project to work?</p>
-<blockquote>
-  <p>GET /Release/UnityConfig.js <strong>404 (Not Found)</strong></p>
-  <p>GET /Release/fileloader.js <strong>404 (Not Found)</strong></p>
-  <p>GET /Release/1446299115.js <strong>404 (Not Found)</strong></p>
-</blockquote>
-<p>I got the instructions here:</p>
-<ul>
-  <li>
-    <p>Export your Unity project as WebGL (probably already did this).
-<a href="/images/unity_webgl_export.png" class="fancybox" title="Export settings">Click for a screenshot of my Build Settings</a></p>
-  </li>
-  <li>
-    <p>Move every file from the <code class="highlighter-rouge">Release</code> folder into the <code class="highlighter-rouge">Compressed</code> folder. You can now delete the <code class="highlighter-rouge">Release</code> folder.
-Your folder structure should look like this:</p>
-  </li>
-</ul>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">.htaccess
-index.html
-Compressed
-- many files (.datagz, .jsgz, .memgz)
-TemplateData
-- many image files, 1 .css &amp; 1 .js file</code></pre></figure>
-<ul>
-  <li>
-    <p>Enter <code class="highlighter-rouge">sudo a2enmod rewrite</code> in the terminal (to activate the <code class="highlighter-rouge">rewrite</code> Apache module).</p>
-  </li>
-  <li>
-    <p>Open <code class="highlighter-rouge">/etc/apache2/apache2.conf</code> with your favorite text editor and find the following part:
-<code class="highlighter-rouge">&lt;Directory /var/www/&gt;</code> / <code class="highlighter-rouge">&lt;Directory /var/www/html/&gt;</code> (or wherever your “main” folder is)</p>
-  </li>
-  <li>
-    <p>Change <code class="highlighter-rouge">AllowOverride</code> from <code class="highlighter-rouge">None</code> to <code class="highlighter-rouge">All</code> and save the file.</p>
-  </li>
-</ul>
-<p>I hope this helped you!</p>
+    <p>If you are wondering how you can login with a Yubikey into your system with SDDM, here are the steps:</p>
+<ol>
+  <li>Install <a href="https://www.archlinux.org/packages/?name=yubico-pam">yubico-pam</a> from [community].</li>
+  <li>Edit the file <code class="highlighter-rouge">/etc/yubikeys</code> and insert the following text:
+```</li>
+</ol>
+<username>:<yubikey_token_id>
+# eg
+luca:cclcclcclccl
+```
+If you don't know what the token ID from your yubikey is, just open a text editor and press the button on your yubikey to create a one time password (=OTP). Then take the first twelve characters from that string, which is your token id. If you are too lazy to count, you can also press the button multiple times and take the part that stays the same at the beginning.
+3. Edit the file `/etc/pam.d/system-auth` that it looks like the following. Note, that by editing this file you allow these users you specified in Step 2 to login nearly everywhere in your system with the yubikey.
+```
+#%PAM-1.0
+auth sufficient pam_yubico.so debug id=1 authfile=/etc/yubikeys
+auth required pam_unix.so try_first_pass nullok
+.
+.
+.
+```
+**If you don't want fancy debug lines, remove the 'debug' parameter. If you don't want the ability to just login with your yubikey, replace the 'sufficient' parameter with 'required'. But note, that you will be locked out of your system if you lose your yubikey or don't have it with you!**
+4. Now you should be able to use your Yubikey to login into your session, unlock the lockscreen and even use it for 'sudo' access.
+*If you don't want global Yubikey authentication, you can also not add the line in step 3 into the 'system-auth' file but into the 'sddm' file in the '/etc/pam.d/' directory. But also note, that you won't be able to use your Yubikey to unlock the lockscreen, just to login!*
+I hope this was helpful. If you have any questions, don't hesitate to ask in the comments.
+</yubikey_token_id></username>
   </div>
     <div id="disqus_thread"></div>
 <script>
     var disqus_config = function () {
-        this.page.url = 'https://z3ntu.github.io/2015/10/31/Deploying-Unity-WebGL-with-Apache.html';
-        this.page.identifier = '/2015/10/31/Deploying-Unity-WebGL-with-Apache.html';
+        this.page.url = 'https://z3ntu.github.io/2016/07/23/SDDM-login-with-yubikey.html';
+        this.page.identifier = '/2016/07/23/SDDM-login-with-yubikey.html';
     };
     (function() {
         var d = document, s = d.createElement('script');

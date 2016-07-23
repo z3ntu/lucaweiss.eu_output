@@ -4,10 +4,11 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Deploying Unity WebGL with Apache</title>
-  <meta name="description" content="Deploying Unity WebGL on Apache">
+  <title>Posts Tagged &ldquo;login&rdquo;</title>
+  <meta name="description" content="This is my blog and website, where I write about different things and present my projects.
+">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://z3ntu.github.io/2015/10/31/Deploying-Unity-WebGL-with-Apache.html">
+  <link rel="canonical" href="https://z3ntu.github.io/tag/login/">
   <link rel="alternate" type="application/rss+xml" title="z3ntu" href="https://z3ntu.github.io/feed.xml">
   <meta name="google-site-verification" content="lRwe0qGfXZl9HSQKeG0NkNrOAlJFdNqGtyzs6FLRs9k" />
 </head>
@@ -32,73 +33,18 @@
 </header>
     <div class="page-content">
       <div class="wrapper">
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Deploying Unity WebGL with Apache</h1>
-    <p class="post-meta"><time datetime="2015-10-31T12:25:57+01:00" itemprop="datePublished">Oct 31, 2015</time></p>
-  </header>
-  <div class="post-content" itemprop="articleBody">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-<link rel="stylesheet" href="/css/jquery.fancybox.css" type="text/css" media="screen" />
-<script type="text/javascript" src="/js/jquery.fancybox.pack.js"></script>
-<script>
-        $(document).ready(function() {
-            $('.fancybox').fancybox();
-        });
-    </script>
-<h1 id="deploying-unity-webgl-on-apache">Deploying Unity WebGL on Apache</h1>
-<p>Have you had troubles getting your exported Unity WebGL project to work?</p>
-<blockquote>
-  <p>GET /Release/UnityConfig.js <strong>404 (Not Found)</strong></p>
-  <p>GET /Release/fileloader.js <strong>404 (Not Found)</strong></p>
-  <p>GET /Release/1446299115.js <strong>404 (Not Found)</strong></p>
-</blockquote>
-<p>I got the instructions here:</p>
+        <h2 class="post_title">Posts Tagged &ldquo;login&rdquo;</h2>
 <ul>
-  <li>
-    <p>Export your Unity project as WebGL (probably already did this).
-<a href="/images/unity_webgl_export.png" class="fancybox" title="Export settings">Click for a screenshot of my Build Settings</a></p>
-  </li>
-  <li>
-    <p>Move every file from the <code class="highlighter-rouge">Release</code> folder into the <code class="highlighter-rouge">Compressed</code> folder. You can now delete the <code class="highlighter-rouge">Release</code> folder.
-Your folder structure should look like this:</p>
+  <li class="archive_list">
+    <time style="color:#666;font-size:11px;" datetime='2016-07-23'>07/23/16</time> <a class="archive_list_article_link" href='/2016/07/23/SDDM-login-with-yubikey.html'>SDDM login with a Yubikey on Arch Linux</a>
+    <p class="summary"></p>
+    <ul class="tag_list">
+      <li class="inline archive_list"><a class="tag_list_link" href="/tag/yubikey">yubikey</a></li>
+      <li class="inline archive_list"><a class="tag_list_link" href="/tag/login">login</a></li>
+      <li class="inline archive_list"><a class="tag_list_link" href="/tag/tutorial">tutorial</a></li>
+    </ul>
   </li>
 </ul>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">.htaccess
-index.html
-Compressed
-- many files (.datagz, .jsgz, .memgz)
-TemplateData
-- many image files, 1 .css &amp; 1 .js file</code></pre></figure>
-<ul>
-  <li>
-    <p>Enter <code class="highlighter-rouge">sudo a2enmod rewrite</code> in the terminal (to activate the <code class="highlighter-rouge">rewrite</code> Apache module).</p>
-  </li>
-  <li>
-    <p>Open <code class="highlighter-rouge">/etc/apache2/apache2.conf</code> with your favorite text editor and find the following part:
-<code class="highlighter-rouge">&lt;Directory /var/www/&gt;</code> / <code class="highlighter-rouge">&lt;Directory /var/www/html/&gt;</code> (or wherever your “main” folder is)</p>
-  </li>
-  <li>
-    <p>Change <code class="highlighter-rouge">AllowOverride</code> from <code class="highlighter-rouge">None</code> to <code class="highlighter-rouge">All</code> and save the file.</p>
-  </li>
-</ul>
-<p>I hope this helped you!</p>
-  </div>
-    <div id="disqus_thread"></div>
-<script>
-    var disqus_config = function () {
-        this.page.url = 'https://z3ntu.github.io/2015/10/31/Deploying-Unity-WebGL-with-Apache.html';
-        this.page.identifier = '/2015/10/31/Deploying-Unity-WebGL-with-Apache.html';
-    };
-    (function() {
-        var d = document, s = d.createElement('script');
-        s.src = '//z3ntu.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-</article>
       </div>
     </div>
     <footer class="site-footer">
