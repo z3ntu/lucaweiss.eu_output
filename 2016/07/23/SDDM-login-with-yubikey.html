@@ -39,30 +39,26 @@
   </header>
   <div class="post-content" itemprop="articleBody">
     <p>If you are wondering how you can login with a Yubikey into your system with SDDM, here are the steps:</p>
-<ol>
-  <li>Install <a href="https://www.archlinux.org/packages/?name=yubico-pam">yubico-pam</a> from [community].</li>
-  <li>Edit the file <code class="highlighter-rouge">/etc/yubikeys</code> and insert the following text:
-```</li>
-</ol>
-<username>:<yubikey_token_id>
+<p><strong>Step 1:</strong>
+Install <a href="https://www.archlinux.org/packages/?name=yubico-pam">yubico-pam</a> from [community].</p>
+<p><strong>Step 2:</strong> Edit the file <code class="highlighter-rouge">/etc/yubikeys</code> and insert text in the following format:</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;username&gt;:&lt;yubikey_token_id&gt;
 # eg
-luca:cclcclcclccl
-```
-If you don't know what the token ID from your yubikey is, just open a text editor and press the button on your yubikey to create a one time password (=OTP). Then take the first twelve characters from that string, which is your token id. If you are too lazy to count, you can also press the button multiple times and take the part that stays the same at the beginning.
-3. Edit the file `/etc/pam.d/system-auth` that it looks like the following. Note, that by editing this file you allow these users you specified in Step 2 to login nearly everywhere in your system with the yubikey.
-```
-#%PAM-1.0
+luca:cclcclcclccl</code></pre></figure>
+<p>If you don’t know what the token ID from your yubikey is, just open a text editor and press the button on your yubikey to create a one time password (=OTP). Then take the <strong>first twelve characters</strong> from that string, which is your token id. If you are too lazy to count, you can also press the button multiple times and take the part that stays the same at the beginning.</p>
+<p><strong>Step 3:</strong> Edit the file <code class="highlighter-rouge">/etc/pam.d/system-auth</code> that it looks like the following. Note, that by editing this file you allow these users you specified in Step 2 to login nearly everywhere in your system with the yubikey.</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">#%PAM-1.0
 auth sufficient pam_yubico.so debug id=1 authfile=/etc/yubikeys
 auth required pam_unix.so try_first_pass nullok
-.
-.
-.
-```
-**If you don't want fancy debug lines, remove the 'debug' parameter. If you don't want the ability to just login with your yubikey, replace the 'sufficient' parameter with 'required'. But note, that you will be locked out of your system if you lose your yubikey or don't have it with you!**
-4. Now you should be able to use your Yubikey to login into your session, unlock the lockscreen and even use it for 'sudo' access.
-*If you don't want global Yubikey authentication, you can also not add the line in step 3 into the 'system-auth' file but into the 'sddm' file in the '/etc/pam.d/' directory. But also note, that you won't be able to use your Yubikey to unlock the lockscreen, just to login!*
-I hope this was helpful. If you have any questions, don't hesitate to ask in the comments.
-</yubikey_token_id></username>
+# and more lines</code></pre></figure>
+<p><strong>If you don’t want fancy debug lines, remove the ‘debug’ parameter.
+If you don’t want the ability to just login with your yubikey, replace the ‘sufficient’ parameter with ‘required’. But note, that you will be locked out of your system if you lose your yubikey or don’t have it with you!</strong></p>
+<ol>
+  <li>Now you should be able to use your Yubikey to login into your session, unlock the lockscreen and even use it for ‘sudo’ access.
+<em>If you don’t want global Yubikey authentication, you can also not add the line in step 3 into the ‘system-auth’ file but into the ‘sddm’ file in the ‘/etc/pam.d/’ directory. But also note, that you won’t be able to use your Yubikey to unlock the lockscreen, just to login!</em></li>
+</ol>
+<p>I hope this was helpful. If you have any questions, don’t hesitate to ask in the comments.
+You can also take a look at the <a href="https://fedoraproject.org/wiki/Using_Yubikeys_with_Fedora">Fedora wiki article about Yubikey authentication</a>, which is much better than the Arch wiki at the moment.</p>
   </div>
     <div id="disqus_thread"></div>
 <script>
