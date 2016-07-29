@@ -53,10 +53,8 @@ auth required pam_unix.so try_first_pass nullok
 # and more lines</code></pre></figure>
 <p><strong>If you don’t want fancy debug lines, remove the ‘debug’ parameter.
 If you don’t want the ability to just login with your yubikey, replace the ‘sufficient’ parameter with ‘required’. But note, that you will be locked out of your system if you lose your yubikey or don’t have it with you!</strong></p>
-<ol>
-  <li>Now you should be able to use your Yubikey to login into your session, unlock the lockscreen and even use it for ‘sudo’ access.
-<em>If you don’t want global Yubikey authentication, you can also not add the line in step 3 into the ‘system-auth’ file but into the ‘sddm’ file in the ‘/etc/pam.d/’ directory. But also note, that you won’t be able to use your Yubikey to unlock the lockscreen, just to login!</em></li>
-</ol>
+<p><strong>Step 4:</strong> Now you should be able to use your Yubikey to login into your session, unlock the lockscreen and even use it for <code class="highlighter-rouge">sudo</code> access.
+<em>If you don’t want global Yubikey authentication, you can also not add the line in step 3 into the <code class="highlighter-rouge">system-auth</code> file but into the <code class="highlighter-rouge">sddm</code> file in the <code class="highlighter-rouge">/etc/pam.d/</code> directory. But also note, that you won’t be able to use your Yubikey to unlock the lockscreen, just to login!</em></p>
 <p>I hope this was helpful. If you have any questions, don’t hesitate to ask in the comments.
 You can also take a look at the <a href="https://fedoraproject.org/wiki/Using_Yubikeys_with_Fedora">Fedora wiki article about Yubikey authentication</a>, which is much better than the Arch wiki at the moment.</p>
   </div>
