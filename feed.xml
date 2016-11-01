@@ -6,8 +6,8 @@
 </description>
     <link>https://z3ntu.github.io/</link>
     <atom:link href="https://z3ntu.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 01 Nov 2016 19:22:11 +0100</pubDate>
-    <lastBuildDate>Tue, 01 Nov 2016 19:22:11 +0100</lastBuildDate>
+    <pubDate>Tue, 01 Nov 2016 20:31:35 +0100</pubDate>
+    <lastBuildDate>Tue, 01 Nov 2016 20:31:35 +0100</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -25,7 +25,7 @@
 
 &lt;h2 id=&quot;about-efidroid&quot;&gt;About EFIDroid&lt;/h2&gt;
 &lt;p&gt;EFIDroid is a relatively new multiboot solution for mobile devices. It is based on the EFI implementation by Intel (EDK2).&lt;br /&gt;
-For more information and support, please visit to the &lt;a href=&quot;LINKHERE&quot;&gt;Fairphone Forum thread&lt;/a&gt;.&lt;/p&gt;
+For more information and support, please visit to the &lt;a href=&quot;https://forum.fairphone.com/t/efidroid-multiboot-for-the-fairphone-2/23344&quot;&gt;Fairphone Forum thread&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;how-to-install-fp2&quot;&gt;How to install (FP2)&lt;/h2&gt;
 &lt;ul&gt;
@@ -57,13 +57,14 @@ For more information and support, please visit to the &lt;a href=&quot;LINKHERE&
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;add-a-system-to-the-new-rom&quot;&gt;Add a system to the new ROM&lt;/h2&gt;
+&lt;p&gt;Once you are in the &lt;strong&gt;UEFI&lt;/strong&gt;, you can navigate around with &lt;strong&gt;volume down&lt;/strong&gt; to go down, &lt;strong&gt;volume up&lt;/strong&gt; to go up and the &lt;strong&gt;power&lt;/strong&gt; button to confirm your selection.&lt;/p&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;Once you are in the &lt;strong&gt;UEFI&lt;/strong&gt;, you can navigate around with &lt;strong&gt;volume down&lt;/strong&gt; to go down, &lt;strong&gt;volume up&lt;/strong&gt; to go up and the &lt;strong&gt;power&lt;/strong&gt; button to confirm your selection.&lt;br /&gt;
-To flash a ROM the empty slot, select &lt;strong&gt;TWRP&lt;/strong&gt; and press &lt;strong&gt;power&lt;/strong&gt;.
+  &lt;li&gt;To flash a ROM the empty slot, select &lt;strong&gt;TWRP (Internal)&lt;/strong&gt; and press &lt;strong&gt;power&lt;/strong&gt;.
 &lt;img src=&quot;/images/efidroid/uefi_twrp.png&quot; alt=&quot;&quot; width=&quot;300&quot; class=&quot;toggle-image&quot; /&gt;&lt;/li&gt;
   &lt;li&gt;Next select your newly created ROM&lt;br /&gt;
 &lt;img src=&quot;/images/efidroid/uefi_twrp_os.png&quot; alt=&quot;&quot; width=&quot;300&quot; class=&quot;toggle-image&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;You will land in TWRP and be greeted with a warning about keeping the system partition &lt;strong&gt;readonly&lt;/strong&gt;. Swipe the slider at the bottom to acknowledge it.&lt;/li&gt;
+  &lt;li&gt;You will land in &lt;strong&gt;TWRP&lt;/strong&gt; and be greeted with a warning about keeping the system partition &lt;strong&gt;readonly&lt;/strong&gt;. Swipe the slider at the bottom to acknowledge it.&lt;/li&gt;
   &lt;li&gt;Click &lt;strong&gt;Install&lt;/strong&gt;, select the &lt;strong&gt;Micro SDcard&lt;/strong&gt; at the top.&lt;br /&gt;
 &lt;img src=&quot;/images/efidroid/twrp_2.png&quot; alt=&quot;&quot; width=&quot;300&quot; class=&quot;toggle-image&quot; /&gt;&lt;/li&gt;
   &lt;li&gt;Select for example the file &lt;code class=&quot;highlighter-rouge&quot;&gt;fp2-sibon-16.09.0-ota-userdebug.zip&lt;/code&gt;.&lt;br /&gt;
