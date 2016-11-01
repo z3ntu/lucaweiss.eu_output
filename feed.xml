@@ -6,9 +6,99 @@
 </description>
     <link>https://z3ntu.github.io/</link>
     <atom:link href="https://z3ntu.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 12 Sep 2016 14:48:49 +0200</pubDate>
-    <lastBuildDate>Mon, 12 Sep 2016 14:48:49 +0200</lastBuildDate>
+    <pubDate>Tue, 01 Nov 2016 19:22:11 +0100</pubDate>
+    <lastBuildDate>Tue, 01 Nov 2016 19:22:11 +0100</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Install and configure EFIDroid on the Fairphone 2</title>
+        <description>&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;h3 id=&quot;table-of-contents&quot;&gt;Table of contents:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#about-efidroid&quot;&gt;About EFIDroid&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#how-to-install-fp2&quot;&gt;How to install (FP2)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#add-a-new-rom&quot;&gt;Add a new ROM&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#add-a-system-to-the-new-rom&quot;&gt;Add a system to the new ROM&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#booting-into-your-new-rom&quot;&gt;Booting into your new ROM&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;about-efidroid&quot;&gt;About EFIDroid&lt;/h2&gt;
+&lt;p&gt;EFIDroid is a relatively new multiboot solution for mobile devices. It is based on the EFI implementation by Intel (EDK2).&lt;br /&gt;
+For more information and support, please visit to the &lt;a href=&quot;LINKHERE&quot;&gt;Fairphone Forum thread&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-to-install-fp2&quot;&gt;How to install (FP2)&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Download my build of the EFIDroid Manager app: &lt;a href=&quot;https://private.z3ntu.xyz/efidroid/apk/efidroid_fp2.apk&quot;&gt;https://private.z3ntu.xyz/efidroid/apk/efidroid_fp2.apk&lt;/a&gt;.&lt;br /&gt;
+&lt;em&gt;Please note, that this build is only temporary and that the app will be replaced in the near future!&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Go to &lt;strong&gt;Install/Update&lt;/strong&gt;&lt;br /&gt;
+&lt;img src=&quot;/images/efidroid/sidebar.png&quot; alt=&quot;&quot; width=&quot;300&quot; class=&quot;toggle-image&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Click &lt;strong&gt;Install&lt;/strong&gt;:&lt;br /&gt;
+&lt;img src=&quot;/images/efidroid/install.png&quot; alt=&quot;&quot; width=&quot;300&quot; class=&quot;toggle-image&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;It should be successfully installed!&lt;br /&gt;
+&lt;img src=&quot;/images/efidroid/installed.png&quot; alt=&quot;&quot; width=&quot;300&quot; class=&quot;toggle-image&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;add-a-new-rom&quot;&gt;Add a new ROM&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Before you do any of this you should download a ROM .zip file (for example &lt;a href=&quot;http://storage.googleapis.com/fairphone-updates/7114445d-6560-440c-9c9f-44639808f7a7/fp2-sibon-16.09.0-ota-userdebug.zip&quot;&gt;FP Open 16.09&lt;/a&gt;) and put it on your SD card (&lt;code class=&quot;highlighter-rouge&quot;&gt;/storage/sdcard1/&lt;/code&gt; and &lt;strong&gt;!!NOT!!&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;/sdcard&lt;/code&gt;!).&lt;/li&gt;
+  &lt;li&gt;To add a ROM click the &lt;strong&gt;FAB&lt;/strong&gt; (Floating Action Button)&lt;br /&gt;
+&lt;img src=&quot;/images/efidroid/mgr_systems_empty.png&quot; alt=&quot;&quot; width=&quot;300&quot; class=&quot;toggle-image&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Choose in the screen &lt;code class=&quot;highlighter-rouge&quot;&gt;/data/media/0/multiboot&lt;/code&gt; as location.&lt;br /&gt;
+&lt;img src=&quot;/images/efidroid/mgr_rom_new.png&quot; alt=&quot;&quot; width=&quot;300&quot; class=&quot;toggle-image&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Enter a &lt;strong&gt;name&lt;/strong&gt; for the ROM&lt;br /&gt;
+&lt;img src=&quot;/images/efidroid/mgr_rom_configured.png&quot; alt=&quot;&quot; width=&quot;300&quot; class=&quot;toggle-image&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;You can leave the partitions as they are (Schema &lt;code class=&quot;highlighter-rouge&quot;&gt;LoopSystem + BindOther&lt;/code&gt;) and press the &lt;strong&gt;tick&lt;/strong&gt; in the top right corner.&lt;br /&gt;
+&lt;img src=&quot;/images/efidroid/mgr_rom_partitions_finished.png&quot; alt=&quot;&quot; width=&quot;300&quot; class=&quot;toggle-image&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Now you can see that your newly created ROM is in the list.&lt;br /&gt;
+&lt;img src=&quot;/images/efidroid/mgr_systems_one.png&quot; alt=&quot;&quot; width=&quot;300&quot; class=&quot;toggle-image&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Then &lt;strong&gt;reboot&lt;/strong&gt;&lt;br /&gt;
+&lt;img src=&quot;/images/efidroid/reboot.png&quot; alt=&quot;&quot; width=&quot;300&quot; class=&quot;toggle-image&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;add-a-system-to-the-new-rom&quot;&gt;Add a system to the new ROM&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Once you are in the &lt;strong&gt;UEFI&lt;/strong&gt;, you can navigate around with &lt;strong&gt;volume down&lt;/strong&gt; to go down, &lt;strong&gt;volume up&lt;/strong&gt; to go up and the &lt;strong&gt;power&lt;/strong&gt; button to confirm your selection.&lt;br /&gt;
+To flash a ROM the empty slot, select &lt;strong&gt;TWRP&lt;/strong&gt; and press &lt;strong&gt;power&lt;/strong&gt;.
+&lt;img src=&quot;/images/efidroid/uefi_twrp.png&quot; alt=&quot;&quot; width=&quot;300&quot; class=&quot;toggle-image&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Next select your newly created ROM&lt;br /&gt;
+&lt;img src=&quot;/images/efidroid/uefi_twrp_os.png&quot; alt=&quot;&quot; width=&quot;300&quot; class=&quot;toggle-image&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;You will land in TWRP and be greeted with a warning about keeping the system partition &lt;strong&gt;readonly&lt;/strong&gt;. Swipe the slider at the bottom to acknowledge it.&lt;/li&gt;
+  &lt;li&gt;Click &lt;strong&gt;Install&lt;/strong&gt;, select the &lt;strong&gt;Micro SDcard&lt;/strong&gt; at the top.&lt;br /&gt;
+&lt;img src=&quot;/images/efidroid/twrp_2.png&quot; alt=&quot;&quot; width=&quot;300&quot; class=&quot;toggle-image&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Select for example the file &lt;code class=&quot;highlighter-rouge&quot;&gt;fp2-sibon-16.09.0-ota-userdebug.zip&lt;/code&gt;.&lt;br /&gt;
+&lt;img src=&quot;/images/efidroid/twrp_3.png&quot; alt=&quot;&quot; width=&quot;300&quot; class=&quot;toggle-image&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Disable the &lt;strong&gt;Zip file signature verification&lt;/strong&gt; and slide the confirmation bar.
+&lt;img src=&quot;/images/efidroid/twrp_4.png&quot; alt=&quot;&quot; width=&quot;300&quot; class=&quot;toggle-image&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Everything should be good and you can reboot!&lt;br /&gt;
+&lt;img src=&quot;/images/efidroid/twrp_5.png&quot; alt=&quot;&quot; width=&quot;300&quot; class=&quot;toggle-image&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;booting-into-your-new-rom&quot;&gt;Booting into your new ROM&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Select&lt;/strong&gt; your new ROM and press the &lt;strong&gt;power&lt;/strong&gt; button. &lt;em&gt;Do not be put off because of the long “Booting &amp;lt;romname&amp;gt;” screen as FP Open plays the boot animation very late (unfortunately).&lt;/em&gt;&lt;br /&gt;
+&lt;img src=&quot;/images/efidroid/boot_secondary.png&quot; alt=&quot;&quot; width=&quot;300&quot; class=&quot;toggle-image&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Aaaand we are in!&lt;/strong&gt;&lt;br /&gt;
+&lt;img src=&quot;/images/efidroid/booted.png&quot; alt=&quot;&quot; width=&quot;300&quot; class=&quot;toggle-image&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;If you have questions, please ask in the Fairphone Forum thread linked at the top.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div style=&quot;position:fixed;right:0;bottom:0; user-select: none;&quot;&gt;
+&lt;div style=&quot;background-color:gray; color:white; cursor: pointer; margin-right: 10px; margin-bottom: 10px; padding: 5px; border-radius: 10px&quot; width=&quot;100&quot; height=&quot;100&quot; onclick=&quot;$(&#39;.toggle-image&#39;).css(&#39;display&#39;, &#39;none&#39;);&quot;&gt;Disable images&lt;/div&gt;
+&lt;div style=&quot;background-color:gray; color:white; cursor: pointer; margin-right: 10px; margin-bottom: 10px; padding: 5px; border-radius: 10px&quot; width=&quot;100&quot; height=&quot;100&quot; onclick=&quot;$(&#39;.toggle-image&#39;).css(&#39;display&#39;, &#39;inline&#39;);&quot;&gt;Enable images&lt;/div&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Tue, 01 Nov 2016 15:27:00 +0100</pubDate>
+        <link>https://z3ntu.github.io/2016/11/01/Install-and-configure-efidroid.html</link>
+        <guid isPermaLink="true">https://z3ntu.github.io/2016/11/01/Install-and-configure-efidroid.html</guid>
+        
+        <category>efidroid</category>
+        
+        <category>fp2</category>
+        
+        
+      </item>
     
       <item>
         <title>SDDM login with a Yubikey on Arch Linux</title>
@@ -60,7 +150,7 @@ You can also take a look at the &lt;a href=&quot;https://fedoraproject.org/wiki/
         <title>Fixing the Unity3D 5.3 startup error on Linux</title>
         <description>&lt;p&gt;If you experience this error with the newest Unity3D Build on Linux, just do this one simple step:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/unity3d_startup_error.png&quot; alt=&quot;Screenshot&quot; class=&quot;some-css-class&quot; width=&quot;500&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/unity3d_startup_error.png&quot; alt=&quot;Screenshot&quot; width=&quot;500&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Create the folder &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.local/share/unity3d&lt;/code&gt; and you are good to go!&lt;/li&gt;
