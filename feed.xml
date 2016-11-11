@@ -6,8 +6,8 @@
 </description>
     <link>https://z3ntu.github.io/</link>
     <atom:link href="https://z3ntu.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 01 Nov 2016 20:31:35 +0100</pubDate>
-    <lastBuildDate>Tue, 01 Nov 2016 20:31:35 +0100</lastBuildDate>
+    <pubDate>Fri, 11 Nov 2016 14:44:59 +0100</pubDate>
+    <lastBuildDate>Fri, 11 Nov 2016 14:44:59 +0100</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -29,8 +29,7 @@ For more information and support, please visit to the &lt;a href=&quot;https://f
 
 &lt;h2 id=&quot;how-to-install-fp2&quot;&gt;How to install (FP2)&lt;/h2&gt;
 &lt;ul&gt;
-  &lt;li&gt;Download my build of the EFIDroid Manager app: &lt;a href=&quot;https://private.z3ntu.xyz/efidroid/apk/efidroid_fp2.apk&quot;&gt;https://private.z3ntu.xyz/efidroid/apk/efidroid_fp2.apk&lt;/a&gt;.&lt;br /&gt;
-&lt;em&gt;Please note, that this build is only temporary and that the app will be replaced in the near future!&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Download the EFIDroid Manager app from Google Play: &lt;a href=&quot;https://play.google.com/store/apps/details?id=org.efidroid.efidroidmanager&quot;&gt;https://play.google.com/store/apps/details?id=org.efidroid.efidroidmanager&lt;/a&gt;.&lt;/li&gt;
   &lt;li&gt;Go to &lt;strong&gt;Install/Update&lt;/strong&gt;&lt;br /&gt;
 &lt;img src=&quot;/images/efidroid/sidebar.png&quot; alt=&quot;&quot; width=&quot;300&quot; class=&quot;toggle-image&quot; /&gt;&lt;/li&gt;
   &lt;li&gt;Click &lt;strong&gt;Install&lt;/strong&gt;:&lt;br /&gt;
