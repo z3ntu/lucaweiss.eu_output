@@ -6,9 +6,69 @@
 </description>
     <link>https://z3ntu.github.io/</link>
     <atom:link href="https://z3ntu.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 11 Nov 2016 14:44:59 +0100</pubDate>
-    <lastBuildDate>Fri, 11 Nov 2016 14:44:59 +0100</lastBuildDate>
-    <generator>Jekyll v3.1.6</generator>
+    <pubDate>Fri, 16 Jun 2017 09:19:52 +0200</pubDate>
+    <lastBuildDate>Fri, 16 Jun 2017 09:19:52 +0200</lastBuildDate>
+    <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>Signing boot images for fastboot</title>
+        <description>&lt;p&gt;If you have ever seen the error &lt;code class=&quot;highlighter-rouge&quot;&gt;FAILED (remote: bootimage: incomplete or not signed)&lt;/code&gt;, here’s the solution (at least for the Fairphone 2 😉):&lt;/p&gt;
+
+&lt;p&gt;Download the &lt;code class=&quot;highlighter-rouge&quot;&gt;BootSignature.jar&lt;/code&gt; file from my server (or compile it yourself from the LineageOS 14.1 tree with the command &lt;code class=&quot;highlighter-rouge&quot;&gt;mka BootSignature&lt;/code&gt;).&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl -O https://private.z3ntu.xyz/BootSignature.jar
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Download the &lt;code class=&quot;highlighter-rouge&quot;&gt;make_key&lt;/code&gt; tool from the LineageOS GitHub.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl -O https://raw.githubusercontent.com/LineageOS/android_development/cm-14.1/tools/make_key
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Make the script executable&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;chmod +x make_key
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Generate the key with&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./make_key keystore '/C=US/ST=California/L=Mountain View/O=Android/OU=Android/CN=Android/emailAddress=android@android.com'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Put the &lt;code class=&quot;highlighter-rouge&quot;&gt;BootSignature.jar&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;keystore.pk8&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;keystore.x509.pem&lt;/code&gt; in a directory of your choice.&lt;/p&gt;
+
+&lt;p&gt;Put the following script into a location in the PATH (&lt;code class=&quot;highlighter-rouge&quot;&gt;~/bin&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/bin&lt;/code&gt; should be good) &lt;strong&gt;and replace the first variable with the location you put the three files in&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;KEYSTORE_TOOLS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/location/to/jar_and_certs
+
+&lt;span class=&quot;nv&quot;&gt;IMGFILE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; ! -n &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;; &lt;span class=&quot;k&quot;&gt;then
+  &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Usage: &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$0&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; &amp;lt;file.img&amp;gt;&quot;&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;exit &lt;/span&gt;1
+&lt;span class=&quot;k&quot;&gt;fi
+
+&lt;/span&gt;java -jar &lt;span class=&quot;nv&quot;&gt;$KEYSTORE_TOOLS&lt;/span&gt;/BootSignature.jar /boot &lt;span class=&quot;nv&quot;&gt;$IMGFILE&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$KEYSTORE_TOOLS&lt;/span&gt;/keystore.pk8 &lt;span class=&quot;nv&quot;&gt;$KEYSTORE_TOOLS&lt;/span&gt;/keystore.x509.pem &lt;span class=&quot;nv&quot;&gt;$IMGFILE&lt;/span&gt;.signed
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Don’t forget to make that script executable! (&lt;code class=&quot;highlighter-rouge&quot;&gt;chmod +x&lt;/code&gt;)&lt;/p&gt;
+
+&lt;p&gt;Now you can use the script to sign your images and then boot it&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sign_img boot.img &amp;amp;&amp;amp; fastboot boot boot.img.signed
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Have fun!&lt;/p&gt;
+</description>
+        <pubDate>Fri, 16 Jun 2017 08:55:00 +0200</pubDate>
+        <link>https://z3ntu.github.io/2017/06/16/Signing-boot-images.html</link>
+        <guid isPermaLink="true">https://z3ntu.github.io/2017/06/16/Signing-boot-images.html</guid>
+        
+        <category>android</category>
+        
+        <category>fp2</category>
+        
+        
+      </item>
     
       <item>
         <title>Install and configure EFIDroid on the Fairphone 2</title>
@@ -85,8 +145,8 @@ For more information and support, please visit to the &lt;a href=&quot;https://f
 &lt;p&gt;&lt;strong&gt;If you have questions, please ask in the Fairphone Forum thread linked at the top.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;div style=&quot;position:fixed;right:0;bottom:0; user-select: none;&quot;&gt;
-&lt;div style=&quot;background-color:gray; color:white; cursor: pointer; margin-right: 10px; margin-bottom: 10px; padding: 5px; border-radius: 10px&quot; width=&quot;100&quot; height=&quot;100&quot; onclick=&quot;$(&#39;.toggle-image&#39;).css(&#39;display&#39;, &#39;none&#39;);&quot;&gt;Disable images&lt;/div&gt;
-&lt;div style=&quot;background-color:gray; color:white; cursor: pointer; margin-right: 10px; margin-bottom: 10px; padding: 5px; border-radius: 10px&quot; width=&quot;100&quot; height=&quot;100&quot; onclick=&quot;$(&#39;.toggle-image&#39;).css(&#39;display&#39;, &#39;inline&#39;);&quot;&gt;Enable images&lt;/div&gt;
+&lt;div style=&quot;background-color:gray; color:white; cursor: pointer; margin-right: 10px; margin-bottom: 10px; padding: 5px; border-radius: 10px&quot; width=&quot;100&quot; height=&quot;100&quot; onclick=&quot;$('.toggle-image').css('display', 'none');&quot;&gt;Disable images&lt;/div&gt;
+&lt;div style=&quot;background-color:gray; color:white; cursor: pointer; margin-right: 10px; margin-bottom: 10px; padding: 5px; border-radius: 10px&quot; width=&quot;100&quot; height=&quot;100&quot; onclick=&quot;$('.toggle-image').css('display', 'inline');&quot;&gt;Enable images&lt;/div&gt;
 &lt;/div&gt;
 </description>
         <pubDate>Tue, 01 Nov 2016 15:27:00 +0100</pubDate>
@@ -192,58 +252,58 @@ You can also take a look at the &lt;a href=&quot;https://fedoraproject.org/wiki/
 &lt;h3 id=&quot;ncurses&quot;&gt;Ncurses&lt;/h3&gt;
 &lt;p&gt;Add &lt;code class=&quot;highlighter-rouge&quot;&gt;ac_cv_header_locale_h=no&lt;/code&gt; to your &lt;code class=&quot;highlighter-rouge&quot;&gt;android_configure&lt;/code&gt; script to the line &lt;code class=&quot;highlighter-rouge&quot;&gt;export CC&lt;/code&gt; (example: &lt;code class=&quot;highlighter-rouge&quot;&gt;export CC=${CROSS_PATH}/${CROSS_COMPILE}-gcc ac_cv_header_locale_h=no&lt;/code&gt;)&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;android_configure --enable-widec
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;android_configure --enable-widec
 make
 make install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;htop&quot;&gt;Htop&lt;/h3&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;android_configure
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;android_configure
 make
 make install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;gnutls&quot;&gt;GnuTLS&lt;/h3&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;android_configure --without-p11-kit
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;android_configure --without-p11-kit
 make
 make install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;wget&quot;&gt;Wget&lt;/h3&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;android_configure
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;android_configure
 patch src/gnutls.c &amp;lt; ../TOOLS/gnutls.c.patch
 make
 make install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;curl&quot;&gt;Curl&lt;/h3&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;android_configure
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;android_configure
 make
 make install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;libiconv&quot;&gt;Libiconv&lt;/h3&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;android_configure --host=arm-linux
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;android_configure --host&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;arm-linux
 make
 make install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;git&quot;&gt;Git&lt;/h3&gt;
 &lt;p&gt;Comment out the parts in &lt;code class=&quot;highlighter-rouge&quot;&gt;configure.ac&lt;/code&gt; with &lt;code class=&quot;highlighter-rouge&quot;&gt;ac_cv_fread_reads_directories&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;ac_cv_snprintf_returns_bogus&lt;/code&gt;. Currently on Line 854.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;make configure
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;make configure
 android_configure
-make NO_NSEC=1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+make &lt;span class=&quot;nv&quot;&gt;NO_NSEC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;binutils&quot;&gt;Binutils&lt;/h3&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;android_configure
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;android_configure
 make
 make install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;python-not-complete&quot;&gt;Python (not complete)&lt;/h3&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;android_configure --host=arm-linux --build=arm
-not complete!&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;android_configure --host&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;arm-linux --build&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;arm
+not &lt;span class=&quot;nb&quot;&gt;complete&lt;/span&gt;!&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;hr /&gt;
 
@@ -251,26 +311,26 @@ not complete!&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;gmp&quot;&gt;GMP&lt;/h3&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;android_configure --host=arm-linux
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;android_configure --host&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;arm-linux
 make
 make install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;mpfr&quot;&gt;MPFR&lt;/h3&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;android_configure --host=arm-linux
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;android_configure --host&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;arm-linux
 make
 make install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;mpc&quot;&gt;MPC&lt;/h3&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;android_configure --host=arm-linux
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;android_configure --host&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;arm-linux
 make
 make install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;gcc-1&quot;&gt;GCC&lt;/h3&gt;
 &lt;p&gt;Add &lt;code class=&quot;highlighter-rouge&quot;&gt;-I&amp;lt;YOUR_NDK_ROOT&amp;gt;/sources/android/support/include&lt;/code&gt; to your CFLAGS (android_configure script)&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;android_configure
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;android_configure
 make
 make install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -350,7 +410,7 @@ make install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Then make sure you have your Android device connected with access to adb!&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;adb shell
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;adb shell
 su
 mount -o rw,remount /system
 cp /data/data/berserker.android.apps.sshdroid/dropbear/ssh /system/bin/ssh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
@@ -379,7 +439,7 @@ cp /data/data/berserker.android.apps.sshdroid/dropbear/ssh /system/bin/ssh&lt;/c
 
 &lt;script&gt;
         $(document).ready(function() {
-            $(&#39;.fancybox&#39;).fancybox();
+            $('.fancybox').fancybox();
         });
     &lt;/script&gt;
 
