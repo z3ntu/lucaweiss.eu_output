@@ -4,11 +4,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>z3ntu</title>
-  <meta name="description" content="This is my blog and website, where I write about different things and present my projects.
-">
+  <title>Google Play Services with Android 6.0 Marshmallow and Genymotion</title>
+  <meta name="description" content="So, I think you want to install the Google Play Store &amp; Services with an Android 6.0 Marshmallow Emulator?">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://z3ntu.github.io/">
+  <link rel="canonical" href="https://z3ntu.github.io/2015/12/10/play-services-with-genymotion.html">
   <link rel="alternate" type="application/rss+xml" title="z3ntu" href="https://z3ntu.github.io/feed.xml">
   <meta name="google-site-verification" content="lRwe0qGfXZl9HSQKeG0NkNrOAlJFdNqGtyzs6FLRs9k" />
 </head>
@@ -33,60 +32,54 @@
 </header>
     <div class="page-content">
       <div class="wrapper">
-        <div class="home">
-  <h1 class="page-heading">Posts</h1>
-  <ul class="post-list">
-      <li>
-        <span class="post-meta">Jun 16, 2017</span>
-        <h2>
-          <a class="post-link" href="/2017/06/16/Signing-boot-images.html">Signing boot images for fastboot</a>
-        </h2>
-      </li>
-      <li>
-        <span class="post-meta">Nov 1, 2016</span>
-        <h2>
-          <a class="post-link" href="/2016/11/01/Install-and-configure-efidroid.html">Install and configure EFIDroid on the Fairphone 2</a>
-        </h2>
-      </li>
-      <li>
-        <span class="post-meta">Jul 23, 2016</span>
-        <h2>
-          <a class="post-link" href="/2016/07/23/SDDM-login-with-yubikey.html">SDDM login with a Yubikey on Arch Linux</a>
-        </h2>
-      </li>
-      <li>
-        <span class="post-meta">Dec 18, 2015</span>
-        <h2>
-          <a class="post-link" href="/2015/12/18/fixing-unity-5.3-startup-error-linux.html">Fixing the Unity3D 5.3 startup error on Linux</a>
-        </h2>
-      </li>
-      <li>
-        <span class="post-meta">Dec 12, 2015</span>
-        <h2>
-          <a class="post-link" href="/2015/12/12/Cross-compiling-native-linux-applications-for-android.html">Cross-compiling native Linux applications for Android</a>
-        </h2>
-      </li>
-      <li>
-        <span class="post-meta">Dec 10, 2015</span>
-        <h2>
-          <a class="post-link" href="/2015/12/10/play-services-with-genymotion.html">Google Play Services with Android 6.0 Marshmallow and Genymotion</a>
-        </h2>
-      </li>
-      <li>
-        <span class="post-meta">Nov 3, 2015</span>
-        <h2>
-          <a class="post-link" href="/2015/11/03/SSH-on-Android.html">SSH on Android</a>
-        </h2>
-      </li>
-      <li>
-        <span class="post-meta">Oct 31, 2015</span>
-        <h2>
-          <a class="post-link" href="/2015/10/31/Deploying-Unity-WebGL-with-Apache.html">Deploying Unity WebGL with Apache</a>
-        </h2>
-      </li>
-  </ul>
-  <!-- <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p> -->
-</div>
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Google Play Services with Android 6.0 Marshmallow and Genymotion</h1>
+    <p class="post-meta"><time datetime="2015-12-10T12:24:00+01:00" itemprop="datePublished">Dec 10, 2015</time></p>
+  </header>
+  <div class="post-content" itemprop="articleBody">
+    <p>So, I think you want to install the Google Play Store &amp; Services with an Android 6.0 Marshmallow Emulator?</p>
+<p>To do that, follow either the long or the short version.</p>
+<p>You need the following three files:</p>
+<ul>
+  <li><a href="http://www.mirrorcreator.com/files/0ZIO8PME/Genymotion-ARM-Translation_v1.1.zip_links">Genymotion-ARM-Translation_v1.1.zip</a></li>
+  <li><a href="https://www.androidfilehost.com/?fid=96042739161891406">gapps-L-4-21-15.zip</a></li>
+  <li><a href="https://www.androidfilehost.com/?fid=24052804347835438">benzo-gapps-M-20151011-signed-chroma-r3.zip</a>.</li>
+</ul>
+<p><strong>Short version:</strong></p>
+<ul>
+  <li>Download all three files.</li>
+  <li>Create an emulator with the <code class="highlighter-rouge">Nexus 5X</code> image and start it.</li>
+  <li>Flash <code class="highlighter-rouge">Genymotion-ARM-Translation_v1.1.zip</code> and reboot.</li>
+  <li>Flash <code class="highlighter-rouge">gapps-L-4-21-15.zip</code> and reboot.</li>
+  <li>Sign into your Google Account.</li>
+  <li>Flash <code class="highlighter-rouge">benzo-gapps-M-20151011-signed-chroma-r3.zip</code> and reboot.</li>
+  <li>You are finished!</li>
+</ul>
+<p><strong>Long version:</strong></p>
+<p>Then start GenyMotion and add an emulator with the preset <code class="highlighter-rouge">!! PREVIEW - Google Nexus 5X - 6.0.0 - API 23 - 1080x1920</code>. Start it and wait until you see the homescreen.</p>
+<p>The next step is to flash the <code class="highlighter-rouge">Genymotion-ARM-Translation_v1.1.zip</code>. To do that, just drap &amp; drop the .zip file onto the emulator.</p>
+<p>Turn the emulator off with the power button and wait until it is powered off. Then turn it on again.</p>
+<p>Now repeat the last two steps with <code class="highlighter-rouge">gapps-L-4-21-15.zip</code> (flash, reboot).</p>
+<p>If you are finished with that, sign into your Google account (you can do that when opening the Play Store). If you are successfully logged in, flash the <code class="highlighter-rouge">benzo-gapps-M-20151011-signed-chroma-r3.zip</code> file and reboot again.</p>
+<p>Have fun with your working Google Play Store!</p>
+<p>Source: <a href="https://gist.github.com/wbroek/9321145">gist.github.com</a></p>
+  </div>
+    <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https://z3ntu.github.io/2015/12/10/play-services-with-genymotion.html';
+        this.page.identifier = '/2015/12/10/play-services-with-genymotion.html';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');
+        s.src = '//z3ntu.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</article>
       </div>
     </div>
     <footer class="site-footer">

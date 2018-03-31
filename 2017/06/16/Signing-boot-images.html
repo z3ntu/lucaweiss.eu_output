@@ -4,11 +4,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>z3ntu</title>
-  <meta name="description" content="This is my blog and website, where I write about different things and present my projects.
-">
+  <title>Signing boot images for fastboot</title>
+  <meta name="description" content="If you have ever seen the error FAILED (remote: bootimage: incomplete or not signed), here’s the solution (at least for the Fairphone 2 😉):">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://z3ntu.github.io/">
+  <link rel="canonical" href="https://z3ntu.github.io/2017/06/16/Signing-boot-images.html">
   <link rel="alternate" type="application/rss+xml" title="z3ntu" href="https://z3ntu.github.io/feed.xml">
   <meta name="google-site-verification" content="lRwe0qGfXZl9HSQKeG0NkNrOAlJFdNqGtyzs6FLRs9k" />
 </head>
@@ -33,60 +32,63 @@
 </header>
     <div class="page-content">
       <div class="wrapper">
-        <div class="home">
-  <h1 class="page-heading">Posts</h1>
-  <ul class="post-list">
-      <li>
-        <span class="post-meta">Jun 16, 2017</span>
-        <h2>
-          <a class="post-link" href="/2017/06/16/Signing-boot-images.html">Signing boot images for fastboot</a>
-        </h2>
-      </li>
-      <li>
-        <span class="post-meta">Nov 1, 2016</span>
-        <h2>
-          <a class="post-link" href="/2016/11/01/Install-and-configure-efidroid.html">Install and configure EFIDroid on the Fairphone 2</a>
-        </h2>
-      </li>
-      <li>
-        <span class="post-meta">Jul 23, 2016</span>
-        <h2>
-          <a class="post-link" href="/2016/07/23/SDDM-login-with-yubikey.html">SDDM login with a Yubikey on Arch Linux</a>
-        </h2>
-      </li>
-      <li>
-        <span class="post-meta">Dec 18, 2015</span>
-        <h2>
-          <a class="post-link" href="/2015/12/18/fixing-unity-5.3-startup-error-linux.html">Fixing the Unity3D 5.3 startup error on Linux</a>
-        </h2>
-      </li>
-      <li>
-        <span class="post-meta">Dec 12, 2015</span>
-        <h2>
-          <a class="post-link" href="/2015/12/12/Cross-compiling-native-linux-applications-for-android.html">Cross-compiling native Linux applications for Android</a>
-        </h2>
-      </li>
-      <li>
-        <span class="post-meta">Dec 10, 2015</span>
-        <h2>
-          <a class="post-link" href="/2015/12/10/play-services-with-genymotion.html">Google Play Services with Android 6.0 Marshmallow and Genymotion</a>
-        </h2>
-      </li>
-      <li>
-        <span class="post-meta">Nov 3, 2015</span>
-        <h2>
-          <a class="post-link" href="/2015/11/03/SSH-on-Android.html">SSH on Android</a>
-        </h2>
-      </li>
-      <li>
-        <span class="post-meta">Oct 31, 2015</span>
-        <h2>
-          <a class="post-link" href="/2015/10/31/Deploying-Unity-WebGL-with-Apache.html">Deploying Unity WebGL with Apache</a>
-        </h2>
-      </li>
-  </ul>
-  <!-- <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p> -->
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Signing boot images for fastboot</h1>
+    <p class="post-meta"><time datetime="2017-06-16T08:55:00+02:00" itemprop="datePublished">Jun 16, 2017</time></p>
+  </header>
+  <div class="post-content" itemprop="articleBody">
+    <p>If you have ever seen the error <code class="highlighter-rouge">FAILED (remote: bootimage: incomplete or not signed)</code>, here’s the solution (at least for the Fairphone 2 😉):</p>
+<p>Download the <code class="highlighter-rouge">BootSignature.jar</code> file from my server (or compile it yourself from the LineageOS 14.1 tree with the command <code class="highlighter-rouge">mka BootSignature</code>).</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -O https://private.z3ntu.xyz/BootSignature.jar
+</code></pre>
 </div>
+<p>Download the <code class="highlighter-rouge">make_key</code> tool from the LineageOS GitHub.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -O https://raw.githubusercontent.com/LineageOS/android_development/cm-14.1/tools/make_key
+</code></pre>
+</div>
+<p>Make the script executable</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>chmod +x make_key
+</code></pre>
+</div>
+<p>Generate the key with</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>./make_key keystore '/C=US/ST=California/L=Mountain View/O=Android/OU=Android/CN=Android/emailAddress=android@android.com'
+</code></pre>
+</div>
+<p>Put the <code class="highlighter-rouge">BootSignature.jar</code>, <code class="highlighter-rouge">keystore.pk8</code> and <code class="highlighter-rouge">keystore.x509.pem</code> in a directory of your choice.</p>
+<p>Put the following script into a location in the PATH (<code class="highlighter-rouge">~/bin</code> or <code class="highlighter-rouge">/usr/local/bin</code> should be good) <strong>and replace the first variable with the location you put the three files in</strong>:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="nv">KEYSTORE_TOOLS</span><span class="o">=</span>/location/to/jar_and_certs
+<span class="nv">IMGFILE</span><span class="o">=</span><span class="nv">$1</span>
+<span class="k">if</span> <span class="o">[</span> ! -n <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> <span class="o">]</span>; <span class="k">then
+  </span><span class="nb">echo</span> <span class="s2">"Usage: </span><span class="nv">$0</span><span class="s2"> &lt;file.img&gt;"</span>
+  <span class="nb">exit </span>1
+<span class="k">fi
+</span>java -jar <span class="nv">$KEYSTORE_TOOLS</span>/BootSignature.jar /boot <span class="nv">$IMGFILE</span> <span class="nv">$KEYSTORE_TOOLS</span>/keystore.pk8 <span class="nv">$KEYSTORE_TOOLS</span>/keystore.x509.pem <span class="nv">$IMGFILE</span>.signed
+</code></pre>
+</div>
+<p>Don’t forget to make that script executable! (<code class="highlighter-rouge">chmod +x</code>)</p>
+<p>Now you can use the script to sign your images and then boot it</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>sign_img boot.img &amp;&amp; fastboot boot boot.img.signed
+</code></pre>
+</div>
+<p>Have fun!</p>
+  </div>
+    <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https://z3ntu.github.io/2017/06/16/Signing-boot-images.html';
+        this.page.identifier = '/2017/06/16/Signing-boot-images.html';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');
+        s.src = '//z3ntu.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</article>
       </div>
     </div>
     <footer class="site-footer">
