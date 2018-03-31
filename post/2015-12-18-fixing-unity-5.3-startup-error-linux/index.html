@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.37.1" />
 
-  <title>About &middot; z3ntu</title>
+  <title>Fixing the Unity3D 5.3 startup error on Linux &middot; z3ntu</title>
 
   
   
@@ -209,13 +209,116 @@
 
 
 <div class="header">
-  <h1>About</h1>
+  <h1>Fixing the Unity3D 5.3 startup error on Linux</h1>
   <h2></h2>
 </div>
 <div class="content">
-  <p>I am a 18-year-old student who likes programming.</p>
 
-<p>I publish most of what I do on GitHub.</p>
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>18 Dec 2015, 19:23</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://z3ntu.github.iotags/unity3d">unity3d</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://z3ntu.github.iotags/tutorial">tutorial</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p>If you experience this error with the newest Unity3D Build on Linux, just do this one simple step:</p>
+
+
+<figure>
+    
+        <img src="/images/unity3d_startup_error.png" width="500" />
+    
+    
+</figure>
+
+
+<ul>
+<li>Create the folder <code>~/.local/share/unity3d</code> and you are good to go!</li>
+</ul>
+
+<p><strong>Now have fun with Unity!</strong></p>
+
+<p>In more detail, the &ldquo;main&rdquo; error message in <code>~/.config/unity3d/Editor.log</code> is</p>
+
+<blockquote>
+<p>CopyPackageFile failed, unable to copy /opt/Unity/Editor/Data/Resources/Packages/unity-editor-home-0.0.7.tgz to /home/luca/.local/share/unity3d/Packages/unity-editor-home-0.0.7.tgz</p>
+
+<p>CopyPackageFile failed, unable to copy /opt/Unity/Editor/Data/Resources/Packages/unityeditor-cloud-hub-0.0.1.tgz to /home/luca/.local/share/unity3d/Packages/unityeditor-cloud-hub-0.0.1.tgz</p>
+</blockquote>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://z3ntu.github.io/post/2015-12-12-cross-compiling-native-linux-applications-for-android/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://z3ntu.github.io/post/2015-12-12-cross-compiling-native-linux-applications-for-android/">Cross-compiling native Linux applications for Android</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://z3ntu.github.io/post/2016-07-23-sddm-login-with-yubikey/">SDDM login with a Yubikey on Arch Linux</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://z3ntu.github.io/post/2016-07-23-sddm-login-with-yubikey/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'z3ntu';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
 
 </div>
 

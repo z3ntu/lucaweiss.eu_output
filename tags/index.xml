@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on z3ntu</title>
+    <link>https://z3ntu.github.io/tags/</link>
+    <description>Recent content in Tags on z3ntu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018 Luca Weiss</copyright>
+    <lastBuildDate>Fri, 16 Jun 2017 08:55:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://z3ntu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Android</title>
+      <link>https://z3ntu.github.io/tags/android/</link>
+      <pubDate>Fri, 16 Jun 2017 08:55:00 +0200</pubDate>
+      
+      <guid>https://z3ntu.github.io/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Efidroid</title>
+      <link>https://z3ntu.github.io/tags/efidroid/</link>
+      <pubDate>Tue, 01 Nov 2016 15:27:00 +0100</pubDate>
+      
+      <guid>https://z3ntu.github.io/tags/efidroid/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fp2</title>
+      <link>https://z3ntu.github.io/tags/fp2/</link>
+      <pubDate>Fri, 16 Jun 2017 08:55:00 +0200</pubDate>
+      
+      <guid>https://z3ntu.github.io/tags/fp2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Login</title>
+      <link>https://z3ntu.github.io/tags/login/</link>
+      <pubDate>Sat, 23 Jul 2016 11:56:00 +0200</pubDate>
+      
+      <guid>https://z3ntu.github.io/tags/login/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ssh</title>
+      <link>https://z3ntu.github.io/tags/ssh/</link>
+      <pubDate>Tue, 03 Nov 2015 10:40:00 +0100</pubDate>
+      
+      <guid>https://z3ntu.github.io/tags/ssh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tutorial</title>
+      <link>https://z3ntu.github.io/tags/tutorial/</link>
+      <pubDate>Sat, 23 Jul 2016 11:56:00 +0200</pubDate>
+      
+      <guid>https://z3ntu.github.io/tags/tutorial/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unity3d</title>
+      <link>https://z3ntu.github.io/tags/unity3d/</link>
+      <pubDate>Fri, 18 Dec 2015 19:23:00 +0100</pubDate>
+      
+      <guid>https://z3ntu.github.io/tags/unity3d/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Yubikey</title>
+      <link>https://z3ntu.github.io/tags/yubikey/</link>
+      <pubDate>Sat, 23 Jul 2016 11:56:00 +0200</pubDate>
+      
+      <guid>https://z3ntu.github.io/tags/yubikey/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

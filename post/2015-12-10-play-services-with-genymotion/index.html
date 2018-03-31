@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.37.1" />
+
+  <title>Google Play Services with Android 6.0 Marshmallow and Genymotion &middot; z3ntu</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+
+  <link rel="shortcut icon" href="https://z3ntu.github.ioimg/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="/">z3ntu</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/projects/"><i class='fa fa-code fa-fw'></i>Projects</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/z3ntu" target="_blank"><i class="fa fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/luca-weiss" target="_blank"><i class="fa fa-linkedin-square fa-fw"></i>LinkedIn</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/z3ntu" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://keybase.io/z3ntu" target="_blank"><i class="fa fa-key fa-fw"></i>Keybase</a>
+    </li>
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2018 Luca Weiss</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Google Play Services with Android 6.0 Marshmallow and Genymotion</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>10 Dec 2015, 12:24</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://z3ntu.github.iotags/android">android</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://z3ntu.github.iotags/tutorial">tutorial</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p>So, I think you want to install the Google Play Store &amp; Services with an Android 6.0 Marshmallow Emulator?</p>
+
+<p>To do that, follow either the long or the short version.</p>
+
+<p>You need the following three files:</p>
+
+<ul>
+<li><a href="http://www.mirrorcreator.com/files/0ZIO8PME/Genymotion-ARM-Translation_v1.1.zip_links">Genymotion-ARM-Translation_v1.1.zip</a></li>
+<li><a href="https://www.androidfilehost.com/?fid=96042739161891406">gapps-L-4-21-15.zip</a></li>
+<li><a href="https://www.androidfilehost.com/?fid=24052804347835438">benzo-gapps-M-20151011-signed-chroma-r3.zip</a>.</li>
+</ul>
+
+<p><strong>Short version:</strong></p>
+
+<ul>
+<li>Download all three files.</li>
+<li>Create an emulator with the <code>Nexus 5X</code> image and start it.</li>
+<li>Flash <code>Genymotion-ARM-Translation_v1.1.zip</code> and reboot.</li>
+<li>Flash <code>gapps-L-4-21-15.zip</code> and reboot.</li>
+<li>Sign into your Google Account.</li>
+<li>Flash <code>benzo-gapps-M-20151011-signed-chroma-r3.zip</code> and reboot.</li>
+<li>You are finished!</li>
+</ul>
+
+<p><strong>Long version:</strong></p>
+
+<p>Then start GenyMotion and add an emulator with the preset <code>!! PREVIEW - Google Nexus 5X - 6.0.0 - API 23 - 1080x1920</code>. Start it and wait until you see the homescreen.</p>
+
+<p>The next step is to flash the <code>Genymotion-ARM-Translation_v1.1.zip</code>. To do that, just drap &amp; drop the .zip file onto the emulator.</p>
+
+<p>Turn the emulator off with the power button and wait until it is powered off. Then turn it on again.</p>
+
+<p>Now repeat the last two steps with <code>gapps-L-4-21-15.zip</code> (flash, reboot).</p>
+
+<p>If you are finished with that, sign into your Google account (you can do that when opening the Play Store). If you are successfully logged in, flash the <code>benzo-gapps-M-20151011-signed-chroma-r3.zip</code> file and reboot again.</p>
+
+<p>Have fun with your working Google Play Store!</p>
+
+<p>Source: <a href="https://gist.github.com/wbroek/9321145">gist.github.com</a></p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://z3ntu.github.io/post/2015-11-03-ssh-on-android/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://z3ntu.github.io/post/2015-11-03-ssh-on-android/">SSH on Android</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://z3ntu.github.io/post/2015-12-12-cross-compiling-native-linux-applications-for-android/">Cross-compiling native Linux applications for Android</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://z3ntu.github.io/post/2015-12-12-cross-compiling-native-linux-applications-for-android/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'z3ntu';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</div>
+
+</div>
+</div>
+<script src="https://z3ntu.github.iojs/ui.js"></script>
+
+
+
+
+
+
+</body>
+</html>
+
