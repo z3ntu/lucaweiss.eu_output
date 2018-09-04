@@ -47,30 +47,30 @@
 </ul>
 <h3 id="ncurses">Ncurses</h3>
 <p>Add <code class="highlighter-rouge">ac_cv_header_locale_h=no</code> to your <code class="highlighter-rouge">android_configure</code> script to the line <code class="highlighter-rouge">export CC</code> (example: <code class="highlighter-rouge">export CC=${CROSS_PATH}/${CROSS_COMPILE}-gcc ac_cv_header_locale_h=no</code>)</p>
-<figure class="highlight"><pre><code class="language-shell" data-lang="shell">android_configure --enable-widec
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">android_configure <span class="nt">--enable-widec</span>
 make
-make install</code></pre></figure>
+make <span class="nb">install</span></code></pre></figure>
 <h3 id="htop">Htop</h3>
 <figure class="highlight"><pre><code class="language-shell" data-lang="shell">android_configure
 make
-make install</code></pre></figure>
+make <span class="nb">install</span></code></pre></figure>
 <h3 id="gnutls">GnuTLS</h3>
-<figure class="highlight"><pre><code class="language-shell" data-lang="shell">android_configure --without-p11-kit
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">android_configure <span class="nt">--without-p11-kit</span>
 make
-make install</code></pre></figure>
+make <span class="nb">install</span></code></pre></figure>
 <h3 id="wget">Wget</h3>
 <figure class="highlight"><pre><code class="language-shell" data-lang="shell">android_configure
 patch src/gnutls.c &lt; ../TOOLS/gnutls.c.patch
 make
-make install</code></pre></figure>
+make <span class="nb">install</span></code></pre></figure>
 <h3 id="curl">Curl</h3>
 <figure class="highlight"><pre><code class="language-shell" data-lang="shell">android_configure
 make
-make install</code></pre></figure>
+make <span class="nb">install</span></code></pre></figure>
 <h3 id="libiconv">Libiconv</h3>
-<figure class="highlight"><pre><code class="language-shell" data-lang="shell">android_configure --host<span class="o">=</span>arm-linux
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">android_configure <span class="nt">--host</span><span class="o">=</span>arm-linux
 make
-make install</code></pre></figure>
+make <span class="nb">install</span></code></pre></figure>
 <h3 id="git">Git</h3>
 <p>Comment out the parts in <code class="highlighter-rouge">configure.ac</code> with <code class="highlighter-rouge">ac_cv_fread_reads_directories</code> and <code class="highlighter-rouge">ac_cv_snprintf_returns_bogus</code>. Currently on Line 854.</p>
 <figure class="highlight"><pre><code class="language-shell" data-lang="shell">make configure
@@ -79,29 +79,29 @@ make <span class="nv">NO_NSEC</span><span class="o">=</span>1</code></pre></figu
 <h3 id="binutils">Binutils</h3>
 <figure class="highlight"><pre><code class="language-shell" data-lang="shell">android_configure
 make
-make install</code></pre></figure>
+make <span class="nb">install</span></code></pre></figure>
 <h3 id="python-not-complete">Python (not complete)</h3>
-<figure class="highlight"><pre><code class="language-shell" data-lang="shell">android_configure --host<span class="o">=</span>arm-linux --build<span class="o">=</span>arm
-not <span class="nb">complete</span>!</code></pre></figure>
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">android_configure <span class="nt">--host</span><span class="o">=</span>arm-linux <span class="nt">--build</span><span class="o">=</span>arm
+not <span class="nb">complete</span><span class="o">!</span></code></pre></figure>
 <hr />
 <h2 id="gcc">GCC</h2>
 <h3 id="gmp">GMP</h3>
-<figure class="highlight"><pre><code class="language-shell" data-lang="shell">android_configure --host<span class="o">=</span>arm-linux
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">android_configure <span class="nt">--host</span><span class="o">=</span>arm-linux
 make
-make install</code></pre></figure>
+make <span class="nb">install</span></code></pre></figure>
 <h3 id="mpfr">MPFR</h3>
-<figure class="highlight"><pre><code class="language-shell" data-lang="shell">android_configure --host<span class="o">=</span>arm-linux
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">android_configure <span class="nt">--host</span><span class="o">=</span>arm-linux
 make
-make install</code></pre></figure>
+make <span class="nb">install</span></code></pre></figure>
 <h3 id="mpc">MPC</h3>
-<figure class="highlight"><pre><code class="language-shell" data-lang="shell">android_configure --host<span class="o">=</span>arm-linux
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">android_configure <span class="nt">--host</span><span class="o">=</span>arm-linux
 make
-make install</code></pre></figure>
+make <span class="nb">install</span></code></pre></figure>
 <h3 id="gcc-1">GCC</h3>
 <p>Add <code class="highlighter-rouge">-I&lt;YOUR_NDK_ROOT&gt;/sources/android/support/include</code> to your CFLAGS (android_configure script)</p>
 <figure class="highlight"><pre><code class="language-shell" data-lang="shell">android_configure
 make
-make install</code></pre></figure>
+make <span class="nb">install</span></code></pre></figure>
 <p>Thanks for reading!</p>
   </div>
     <div id="disqus_thread"></div>

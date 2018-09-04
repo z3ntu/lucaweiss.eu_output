@@ -6,56 +6,76 @@
 </description>
     <link>https://z3ntu.github.io/</link>
     <atom:link href="https://z3ntu.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 01 Oct 2017 15:06:16 +0200</pubDate>
-    <lastBuildDate>Sun, 01 Oct 2017 15:06:16 +0200</lastBuildDate>
-    <generator>Jekyll v3.3.1</generator>
+    <pubDate>Tue, 04 Sep 2018 16:51:57 +0200</pubDate>
+    <lastBuildDate>Tue, 04 Sep 2018 16:51:57 +0200</lastBuildDate>
+    <generator>Jekyll v3.8.3</generator>
+    
+      <item>
+        <title>iTunes protocol handler on Linux with Wine</title>
+        <description>&lt;p&gt;Today I have tried adding my PayPal account to my iTunes (installed with Wine) Account but discovered, that adding my PayPal account as a payment method didn’t work. After inspecting the network traffic, I found that my browser (Firefox) was redirected to an &lt;code class=&quot;highlighter-rouge&quot;&gt;itmss://&lt;/code&gt; URL, but Firefox didn’t know how to handle that and did nothing. To get it working yourself, follow the next steps:&lt;/p&gt;
+
+&lt;p&gt;Assuming you already have iTunes installed and are using Firefox, open &lt;code class=&quot;highlighter-rouge&quot;&gt;about:config&lt;/code&gt; in Firefox, accept the prompt, right-click and select New -&amp;gt; Boolean. In the dialog enter &lt;code class=&quot;highlighter-rouge&quot;&gt;network.protocol-handler.expose.itmss&lt;/code&gt; as preference name and select &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt; as value. After that, restart Firefox.&lt;/p&gt;
+
+&lt;p&gt;Next, create a new file somewhere (I chose &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/bin/&lt;/code&gt;), called for example &lt;code class=&quot;highlighter-rouge&quot;&gt;itunes-url&lt;/code&gt; and make it executable (&lt;code class=&quot;highlighter-rouge&quot;&gt;chmod +x filename&lt;/code&gt;). Put the following content into the file while adjusting the paths to the Wine prefix and the installation directory.&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/sh&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;env &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;WINEPREFIX&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/home/luca/.wine_itunes&quot;&lt;/span&gt; wine /home/luca/.wine_itunes/drive_c/Program&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Files/iTunes/iTunes.exe /url &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$@&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;I found this invocation with Wine regedit.exe under &lt;code class=&quot;highlighter-rouge&quot;&gt;HKEY_CLASSES_ROOT\itmss\shell\open\command&lt;/code&gt;, based on &lt;a href=&quot;https://support.shotgunsoftware.com/hc/en-us/articles/219031308-Launching-applications-using-custom-browser-protocols&quot;&gt;this website&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Then you can go into iTunes and add your PayPal payment method. Once you’ve logged in and accepted the PayPal prompts, you should get a popup from Firefox where you should select the application to handle the &lt;code class=&quot;highlighter-rouge&quot;&gt;itmss&lt;/code&gt; URL. Select the &lt;code class=&quot;highlighter-rouge&quot;&gt;itunes-url&lt;/code&gt; script, you created before and click “Open link”. Now iTunes should get the URL from PayPal and you can confirm the new payment method in iTunes.&lt;/p&gt;
+
+&lt;p&gt;Have fun!&lt;/p&gt;
+</description>
+        <pubDate>Tue, 04 Sep 2018 16:19:00 +0200</pubDate>
+        <link>https://z3ntu.github.io/2018/09/04/iTunes-protocol-handler-on-Linux-with-Wine.html</link>
+        <guid isPermaLink="true">https://z3ntu.github.io/2018/09/04/iTunes-protocol-handler-on-Linux-with-Wine.html</guid>
+        
+        <category>wine</category>
+        
+        
+      </item>
     
       <item>
         <title>Signing boot images for fastboot</title>
         <description>&lt;p&gt;If you have ever seen the error &lt;code class=&quot;highlighter-rouge&quot;&gt;FAILED (remote: bootimage: incomplete or not signed)&lt;/code&gt;, here’s the solution (at least for the Fairphone 2 😉):&lt;/p&gt;
 
 &lt;p&gt;Download the &lt;code class=&quot;highlighter-rouge&quot;&gt;BootSignature.jar&lt;/code&gt; file from my server (or compile it yourself from the LineageOS 14.1 tree with the command &lt;code class=&quot;highlighter-rouge&quot;&gt;mka BootSignature&lt;/code&gt;).&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl -O https://private.z3ntu.xyz/BootSignature.jar
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl -O https://private.z3ntu.xyz/BootSignature.jar
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Download the &lt;code class=&quot;highlighter-rouge&quot;&gt;make_key&lt;/code&gt; tool from the LineageOS GitHub.&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl -O https://raw.githubusercontent.com/LineageOS/android_development/cm-14.1/tools/make_key
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl -O https://raw.githubusercontent.com/LineageOS/android_development/cm-14.1/tools/make_key
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Make the script executable&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;chmod +x make_key
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;chmod +x make_key
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;Generate the key with&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./make_key keystore '/C=US/ST=California/L=Mountain View/O=Android/OU=Android/CN=Android/emailAddress=android@android.com'
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./make_key keystore '/C=US/ST=California/L=Mountain View/O=Android/OU=Android/CN=Android/emailAddress=android@android.com'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;Put the &lt;code class=&quot;highlighter-rouge&quot;&gt;BootSignature.jar&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;keystore.pk8&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;keystore.x509.pem&lt;/code&gt; in a directory of your choice.&lt;/p&gt;
 
 &lt;p&gt;Put the following script into a location in the PATH (&lt;code class=&quot;highlighter-rouge&quot;&gt;~/bin&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/bin&lt;/code&gt; should be good) &lt;strong&gt;and replace the first variable with the location you put the three files in&lt;/strong&gt;:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
 
 &lt;span class=&quot;nv&quot;&gt;KEYSTORE_TOOLS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/location/to/jar_and_certs
 
 &lt;span class=&quot;nv&quot;&gt;IMGFILE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;
 
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; ! -n &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;; &lt;span class=&quot;k&quot;&gt;then
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then
   &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Usage: &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$0&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; &amp;lt;file.img&amp;gt;&quot;&lt;/span&gt;
   &lt;span class=&quot;nb&quot;&gt;exit &lt;/span&gt;1
 &lt;span class=&quot;k&quot;&gt;fi
 
-&lt;/span&gt;java -jar &lt;span class=&quot;nv&quot;&gt;$KEYSTORE_TOOLS&lt;/span&gt;/BootSignature.jar /boot &lt;span class=&quot;nv&quot;&gt;$IMGFILE&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$KEYSTORE_TOOLS&lt;/span&gt;/keystore.pk8 &lt;span class=&quot;nv&quot;&gt;$KEYSTORE_TOOLS&lt;/span&gt;/keystore.x509.pem &lt;span class=&quot;nv&quot;&gt;$IMGFILE&lt;/span&gt;.signed
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/span&gt;java &lt;span class=&quot;nt&quot;&gt;-jar&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$KEYSTORE_TOOLS&lt;/span&gt;/BootSignature.jar /boot &lt;span class=&quot;nv&quot;&gt;$IMGFILE&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$KEYSTORE_TOOLS&lt;/span&gt;/keystore.pk8 &lt;span class=&quot;nv&quot;&gt;$KEYSTORE_TOOLS&lt;/span&gt;/keystore.x509.pem &lt;span class=&quot;nv&quot;&gt;$IMGFILE&lt;/span&gt;.signed
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;Don’t forget to make that script executable! (&lt;code class=&quot;highlighter-rouge&quot;&gt;chmod +x&lt;/code&gt;)&lt;/p&gt;
 
 &lt;p&gt;Now you can use the script to sign your images and then boot it&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sign_img boot.img &amp;amp;&amp;amp; fastboot boot boot.img.signed
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sign_img boot.img &amp;amp;&amp;amp; fastboot boot boot.img.signed
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Have fun!&lt;/p&gt;
 </description>
@@ -252,40 +272,40 @@ You can also take a look at the &lt;a href=&quot;https://fedoraproject.org/wiki/
 &lt;h3 id=&quot;ncurses&quot;&gt;Ncurses&lt;/h3&gt;
 &lt;p&gt;Add &lt;code class=&quot;highlighter-rouge&quot;&gt;ac_cv_header_locale_h=no&lt;/code&gt; to your &lt;code class=&quot;highlighter-rouge&quot;&gt;android_configure&lt;/code&gt; script to the line &lt;code class=&quot;highlighter-rouge&quot;&gt;export CC&lt;/code&gt; (example: &lt;code class=&quot;highlighter-rouge&quot;&gt;export CC=${CROSS_PATH}/${CROSS_COMPILE}-gcc ac_cv_header_locale_h=no&lt;/code&gt;)&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;android_configure --enable-widec
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;android_configure &lt;span class=&quot;nt&quot;&gt;--enable-widec&lt;/span&gt;
 make
-make install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+make &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;htop&quot;&gt;Htop&lt;/h3&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;android_configure
 make
-make install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+make &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;gnutls&quot;&gt;GnuTLS&lt;/h3&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;android_configure --without-p11-kit
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;android_configure &lt;span class=&quot;nt&quot;&gt;--without-p11-kit&lt;/span&gt;
 make
-make install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+make &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;wget&quot;&gt;Wget&lt;/h3&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;android_configure
 patch src/gnutls.c &amp;lt; ../TOOLS/gnutls.c.patch
 make
-make install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+make &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;curl&quot;&gt;Curl&lt;/h3&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;android_configure
 make
-make install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+make &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;libiconv&quot;&gt;Libiconv&lt;/h3&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;android_configure --host&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;arm-linux
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;android_configure &lt;span class=&quot;nt&quot;&gt;--host&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;arm-linux
 make
-make install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+make &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;git&quot;&gt;Git&lt;/h3&gt;
 &lt;p&gt;Comment out the parts in &lt;code class=&quot;highlighter-rouge&quot;&gt;configure.ac&lt;/code&gt; with &lt;code class=&quot;highlighter-rouge&quot;&gt;ac_cv_fread_reads_directories&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;ac_cv_snprintf_returns_bogus&lt;/code&gt;. Currently on Line 854.&lt;/p&gt;
@@ -298,12 +318,12 @@ make &lt;span class=&quot;nv&quot;&gt;NO_NSEC&lt;/span&gt;&lt;span class=&quot;o
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;android_configure
 make
-make install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+make &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;python-not-complete&quot;&gt;Python (not complete)&lt;/h3&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;android_configure --host&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;arm-linux --build&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;arm
-not &lt;span class=&quot;nb&quot;&gt;complete&lt;/span&gt;!&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;android_configure &lt;span class=&quot;nt&quot;&gt;--host&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;arm-linux &lt;span class=&quot;nt&quot;&gt;--build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;arm
+not &lt;span class=&quot;nb&quot;&gt;complete&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;hr /&gt;
 
@@ -311,28 +331,28 @@ not &lt;span class=&quot;nb&quot;&gt;complete&lt;/span&gt;!&lt;/code&gt;&lt;/pre
 
 &lt;h3 id=&quot;gmp&quot;&gt;GMP&lt;/h3&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;android_configure --host&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;arm-linux
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;android_configure &lt;span class=&quot;nt&quot;&gt;--host&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;arm-linux
 make
-make install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+make &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;mpfr&quot;&gt;MPFR&lt;/h3&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;android_configure --host&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;arm-linux
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;android_configure &lt;span class=&quot;nt&quot;&gt;--host&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;arm-linux
 make
-make install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+make &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;mpc&quot;&gt;MPC&lt;/h3&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;android_configure --host&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;arm-linux
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;android_configure &lt;span class=&quot;nt&quot;&gt;--host&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;arm-linux
 make
-make install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+make &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;gcc-1&quot;&gt;GCC&lt;/h3&gt;
 &lt;p&gt;Add &lt;code class=&quot;highlighter-rouge&quot;&gt;-I&amp;lt;YOUR_NDK_ROOT&amp;gt;/sources/android/support/include&lt;/code&gt; to your CFLAGS (android_configure script)&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;android_configure
 make
-make install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+make &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Thanks for reading!&lt;/p&gt;
 </description>
@@ -412,8 +432,8 @@ make install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;adb shell
 su
-mount -o rw,remount /system
-cp /data/data/berserker.android.apps.sshdroid/dropbear/ssh /system/bin/ssh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+mount &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; rw,remount /system
+&lt;span class=&quot;nb&quot;&gt;cp&lt;/span&gt; /data/data/berserker.android.apps.sshdroid/dropbear/ssh /system/bin/ssh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 </description>
         <pubDate>Tue, 03 Nov 2015 00:00:00 +0100</pubDate>
