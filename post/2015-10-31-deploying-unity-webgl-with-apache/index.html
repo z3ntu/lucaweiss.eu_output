@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.56.3" />
 
-  <title>About &middot; z3ntu</title>
+  <title>Deploying Unity WebGL with Apache &middot; z3ntu</title>
 
   
   
@@ -219,13 +219,128 @@
 
 
 <div class="header">
-  <h1>About</h1>
+  <h1>Deploying Unity WebGL with Apache</h1>
   <h2></h2>
 </div>
 <div class="content">
-  <p>I am a 20-year-old student who likes programming.</p>
 
-<p>I publish most of what I do on my GitHub profile. See also <a href="/projects">Projects</a>.</p>
+  <div class="post-meta">
+
+  <div>
+    <i class="fas fa-calendar fa-fw"></i>
+    <time>31 Oct 2015, 12:25</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fas fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://z3ntu.github.iotags/unity3d">unity3d</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://z3ntu.github.iotags/tutorial">tutorial</a>
+    
+  </div>
+  
+  
+
+</div>
+
+
+  
+
+<h1 id="deploying-unity-webgl-on-apache">Deploying Unity WebGL on Apache</h1>
+
+<p>Have you had troubles getting your exported Unity WebGL project to work?</p>
+
+<blockquote>
+<p>GET /Release/UnityConfig.js <strong>404 (Not Found)</strong></p>
+
+<p>GET /Release/fileloader.js <strong>404 (Not Found)</strong></p>
+
+<p>GET /Release/1446299115.js <strong>404 (Not Found)</strong></p>
+</blockquote>
+
+<p>I got the instructions here:</p>
+
+<ul>
+<li><p>Export your Unity project as WebGL (probably already did this).
+<a href="/images/unity_webgl_export.png" target="_blank">Click for a screenshot of my Build Settings</a></p></li>
+
+<li><p>Move every file from the <code>Release</code> folder into the <code>Compressed</code> folder. You can now delete the <code>Release</code> folder.
+Your folder structure should look like this:</p></li>
+</ul>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">.htaccess
+index.html
+Compressed
+- many files (.datagz, .jsgz, .memgz)
+TemplateData
+- many image files, 1 .css &amp; 1 .js file</code></pre></div>
+
+<ul>
+<li><p>Enter <code>sudo a2enmod rewrite</code> in the terminal (to activate the <code>rewrite</code> Apache module).</p></li>
+
+<li><p>Open <code>/etc/apache2/apache2.conf</code> with your favorite text editor and find the following part:
+<code>&lt;Directory /var/www/&gt;</code> / <code>&lt;Directory /var/www/html/&gt;</code> (or wherever your &ldquo;main&rdquo; folder is)</p></li>
+
+<li><p>Change <code>AllowOverride</code> from <code>None</code> to <code>All</code> and save the file.</p></li>
+</ul>
+
+<p>I hope this helped you!</p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://z3ntu.github.io/post/2015-11-03-ssh-on-android/">SSH on Android</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://z3ntu.github.io/post/2015-11-03-ssh-on-android/"><i class="fas fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'z3ntu';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
 
 </div>
 

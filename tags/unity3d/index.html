@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.56.3" />
 
-  <title>About &middot; z3ntu</title>
+  <title>unity3d &middot; z3ntu</title>
 
   
   
@@ -39,6 +39,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
  
+  
+  <link rel="alternate" type="application/rss+xml" title="z3ntu"
+    href='/tags/unity3d/index.xml' />
   
 
   
@@ -98,6 +101,11 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href='/tags/unity3d/index.xml'><i
+          class="fas fa-rss fa-fw"></i>RSS</a>
+    </li>
     
 
     
@@ -219,14 +227,110 @@
 
 
 <div class="header">
-  <h1>About</h1>
-  <h2></h2>
+  <h1>unity3d</h1>
 </div>
+
 <div class="content">
-  <p>I am a 20-year-old student who likes programming.</p>
+  
+    <article>
+  <header>
+    <h2><a href="https://z3ntu.github.io/post/2015-12-18-fixing-unity-5.3-startup-error-linux/">Fixing the Unity3D 5.3 startup error on Linux</a></h2>
 
-<p>I publish most of what I do on my GitHub profile. See also <a href="/projects">Projects</a>.</p>
+    <div class="post-meta">
 
+  <div>
+    <i class="fas fa-calendar fa-fw"></i>
+    <time>18 Dec 2015, 19:23</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fas fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://z3ntu.github.iotags/unity3d">unity3d</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://z3ntu.github.iotags/tutorial">tutorial</a>
+    
+  </div>
+  
+  
+
+</div>
+
+
+  </header>
+
+  <p>
+  If you experience this error with the newest Unity3D Build on Linux, just do this one simple step:
+   Create the folder ~/.local/share/unity3d and you are good to go!  Now have fun with Unity!
+In more detail, the &ldquo;main&rdquo; error message in ~/.config/unity3d/Editor.log is
+ CopyPackageFile failed, unable to copy /opt/Unity/Editor/Data/Resources/Packages/unity-editor-home-0.0.7.tgz to /home/luca/.local/share/unity3d/Packages/unity-editor-home-0.0.7.tgz
+CopyPackageFile failed, unable to copy /opt/Unity/Editor/Data/Resources/Packages/unityeditor-cloud-hub-0.0.1.tgz to /home/luca/.local/share/unity3d/Packages/unityeditor-cloud-hub-0.0.1.tgz
+ 
+  </p>
+
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://z3ntu.github.io/post/2015-10-31-deploying-unity-webgl-with-apache/">Deploying Unity WebGL with Apache</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fas fa-calendar fa-fw"></i>
+    <time>31 Oct 2015, 12:25</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fas fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://z3ntu.github.iotags/unity3d">unity3d</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://z3ntu.github.iotags/tutorial">tutorial</a>
+    
+  </div>
+  
+  
+
+</div>
+
+
+  </header>
+
+  <p>
+  Deploying Unity WebGL on Apache Have you had troubles getting your exported Unity WebGL project to work?
+ GET /Release/UnityConfig.js 404 (Not Found)
+GET /Release/fileloader.js 404 (Not Found)
+GET /Release/1446299115.js 404 (Not Found)
+ I got the instructions here:
+ Export your Unity project as WebGL (probably already did this). Click for a screenshot of my Build Settings
+ Move every file from the Release folder into the Compressed folder.
+  </p>
+
+  
+  <footer>
+    <a href="/post/2015-10-31-deploying-unity-webgl-with-apache/">Read more<i class="fas fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
 </div>
 
 </div>
@@ -241,4 +345,3 @@
 
 </body>
 </html>
-

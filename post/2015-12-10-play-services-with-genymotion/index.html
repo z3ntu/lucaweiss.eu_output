@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.56.3" />
 
-  <title>About &middot; z3ntu</title>
+  <title>Google Play Services with Android 6.0 Marshmallow and Genymotion &middot; z3ntu</title>
 
   
   
@@ -219,13 +219,132 @@
 
 
 <div class="header">
-  <h1>About</h1>
+  <h1>Google Play Services with Android 6.0 Marshmallow and Genymotion</h1>
   <h2></h2>
 </div>
 <div class="content">
-  <p>I am a 20-year-old student who likes programming.</p>
 
-<p>I publish most of what I do on my GitHub profile. See also <a href="/projects">Projects</a>.</p>
+  <div class="post-meta">
+
+  <div>
+    <i class="fas fa-calendar fa-fw"></i>
+    <time>10 Dec 2015, 12:24</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fas fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://z3ntu.github.iotags/android">android</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://z3ntu.github.iotags/tutorial">tutorial</a>
+    
+  </div>
+  
+  
+
+</div>
+
+
+  <p>So, I think you want to install the Google Play Store &amp; Services with an Android 6.0 Marshmallow Emulator?</p>
+
+<p>To do that, follow either the long or the short version.</p>
+
+<p>You need the following three files:</p>
+
+<ul>
+<li><a href="http://www.mirrorcreator.com/files/0ZIO8PME/Genymotion-ARM-Translation_v1.1.zip_links">Genymotion-ARM-Translation_v1.1.zip</a></li>
+<li><a href="https://www.androidfilehost.com/?fid=96042739161891406">gapps-L-4-21-15.zip</a></li>
+<li><a href="https://www.androidfilehost.com/?fid=24052804347835438">benzo-gapps-M-20151011-signed-chroma-r3.zip</a>.</li>
+</ul>
+
+<p><strong>Short version:</strong></p>
+
+<ul>
+<li>Download all three files.</li>
+<li>Create an emulator with the <code>Nexus 5X</code> image and start it.</li>
+<li>Flash <code>Genymotion-ARM-Translation_v1.1.zip</code> and reboot.</li>
+<li>Flash <code>gapps-L-4-21-15.zip</code> and reboot.</li>
+<li>Sign into your Google Account.</li>
+<li>Flash <code>benzo-gapps-M-20151011-signed-chroma-r3.zip</code> and reboot.</li>
+<li>You are finished!</li>
+</ul>
+
+<p><strong>Long version:</strong></p>
+
+<p>Then start GenyMotion and add an emulator with the preset <code>!! PREVIEW - Google Nexus 5X - 6.0.0 - API 23 - 1080x1920</code>. Start it and wait until you see the homescreen.</p>
+
+<p>The next step is to flash the <code>Genymotion-ARM-Translation_v1.1.zip</code>. To do that, just drap &amp; drop the .zip file onto the emulator.</p>
+
+<p>Turn the emulator off with the power button and wait until it is powered off. Then turn it on again.</p>
+
+<p>Now repeat the last two steps with <code>gapps-L-4-21-15.zip</code> (flash, reboot).</p>
+
+<p>If you are finished with that, sign into your Google account (you can do that when opening the Play Store). If you are successfully logged in, flash the <code>benzo-gapps-M-20151011-signed-chroma-r3.zip</code> file and reboot again.</p>
+
+<p>Have fun with your working Google Play Store!</p>
+
+<p>Source: <a href="https://gist.github.com/wbroek/9321145">gist.github.com</a></p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://z3ntu.github.io/post/2015-11-03-ssh-on-android/"><i class="fas fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://z3ntu.github.io/post/2015-11-03-ssh-on-android/">SSH on Android</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://z3ntu.github.io/post/2015-12-12-cross-compiling-native-linux-applications-for-android/">Cross-compiling native Linux applications for Android</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://z3ntu.github.io/post/2015-12-12-cross-compiling-native-linux-applications-for-android/"><i class="fas fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'z3ntu';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
 
 </div>
 
