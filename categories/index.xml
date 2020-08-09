@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on z3ntu</title>
-    <link>https://z3ntu.github.io/categories/</link>
+    <link>https://blog.z3ntu.xyz/categories/</link>
     <description>Recent content in Categories on z3ntu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2019 Luca Weiss</copyright>
+    <copyright>&amp;copy; 2020 Luca Weiss</copyright>
     
-	<atom:link href="https://z3ntu.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.z3ntu.xyz/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

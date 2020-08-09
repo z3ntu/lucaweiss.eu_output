@@ -1,135 +1,122 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://z3ntu.github.io/post/</loc>
-    <lastmod>2018-09-04T16:19:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://z3ntu.github.io/tags/</loc>
-    <lastmod>2018-09-04T16:19:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://z3ntu.github.io/post/2018-09-04-itunes-protocol-handler-on-linux-with-wine/</loc>
+    <loc>https://blog.z3ntu.xyz/post/2018-09-04-itunes-protocol-handler-on-linux-with-wine/</loc>
     <lastmod>2018-09-04T16:19:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://z3ntu.github.io/tags/wine/</loc>
+    <loc>https://blog.z3ntu.xyz/post/</loc>
     <lastmod>2018-09-04T16:19:00+02:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://z3ntu.github.io/</loc>
+    <loc>https://blog.z3ntu.xyz/tags/</loc>
     <lastmod>2018-09-04T16:19:00+02:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://z3ntu.github.io/post/2017-06-16-signing-boot-images/</loc>
+    <loc>https://blog.z3ntu.xyz/tags/wine/</loc>
+    <lastmod>2018-09-04T16:19:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.z3ntu.xyz/</loc>
+    <lastmod>2018-09-04T16:19:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.z3ntu.xyz/tags/android/</loc>
     <lastmod>2017-06-16T08:55:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://z3ntu.github.io/tags/android/</loc>
+    <loc>https://blog.z3ntu.xyz/tags/fp2/</loc>
     <lastmod>2017-06-16T08:55:00+02:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://z3ntu.github.io/tags/fp2/</loc>
+    <loc>https://blog.z3ntu.xyz/post/2017-06-16-signing-boot-images/</loc>
     <lastmod>2017-06-16T08:55:00+02:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://z3ntu.github.io/post/2016-11-01-install-and-configure-efidroid/</loc>
+    <loc>https://blog.z3ntu.xyz/tags/efidroid/</loc>
     <lastmod>2016-11-01T15:27:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://z3ntu.github.io/tags/efidroid/</loc>
+    <loc>https://blog.z3ntu.xyz/post/2016-11-01-install-and-configure-efidroid/</loc>
     <lastmod>2016-11-01T15:27:00+01:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://z3ntu.github.io/post/2016-07-23-sddm-login-with-yubikey/</loc>
+    <loc>https://blog.z3ntu.xyz/tags/login/</loc>
     <lastmod>2016-07-23T11:56:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://z3ntu.github.io/tags/login/</loc>
+    <loc>https://blog.z3ntu.xyz/post/2016-07-23-sddm-login-with-yubikey/</loc>
     <lastmod>2016-07-23T11:56:00+02:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://z3ntu.github.io/tags/tutorial/</loc>
+    <loc>https://blog.z3ntu.xyz/tags/tutorial/</loc>
     <lastmod>2016-07-23T11:56:00+02:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://z3ntu.github.io/tags/yubikey/</loc>
+    <loc>https://blog.z3ntu.xyz/tags/yubikey/</loc>
     <lastmod>2016-07-23T11:56:00+02:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://z3ntu.github.io/post/2015-12-18-fixing-unity-5.3-startup-error-linux/</loc>
+    <loc>https://blog.z3ntu.xyz/post/2015-12-18-fixing-unity-5.3-startup-error-linux/</loc>
     <lastmod>2015-12-18T19:23:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://z3ntu.github.io/tags/unity3d/</loc>
+    <loc>https://blog.z3ntu.xyz/tags/unity3d/</loc>
     <lastmod>2015-12-18T19:23:00+01:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://z3ntu.github.io/post/2015-12-12-cross-compiling-native-linux-applications-for-android/</loc>
+    <loc>https://blog.z3ntu.xyz/post/2015-12-12-cross-compiling-native-linux-applications-for-android/</loc>
     <lastmod>2015-12-12T20:23:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://z3ntu.github.io/post/2015-12-10-play-services-with-genymotion/</loc>
+    <loc>https://blog.z3ntu.xyz/post/2015-12-10-play-services-with-genymotion/</loc>
     <lastmod>2015-12-10T12:24:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://z3ntu.github.io/post/2015-11-03-ssh-on-android/</loc>
+    <loc>https://blog.z3ntu.xyz/tags/ssh/</loc>
     <lastmod>2015-11-03T10:40:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://z3ntu.github.io/tags/ssh/</loc>
+    <loc>https://blog.z3ntu.xyz/post/2015-11-03-ssh-on-android/</loc>
     <lastmod>2015-11-03T10:40:00+01:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://z3ntu.github.io/post/2015-10-31-deploying-unity-webgl-with-apache/</loc>
+    <loc>https://blog.z3ntu.xyz/post/2015-10-31-deploying-unity-webgl-with-apache/</loc>
     <lastmod>2015-10-31T12:25:57+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://z3ntu.github.io/about/</loc>
+    <loc>https://blog.z3ntu.xyz/about/</loc>
   </url>
   
   <url>
-    <loc>https://z3ntu.github.io/categories/</loc>
-    <priority>0</priority>
+    <loc>https://blog.z3ntu.xyz/categories/</loc>
   </url>
   
   <url>
-    <loc>https://z3ntu.github.io/projects/</loc>
+    <loc>https://blog.z3ntu.xyz/projects/</loc>
   </url>
   
 </urlset>

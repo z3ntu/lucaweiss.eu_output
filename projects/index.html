@@ -5,9 +5,11 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.56.3" />
+  <meta name="generator" content="Hugo 0.74.3" />
 
   <title>Projects &middot; z3ntu</title>
+
+    
 
   
   
@@ -30,7 +32,7 @@
   <link rel="stylesheet" href="/css/blackburn.css">
 
   
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
 
   
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
@@ -43,7 +45,7 @@
 
   
 
-  <link rel="shortcut icon" href="https://z3ntu.github.ioimg/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="https://blog.z3ntu.xyzimg/favicon.ico" type="image/x-icon" />
 
   
   
@@ -146,7 +148,7 @@
 
     
     <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://linkedin.com/in/luca-weiss" rel="me" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      <a class="pure-menu-link" href="https://linkedin.com/in/luca-weiss" rel="me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></i>LinkedIn</a>
     </li>
     
 
@@ -193,18 +195,19 @@
     
 
     
+
+    
     <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://keybase.io/z3ntu" rel="me" target="_blank"><i class="fas fa-key fa-fw"></i>Keybase</a>
+      <a class="pure-menu-link" href="https://sr.ht/~z3ntu" rel="me" target="_blank"><i class="fas fa-code-branch fa-fw"></i>Sourcehut</a>
     </li>
     
-
   </ul>
 </div>
 
 
   <div>
   <div class="small-print">
-    <small>&copy; 2019 Luca Weiss</small>
+    <small>&copy; 2020 Luca Weiss</small>
   </div>
   <div class="small-print">
     <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
@@ -223,99 +226,58 @@
   <h2></h2>
 </div>
 <div class="content">
-  
-
-<h2 id="embedded">Embedded</h2>
-
+  <h2 id="embedded">Embedded</h2>
 <h4 id="postmarketos">postmarketOS</h4>
-
 <p>postmarketOS is a touch-optimized, pre-configured Alpine Linux that can be installed on smartphones and other mobile devices. I have ported postmarketOS to the Fairphone 1, Fairphone 2 and worked on a port for the Pine64 family of devices. Additionally I have contributed many packages and patches to the project. <strong><a href="https://postmarketos.org/">Project Website</a></strong></p>
-
 <h4 id="fairphone-2-mainline-kernel">Fairphone 2 mainline kernel</h4>
-
 <p>Currently most Android devices run a very outdated version of Linux which is modified by SoC manufacturers and OEMs and deviate from official Linux kernel releases quite a lot. Work has been work by different organisations, companies and people to upstream these changes to mainline Linux so a smartphone or tablet, which originally came with e.g. Linux 3.4, can also boot a non-modified version of the Linux kernel. That way security and features come directly to a device without the OEM being in the way.
 For the Fairphone 2 currently only a limited amount of hardware works but that hopefully can be improved in the future. <strong><a href="https://github.com/z3ntu/linux">GitHub Link</a></strong> - <strong><a href="https://patchwork.kernel.org/bundle/z3ntu/FP2-initial/?archive=both&amp;state=*">kernel.org Patchwork (initial support)</a></strong> - <strong><a href="https://patchwork.kernel.org/bundle/z3ntu/gpio-vibra/?state=%2A&amp;archive=both">kernel.org Patchwork (gpio vibra)</a></strong></p>
-
-<h4 id="twrp-3-x-for-fairphone-2-with-data-decryption-support">TWRP 3.X for Fairphone 2 with <code>/data</code> decryption support</h4>
-
+<h4 id="twrp-3x-for-fairphone-2-with-data-decryption-support">TWRP 3.X for Fairphone 2 with <code>/data</code> decryption support</h4>
 <p>Team Win Recovery Project (TWRP) is a popular custom recovery for Android devices with touchscreen support. Ported to the Fairphone 2, included crypto support and submitted it to upstream (now getting official builds as they are released). <strong><a href="https://github.com/TeamWin/android_device_fairphone_fp2">GitHub Link</a></strong> - <strong><a href="https://twrp.me/devices/fairphone2.html">Official download</a></strong></p>
-
-<h4 id="cwm-v6-0-1-2-for-the-zte-racer-ii">CWM v6.0.1.2 for the ZTE Racer II</h4>
-
+<h4 id="cwm-v6012-for-the-zte-racer-ii">CWM v6.0.1.2 for the ZTE Racer II</h4>
 <p>ClockworkMod Recovery (CWM) is a custom recovery for Android devices, made by Koushik &ldquo;Koush&rdquo; Dutta. Ported to the ZTE Racer II. <strong><a href="https://github.com/z3ntu/android_device_zte_racer2">GitHub Link</a></strong></p>
-
 <h4 id="efidroid-for-the-fairphone-2">EFIDroid for the Fairphone 2</h4>
-
 <p>An UEFI-based second-stage bootloader which supports multiboot. Ported to the Fairphone 2. <strong><a href="https://github.com/efidroid/device/tree/fairphone/fp2">GitHub Link</a></strong></p>
-
 <h2 id="razer">Razer</h2>
-
 <h4 id="openrazer">OpenRazer</h4>
-
 <p>OpenRazer is an open-source driver and user-space daemon that allows you to manage your Razer peripherals on GNU/Linux. I am developing it, handling issues and packaging the software for many different Linux distributions. Written in C and Python <strong><a href="https://github.com/openrazer/openrazer">GitHub Link</a></strong> - <strong><a href="https://openrazer.github.io/">Project Website</a></strong></p>
-
 <h4 id="razergenie">RazerGenie</h4>
-
 <p>An open-source Qt-based application which is UI for interacting with the <a href="#openrazer">OpenRazer</a> daemon. Written in C++ and Qt. <strong><a href="https://github.com/z3ntu/RazerGenie">GitHub Link</a></strong></p>
-
-<h4 id="razer-test">razer_test</h4>
-
+<h4 id="razer_test">razer_test</h4>
 <p>A work-in-progress replacement for the <a href="#openrazer">OpenRazer</a> project which aims to solve design issues present in OpenRazer. Works on Linux, FreeBSD, macOS and Windows. Written in C++. <strong><a href="https://github.com/z3ntu/razer_test">GitHub Link</a></strong></p>
-
 <h2 id="android-apps">Android Apps</h2>
-
 <h4 id="nextcloud-news">Nextcloud News</h4>
-
 <p>An app which connects to the &ldquo;News&rdquo; app for Nextcloud. Written in Kotlin, uses the Android Jetpack libraries and the Nextcloud Single Sign-on API.</p>
-
 <h4 id="schaukuchl-android-app">Schaukuchl Android App</h4>
-
 <p>An app which displays the current menu for the restaurant &ldquo;Schaukuchl&rdquo; in Vienna. <strong><a href="https://github.com/z3ntu/Schaukuchl">GitHub Link</a></strong></p>
-
 <h4 id="spengergasse-timetable-app">Spengergasse Timetable App</h4>
-
 <p>The timetables in our school were generated HTML pages that were not responsive and had other issues. We&rsquo;ve developed an Android app that implemented a parser for the HTML tables using jsoup and displayed them in a nice format. The app was later abandoned because the school switched to a newer version of Untis (the timetable software) that had its own Android app.</p>
-
 <h2 id="python">Python</h2>
-
 <h4 id="aaurbs">aaurbs</h4>
-
 <p><strong>a</strong>utomated <strong>a</strong>rch <strong>u</strong>ser <strong>r</strong>epository <strong>b</strong>uild <strong>s</strong>ystem is an automated builder for Arch Linux packages with a webinterface. <strong><a href="https://github.com/z3ntu/aaurbs">GitHub Link</a></strong></p>
-
 <h4 id="dyndns">DynDNS</h4>
-
 <p>A self-written DynDNS client &amp; server. Works with the DigitalOcean DNS API. <strong><a href="https://github.com/z3ntu/DynDNS">GitHub Link</a></strong></p>
-
 <h4 id="honeypot">Honeypot</h4>
-
 <p>Web-based todo list, made as a school project with 3 others. <strong><a href="https://github.com/MadeInSpengergasse/Honeypot">GitHub Link</a></strong> - <strong><a href="https://youtu.be/8HdV2xxItIM">Demo Video</a></strong></p>
-
 <h4 id="monstercat-connect-notifier">Monstercat Connect Notifier</h4>
-
 <p>A Telegram bot which sends new releases by the EDM Label &ldquo;Monstercat&rdquo; automatically to a Telegram channel. <strong><a href="https://github.com/z3ntu/MonstercatConnectNotifier">GitHub Link</a></strong></p>
-
 <h2 id="browser-extensions">Browser Extensions</h2>
-
 <h4 id="javadocredirector">JavadocRedirector</h4>
-
 <p>This is a Chrome/Opera extension which automatically redirects you from Java 7 Javadoc pages to Java 8 Javadoc pages. <strong><a href="https://github.com/z3ntu/JavadocRedirector">GitHub Link</a></strong> - <strong><a href="https://chrome.google.com/webstore/detail/javadoc-redirector/pkpckmephcfffdfjemgnekclglhpkcom">Chrome Web Store</a></strong></p>
-
 <h4 id="griesmayernoflash">GriesmayerNoFlash</h4>
-
 <p>A WebExtension (compatible with Chrome and Firefox 57+) that adds a <strong>Download</strong> button to educational videos on <a href="http://griesmayer.com/">griesmayer.com</a> which need Flash to play. <strong><a href="https://github.com/z3ntu/GriesmayerNoFlash">GitHub Link</a></strong> - <strong><a href="https://chrome.google.com/webstore/detail/griesmayernoflash/hcaikojphmgkkdcpcohmmnloolhkjihp">Chrome Web Store</a></strong> - <strong><a href="https://addons.mozilla.org/en-US/firefox/addon/griesmayernoflash/">Firefox Add-on</a></strong></p>
-
 <h2 id="others">Others</h2>
-
 <h4 id="robotpi">RobotPi</h4>
-
 <p>RobotPi is a project for controlling a robot with both a server-side and a client-side component. <strong><a href="https://github.com/z3ntu/robotpi_server">GitHub Server</a></strong> - <strong><a href="https://github.com/z3ntu/robotpi_client_android">GitHub Client</a></strong></p>
 
 </div>
 
 </div>
 </div>
-<script src="https://z3ntu.github.iojs/ui.js"></script>
-<script src="https://z3ntu.github.iojs/menus.js"></script>
+<script src="https://blog.z3ntu.xyzjs/ui.js"></script>
+<script src="https://blog.z3ntu.xyzjs/menus.js"></script>
+
+
 
 
 

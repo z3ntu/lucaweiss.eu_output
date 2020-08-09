@@ -1,23 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>unity3d on z3ntu</title>
-    <link>https://z3ntu.github.io/tags/unity3d/</link>
+    <link>https://blog.z3ntu.xyz/tags/unity3d/</link>
     <description>Recent content in unity3d on z3ntu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2019 Luca Weiss</copyright>
+    <copyright>&amp;copy; 2020 Luca Weiss</copyright>
     <lastBuildDate>Fri, 18 Dec 2015 19:23:00 +0100</lastBuildDate>
     
-	<atom:link href="https://z3ntu.github.io/tags/unity3d/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.z3ntu.xyz/tags/unity3d/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Fixing the Unity3D 5.3 startup error on Linux</title>
-      <link>https://z3ntu.github.io/post/2015-12-18-fixing-unity-5.3-startup-error-linux/</link>
+      <link>https://blog.z3ntu.xyz/post/2015-12-18-fixing-unity-5.3-startup-error-linux/</link>
       <pubDate>Fri, 18 Dec 2015 19:23:00 +0100</pubDate>
       
-      <guid>https://z3ntu.github.io/post/2015-12-18-fixing-unity-5.3-startup-error-linux/</guid>
+      <guid>https://blog.z3ntu.xyz/post/2015-12-18-fixing-unity-5.3-startup-error-linux/</guid>
       <description>If you experience this error with the newest Unity3D Build on Linux, just do this one simple step:
    Create the folder ~/.local/share/unity3d and you are good to go!  Now have fun with Unity!
 In more detail, the &amp;ldquo;main&amp;rdquo; error message in ~/.config/unity3d/Editor.log is
@@ -28,17 +28,16 @@ CopyPackageFile failed, unable to copy /opt/Unity/Editor/Data/Resources/Packages
     
     <item>
       <title>Deploying Unity WebGL with Apache</title>
-      <link>https://z3ntu.github.io/post/2015-10-31-deploying-unity-webgl-with-apache/</link>
+      <link>https://blog.z3ntu.xyz/post/2015-10-31-deploying-unity-webgl-with-apache/</link>
       <pubDate>Sat, 31 Oct 2015 12:25:57 +0100</pubDate>
       
-      <guid>https://z3ntu.github.io/post/2015-10-31-deploying-unity-webgl-with-apache/</guid>
+      <guid>https://blog.z3ntu.xyz/post/2015-10-31-deploying-unity-webgl-with-apache/</guid>
       <description>Deploying Unity WebGL on Apache Have you had troubles getting your exported Unity WebGL project to work?
  GET /Release/UnityConfig.js 404 (Not Found)
 GET /Release/fileloader.js 404 (Not Found)
 GET /Release/1446299115.js 404 (Not Found)
  I got the instructions here:
- Export your Unity project as WebGL (probably already did this). Click for a screenshot of my Build Settings
- Move every file from the Release folder into the Compressed folder.</description>
+  Export your Unity project as WebGL (probably already did this). Click for a screenshot of my Build Settings  Move every file from the Release folder into the Compressed folder.</description>
     </item>
     
   </channel>

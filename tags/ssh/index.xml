@@ -1,23 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ssh on z3ntu</title>
-    <link>https://z3ntu.github.io/tags/ssh/</link>
+    <link>https://blog.z3ntu.xyz/tags/ssh/</link>
     <description>Recent content in ssh on z3ntu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2019 Luca Weiss</copyright>
+    <copyright>&amp;copy; 2020 Luca Weiss</copyright>
     <lastBuildDate>Tue, 03 Nov 2015 10:40:00 +0100</lastBuildDate>
     
-	<atom:link href="https://z3ntu.github.io/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.z3ntu.xyz/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>SSH on Android</title>
-      <link>https://z3ntu.github.io/post/2015-11-03-ssh-on-android/</link>
+      <link>https://blog.z3ntu.xyz/post/2015-11-03-ssh-on-android/</link>
       <pubDate>Tue, 03 Nov 2015 10:40:00 +0100</pubDate>
       
-      <guid>https://z3ntu.github.io/post/2015-11-03-ssh-on-android/</guid>
+      <guid>https://blog.z3ntu.xyz/post/2015-11-03-ssh-on-android/</guid>
       <description>Installing the SSH binary on Android (for use with adb shell):
 Install SSHDroid
 Launch SSHDroid and accept the superuser request

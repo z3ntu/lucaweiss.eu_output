@@ -5,9 +5,11 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.56.3" />
+  <meta name="generator" content="Hugo 0.74.3" />
 
   <title>Cross-compiling native Linux applications for Android &middot; z3ntu</title>
+
+    
 
   
   
@@ -30,7 +32,7 @@
   <link rel="stylesheet" href="/css/blackburn.css">
 
   
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
 
   
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
@@ -43,7 +45,7 @@
 
   
 
-  <link rel="shortcut icon" href="https://z3ntu.github.ioimg/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="https://blog.z3ntu.xyzimg/favicon.ico" type="image/x-icon" />
 
   
   
@@ -146,7 +148,7 @@
 
     
     <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://linkedin.com/in/luca-weiss" rel="me" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      <a class="pure-menu-link" href="https://linkedin.com/in/luca-weiss" rel="me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></i>LinkedIn</a>
     </li>
     
 
@@ -193,18 +195,19 @@
     
 
     
+
+    
     <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://keybase.io/z3ntu" rel="me" target="_blank"><i class="fas fa-key fa-fw"></i>Keybase</a>
+      <a class="pure-menu-link" href="https://sr.ht/~z3ntu" rel="me" target="_blank"><i class="fas fa-code-branch fa-fw"></i>Sourcehut</a>
     </li>
     
-
   </ul>
 </div>
 
 
   <div>
   <div class="small-print">
-    <small>&copy; 2019 Luca Weiss</small>
+    <small>&copy; 2020 Luca Weiss</small>
   </div>
   <div class="small-print">
     <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
@@ -227,7 +230,7 @@
   <div class="post-meta">
 
   <div>
-    <i class="fas fa-calendar fa-fw"></i>
+    <i class="fa fa-calendar fa-fw"></i>
     <time>12 Dec 2015, 20:23</time>
   </div>
 
@@ -239,11 +242,11 @@
   
   
   <div>
-    <i class="fas fa-tags fa-fw"></i>
+    <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://z3ntu.github.iotags/android">android</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://blog.z3ntu.xyztags/android">android</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://z3ntu.github.iotags/tutorial">tutorial</a>
+      <a class="post-taxonomy-tag" href="https://blog.z3ntu.xyztags/tutorial">tutorial</a>
     
   </div>
   
@@ -251,104 +254,71 @@
 
 </div>
 
-
-  
-
-<p>Here&rsquo;s how you can cross-compile &ldquo;normal&rdquo; Linux applications for Android!</p>
-
-<p><strong>Note, that I cannot give you any help in following this. It worked&trade; when I wrote this but don&rsquo;t know about now.</strong></p>
-
+  <p>Here&rsquo;s how you can cross-compile &ldquo;normal&rdquo; Linux applications for Android!</p>
+<p><strong>Note, that I cannot give you any help in following this. It worked(tm) when I wrote this but don&rsquo;t know about now.</strong></p>
 <ul>
 <li>For the <code>android_configure</code> script download <a href="https://gist.github.com/z3ntu/57b95b02ebe8e153d5a8">this script</a>, place it in your <code>~/bin</code> folder and (if not already) add <code>~/bin</code> to your <code>PATH</code> variable.</li>
 <li>To create a standalone toolchain use something like the following command (run from your NDK root-dir):
-<script type="application/javascript" src="//gist.github.com/z3ntu/4285eb6fd4327caa6fd8.js"></script></li>
+<script type="application/javascript" src="https://gist.github.com/z3ntu/4285eb6fd4327caa6fd8.js"></script>
+</li>
 </ul>
-
 <h3 id="ncurses">Ncurses</h3>
-
 <p>Add <code>ac_cv_header_locale_h=no</code> to your <code>android_configure</code> script to the line <code>export CC</code> (example: <code>export CC=${CROSS_PATH}/${CROSS_COMPILE}-gcc ac_cv_header_locale_h=no</code>)
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">android_configure --enable-widec
 make
 make install</code></pre></div></p>
-
 <h3 id="htop">Htop</h3>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">android_configure
 make
 make install</code></pre></div>
-
 <h3 id="gnutls">GnuTLS</h3>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">android_configure --without-p11-kit
 make
 make install</code></pre></div>
-
 <h3 id="wget">Wget</h3>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">android_configure
 patch src/gnutls.c &lt; ../TOOLS/gnutls.c.patch
 make
 make install</code></pre></div>
-
 <h3 id="curl">Curl</h3>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">android_configure
 make
 make install</code></pre></div>
-
 <h3 id="libiconv">Libiconv</h3>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">android_configure --host<span style="color:#f92672">=</span>arm-linux
 make
 make install</code></pre></div>
-
 <h3 id="git">Git</h3>
-
 <p>Comment out the parts in <code>configure.ac</code> with <code>ac_cv_fread_reads_directories</code> and <code>ac_cv_snprintf_returns_bogus</code>. Currently on Line 854.
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">make configure
 android_configure
 make NO_NSEC<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span></code></pre></div></p>
-
 <h3 id="binutils">Binutils</h3>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">android_configure
 make
 make install</code></pre></div>
-
 <h3 id="python-not-complete">Python (not complete)</h3>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">android_configure --host<span style="color:#f92672">=</span>arm-linux --build<span style="color:#f92672">=</span>arm
 not complete!</code></pre></div>
-
-<hr />
-
+<hr>
 <h2 id="gcc">GCC</h2>
-
 <h3 id="gmp">GMP</h3>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">android_configure --host<span style="color:#f92672">=</span>arm-linux
 make
 make install</code></pre></div>
-
 <h3 id="mpfr">MPFR</h3>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">android_configure --host<span style="color:#f92672">=</span>arm-linux
 make
 make install</code></pre></div>
-
 <h3 id="mpc">MPC</h3>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">android_configure --host<span style="color:#f92672">=</span>arm-linux
 make
 make install</code></pre></div>
-
 <h3 id="gcc-1">GCC</h3>
-
 <p>Add <code>-I&lt;YOUR_NDK_ROOT&gt;/sources/android/support/include</code> to your CFLAGS (android_configure script)
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">android_configure
 make
 make install</code></pre></div></p>
-
 <p>Thanks for reading!</p>
 
 
@@ -356,13 +326,13 @@ make install</code></pre></div></p>
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://z3ntu.github.io/post/2015-12-10-play-services-with-genymotion/"><i class="fas fa-chevron-left"></i></a>
+    <a href="https://blog.z3ntu.xyz/post/2015-12-10-play-services-with-genymotion/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://z3ntu.github.io/post/2015-12-10-play-services-with-genymotion/">Google Play Services with Android 6.0 Marshmallow and Genymotion</a>
+      <a href="https://blog.z3ntu.xyz/post/2015-12-10-play-services-with-genymotion/">Google Play Services with Android 6.0 Marshmallow and Genymotion</a>
     </nav>
     
   </div>
@@ -372,13 +342,13 @@ make install</code></pre></div></p>
   <div class="pure-u-10-24">
     
     <nav class="next">
-      <a href="https://z3ntu.github.io/post/2015-12-18-fixing-unity-5.3-startup-error-linux/">Fixing the Unity3D 5.3 startup error on Linux</a>
+      <a href="https://blog.z3ntu.xyz/post/2015-12-18-fixing-unity-5.3-startup-error-linux/">Fixing the Unity3D 5.3 startup error on Linux</a>
     </nav>
     
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
     
-    <a href="https://z3ntu.github.io/post/2015-12-18-fixing-unity-5.3-startup-error-linux/"><i class="fas fa-chevron-right"></i></a>
+    <a href="https://blog.z3ntu.xyz/post/2015-12-18-fixing-unity-5.3-startup-error-linux/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>
@@ -386,35 +356,22 @@ make install</code></pre></div></p>
 
 
   
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-
-(function() {
-    
-    
-    if (window.location.hostname == "localhost")
-        return;
-
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    var disqus_shortname = 'z3ntu';
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
 
 </div>
 
 </div>
 </div>
-<script src="https://z3ntu.github.iojs/ui.js"></script>
-<script src="https://z3ntu.github.iojs/menus.js"></script>
+<script src="https://blog.z3ntu.xyzjs/ui.js"></script>
+<script src="https://blog.z3ntu.xyzjs/menus.js"></script>
 
 
 
 
+
+
+<script src="/js/math-code.js"></script>
+  <script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  
 
 
 </body>

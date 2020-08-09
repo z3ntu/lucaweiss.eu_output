@@ -1,95 +1,95 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on z3ntu</title>
-    <link>https://z3ntu.github.io/tags/</link>
+    <link>https://blog.z3ntu.xyz/tags/</link>
     <description>Recent content in Tags on z3ntu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2019 Luca Weiss</copyright>
+    <copyright>&amp;copy; 2020 Luca Weiss</copyright>
     <lastBuildDate>Tue, 04 Sep 2018 16:19:00 +0200</lastBuildDate>
     
-	<atom:link href="https://z3ntu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.z3ntu.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>wine</title>
-      <link>https://z3ntu.github.io/tags/wine/</link>
+      <link>https://blog.z3ntu.xyz/tags/wine/</link>
       <pubDate>Tue, 04 Sep 2018 16:19:00 +0200</pubDate>
       
-      <guid>https://z3ntu.github.io/tags/wine/</guid>
+      <guid>https://blog.z3ntu.xyz/tags/wine/</guid>
       <description></description>
     </item>
     
     <item>
       <title>android</title>
-      <link>https://z3ntu.github.io/tags/android/</link>
+      <link>https://blog.z3ntu.xyz/tags/android/</link>
       <pubDate>Fri, 16 Jun 2017 08:55:00 +0200</pubDate>
       
-      <guid>https://z3ntu.github.io/tags/android/</guid>
+      <guid>https://blog.z3ntu.xyz/tags/android/</guid>
       <description></description>
     </item>
     
     <item>
       <title>fp2</title>
-      <link>https://z3ntu.github.io/tags/fp2/</link>
+      <link>https://blog.z3ntu.xyz/tags/fp2/</link>
       <pubDate>Fri, 16 Jun 2017 08:55:00 +0200</pubDate>
       
-      <guid>https://z3ntu.github.io/tags/fp2/</guid>
+      <guid>https://blog.z3ntu.xyz/tags/fp2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>efidroid</title>
-      <link>https://z3ntu.github.io/tags/efidroid/</link>
+      <link>https://blog.z3ntu.xyz/tags/efidroid/</link>
       <pubDate>Tue, 01 Nov 2016 15:27:00 +0100</pubDate>
       
-      <guid>https://z3ntu.github.io/tags/efidroid/</guid>
+      <guid>https://blog.z3ntu.xyz/tags/efidroid/</guid>
       <description></description>
     </item>
     
     <item>
       <title>login</title>
-      <link>https://z3ntu.github.io/tags/login/</link>
+      <link>https://blog.z3ntu.xyz/tags/login/</link>
       <pubDate>Sat, 23 Jul 2016 11:56:00 +0200</pubDate>
       
-      <guid>https://z3ntu.github.io/tags/login/</guid>
+      <guid>https://blog.z3ntu.xyz/tags/login/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tutorial</title>
-      <link>https://z3ntu.github.io/tags/tutorial/</link>
+      <link>https://blog.z3ntu.xyz/tags/tutorial/</link>
       <pubDate>Sat, 23 Jul 2016 11:56:00 +0200</pubDate>
       
-      <guid>https://z3ntu.github.io/tags/tutorial/</guid>
+      <guid>https://blog.z3ntu.xyz/tags/tutorial/</guid>
       <description></description>
     </item>
     
     <item>
       <title>yubikey</title>
-      <link>https://z3ntu.github.io/tags/yubikey/</link>
+      <link>https://blog.z3ntu.xyz/tags/yubikey/</link>
       <pubDate>Sat, 23 Jul 2016 11:56:00 +0200</pubDate>
       
-      <guid>https://z3ntu.github.io/tags/yubikey/</guid>
+      <guid>https://blog.z3ntu.xyz/tags/yubikey/</guid>
       <description></description>
     </item>
     
     <item>
       <title>unity3d</title>
-      <link>https://z3ntu.github.io/tags/unity3d/</link>
+      <link>https://blog.z3ntu.xyz/tags/unity3d/</link>
       <pubDate>Fri, 18 Dec 2015 19:23:00 +0100</pubDate>
       
-      <guid>https://z3ntu.github.io/tags/unity3d/</guid>
+      <guid>https://blog.z3ntu.xyz/tags/unity3d/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ssh</title>
-      <link>https://z3ntu.github.io/tags/ssh/</link>
+      <link>https://blog.z3ntu.xyz/tags/ssh/</link>
       <pubDate>Tue, 03 Nov 2015 10:40:00 +0100</pubDate>
       
-      <guid>https://z3ntu.github.io/tags/ssh/</guid>
+      <guid>https://blog.z3ntu.xyz/tags/ssh/</guid>
       <description></description>
     </item>
     
