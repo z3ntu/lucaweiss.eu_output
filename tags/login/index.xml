@@ -6,12 +6,8 @@
     <description>Recent content in login on z3ntu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2020 Luca Weiss</copyright>
-    <lastBuildDate>Sat, 23 Jul 2016 11:56:00 +0200</lastBuildDate>
-    
-	<atom:link href="https://blog.z3ntu.xyz/tags/login/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>&amp;copy; {year} Luca Weiss</copyright>
+    <lastBuildDate>Sat, 23 Jul 2016 11:56:00 +0200</lastBuildDate><atom:link href="https://blog.z3ntu.xyz/tags/login/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SDDM login with a Yubikey on Arch Linux</title>
       <link>https://blog.z3ntu.xyz/post/2016-07-23-sddm-login-with-yubikey/</link>

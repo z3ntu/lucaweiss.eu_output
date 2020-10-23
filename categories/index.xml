@@ -6,10 +6,6 @@
     <description>Recent content in Categories on z3ntu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2020 Luca Weiss</copyright>
-    
-	<atom:link href="https://blog.z3ntu.xyz/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>&amp;copy; {year} Luca Weiss</copyright><atom:link href="https://blog.z3ntu.xyz/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

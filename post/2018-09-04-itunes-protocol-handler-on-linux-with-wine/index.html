@@ -1,258 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.74.3" />
-
-  <title>iTunes protocol handler on Linux with Wine &middot; z3ntu</title>
-
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-
-  
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
-
-  <!--[if lte IE 8]>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
-  <![endif]-->
-  <!--[if gt IE 8]><!-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
-  <!--<![endif]-->
-
-  <!--[if lte IE 8]>
-  <link rel="stylesheet" href="/css/side-menu-old-ie.css">
-  <![endif]-->
-  <!--[if gt IE 8]><!-->
-  <link rel="stylesheet" href="/css/side-menu.css">
-  <!--<![endif]-->
-
-  <link rel="stylesheet" href="/css/blackburn.css">
-
-  
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
-
-  
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
-
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
- 
-  
-
-  
-
-  <link rel="shortcut icon" href="https://blog.z3ntu.xyzimg/favicon.ico" type="image/x-icon" />
-
-  
-  
-
-</head>
-
-
-<body>
-<div id="layout">
-
-  
-<a href="#menu" id="menuLink" class="menu-link">
-  
-  <span></span>
-</a>
-<div id="menu">
-
-  
-  <a class="pure-menu-heading brand" href="/">z3ntu</a>
-
-
-  <div class="pure-menu">
-    <ul class="pure-menu-list">
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="/"><i class='fa fa-home fa-fw'></i>Home</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="/projects/"><i class='fa fa-code fa-fw'></i>Projects</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="/about/"><i class='fa fa-user fa-fw'></i>About</a>
-      
-        </li>
-      
-    </ul>
-  </div>
-
-  <div class="pure-menu social">
-  <ul class="pure-menu-list">
-
+    <title>iTunes protocol handler on Linux with Wine - z3ntu</title>
     
-
+    <meta name="description" content="Today I have tried adding my PayPal account to my iTunes (installed with Wine) Account but discovered, that adding my PayPal account as a payment method didn&rsquo;t work. After inspecting the network traffic, I found that my browser (Firefox) was redirected to an itmss:// URL, but Firefox didn&rsquo;t know how to handle that and did nothing. To get it working yourself, follow the next steps:
+Assuming you already have iTunes installed and are using Firefox, open about:config in Firefox, accept the prompt, right-click and select New -&gt; Boolean.">
+    <meta name="author" content="">
     
-
+    <link href="https://blog.z3ntu.xyz/an-old-hope.min.css" rel="stylesheet">
+    <link href="https://blog.z3ntu.xyz/style.css" rel="stylesheet">
+    <link href="https://blog.z3ntu.xyz/custom.css" rel="stylesheet">
+    <meta name="generator" content="Hugo 0.76.5" />
     
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://twitter.com/z3ntu" rel="me" target="_blank"><i class="fab fa-twitter-square fa-fw"></i>Twitter</a>
-    </li>
     
-
-    
-
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://fosstodon.org/@z3ntu" target="_blank"><i class="fab fa-mastodon fa-fw"></i>Mastodon</a>
-    </li>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://linkedin.com/in/luca-weiss" rel="me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></i>LinkedIn</a>
-    </li>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://github.com/z3ntu" rel="me" target="_blank"><i class="fab fa-github-square fa-fw"></i>GitHub</a>
-    </li>
-    
-
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://gitlab.com/z3ntu" rel="me" target="_blank"><i class="fab fa-gitlab fa-fw"></i>GitLab</a>
-    </li>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://sr.ht/~z3ntu" rel="me" target="_blank"><i class="fas fa-code-branch fa-fw"></i>Sourcehut</a>
-    </li>
-    
-  </ul>
-</div>
+    <script>
+      function setTheme() {
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.body.classList.add('dark');
+          return;
+        }
+      }
+    </script>
+  </head>
+  <body class="single">
+    <script>
+      setTheme();
+    </script>
+    <header class="header">
+      <nav class="nav">
+        <p class="logo"><a href="https://blog.z3ntu.xyz">z3ntu</a></p>
+        <ul class="menu">
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/projects/">Projects</a>
+          </li>
+          <li>
+            <a href="/post/">Posts</a>
+          </li>
+          <li>
+            <a href="/about/">About</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
 
 
-  <div>
-  <div class="small-print">
-    <small>&copy; 2020 Luca Weiss</small>
-  </div>
-  <div class="small-print">
-    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
-    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
-  </div>
-</div>
-
-</div>
-
-
-  <div id="main">
-
-
-<div class="header">
-  <h1>iTunes protocol handler on Linux with Wine</h1>
-  <h2></h2>
-</div>
-<div class="content">
-
-  <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>04 Sep 2018, 16:19</time>
-  </div>
-
-  
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://blog.z3ntu.xyztags/wine">wine</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  <p>Today I have tried adding my PayPal account to my iTunes (installed with Wine) Account but discovered, that adding my PayPal account as a payment method didn&rsquo;t work. After inspecting the network traffic, I found that my browser (Firefox) was redirected to an <code>itmss://</code> URL, but Firefox didn&rsquo;t know how to handle that and did nothing. To get it working yourself, follow the next steps:</p>
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">iTunes protocol handler on Linux with Wine</h1>
+    <div class="post-meta">September 4, 2018
+    </div>
+  </header>
+  <div class="post-content"><p>Today I have tried adding my PayPal account to my iTunes (installed with Wine) Account but discovered, that adding my PayPal account as a payment method didn&rsquo;t work. After inspecting the network traffic, I found that my browser (Firefox) was redirected to an <code>itmss://</code> URL, but Firefox didn&rsquo;t know how to handle that and did nothing. To get it working yourself, follow the next steps:</p>
 <p>Assuming you already have iTunes installed and are using Firefox, open <code>about:config</code> in Firefox, accept the prompt, right-click and select New -&gt; Boolean. In the dialog enter <code>network.protocol-handler.expose.itmss</code> as preference name and select <code>false</code> as value. After that, restart Firefox.</p>
 <p>Next, create a new file somewhere (I chose <code>/usr/local/bin/</code>), called for example <code>itunes-url</code> and make it executable (<code>chmod +x filename</code>). Put the following content into the file while adjusting the paths to the Wine prefix and the installation directory.
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/sh
@@ -261,54 +67,24 @@ env WINEPREFIX<span style="color:#f92672">=</span><span style="color:#e6db74">&#
 I found this invocation with Wine regedit.exe under <code>HKEY_CLASSES_ROOT\itmss\shell\open\command</code>, based on <a href="https://support.shotgunsoftware.com/hc/en-us/articles/219031308-Launching-applications-using-custom-browser-protocols">this website</a>.</p>
 <p>Then you can go into iTunes and add your PayPal payment method. Once you&rsquo;ve logged in and accepted the PayPal prompts, you should get a popup from Firefox where you should select the application to handle the <code>itmss</code> URL. Select the <code>itunes-url</code> script, you created before and click &ldquo;Open link&rdquo;. Now iTunes should get the URL from PayPal and you can confirm the new payment method in iTunes.</p>
 <p>Have fun!</p>
-
-
-  
-<div class="prev-next-post pure-g">
-  <div class="pure-u-1-24" style="text-align: left;">
-    
-    <a href="https://blog.z3ntu.xyz/post/2017-06-16-signing-boot-images/"><i class="fa fa-chevron-left"></i></a>
-    
-  </div>
-  <div class="pure-u-10-24">
-    
-    <nav class="prev">
-      <a href="https://blog.z3ntu.xyz/post/2017-06-16-signing-boot-images/">Signing boot images for fastboot</a>
-    </nav>
-    
-  </div>
-  <div class="pure-u-2-24">
-    &nbsp;
-  </div>
-  <div class="pure-u-10-24">
-    
-  </div>
-  <div class="pure-u-1-24" style="text-align: right;">
-    
-  </div>
 </div>
-
-
-
-  
-
-</div>
-
-</div>
-</div>
-<script src="https://blog.z3ntu.xyzjs/ui.js"></script>
-<script src="https://blog.z3ntu.xyzjs/menus.js"></script>
-
-
-
-
-
-
-<script src="/js/math-code.js"></script>
-  <script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-  
-
-
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://blog.z3ntu.xyz/tags/wine">wine</a></li>
+    </ul>
+  </footer>
+</article></main>
+<footer class="footer">
+  <span>© 2020 Luca Weiss</span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+  <span>&middot;</span>
+  <span>Theme️ <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper</a></span>
+</footer>
+<script src="https://blog.z3ntu.xyz/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
 </body>
 </html>
 

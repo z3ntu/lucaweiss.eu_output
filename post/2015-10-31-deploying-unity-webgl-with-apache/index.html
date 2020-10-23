@@ -1,260 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.74.3" />
-
-  <title>Deploying Unity WebGL with Apache &middot; z3ntu</title>
-
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-
-  
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
-
-  <!--[if lte IE 8]>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
-  <![endif]-->
-  <!--[if gt IE 8]><!-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
-  <!--<![endif]-->
-
-  <!--[if lte IE 8]>
-  <link rel="stylesheet" href="/css/side-menu-old-ie.css">
-  <![endif]-->
-  <!--[if gt IE 8]><!-->
-  <link rel="stylesheet" href="/css/side-menu.css">
-  <!--<![endif]-->
-
-  <link rel="stylesheet" href="/css/blackburn.css">
-
-  
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
-
-  
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
-
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
- 
-  
-
-  
-
-  <link rel="shortcut icon" href="https://blog.z3ntu.xyzimg/favicon.ico" type="image/x-icon" />
-
-  
-  
-
-</head>
-
-
-<body>
-<div id="layout">
-
-  
-<a href="#menu" id="menuLink" class="menu-link">
-  
-  <span></span>
-</a>
-<div id="menu">
-
-  
-  <a class="pure-menu-heading brand" href="/">z3ntu</a>
-
-
-  <div class="pure-menu">
-    <ul class="pure-menu-list">
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="/"><i class='fa fa-home fa-fw'></i>Home</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="/projects/"><i class='fa fa-code fa-fw'></i>Projects</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="/about/"><i class='fa fa-user fa-fw'></i>About</a>
-      
-        </li>
-      
-    </ul>
-  </div>
-
-  <div class="pure-menu social">
-  <ul class="pure-menu-list">
-
+    <title>Deploying Unity WebGL with Apache - z3ntu</title>
     
-
+    <meta name="description" content="Deploying Unity WebGL on Apache Have you had troubles getting your exported Unity WebGL project to work?
+ GET /Release/UnityConfig.js 404 (Not Found)
+GET /Release/fileloader.js 404 (Not Found)
+GET /Release/1446299115.js 404 (Not Found)
+ I got the instructions here:
+  Export your Unity project as WebGL (probably already did this). Click for a screenshot of my Build Settings
+  Move every file from the Release folder into the Compressed folder.">
+    <meta name="author" content="">
     
-
+    <link href="https://blog.z3ntu.xyz/an-old-hope.min.css" rel="stylesheet">
+    <link href="https://blog.z3ntu.xyz/style.css" rel="stylesheet">
+    <link href="https://blog.z3ntu.xyz/custom.css" rel="stylesheet">
+    <meta name="generator" content="Hugo 0.76.5" />
     
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://twitter.com/z3ntu" rel="me" target="_blank"><i class="fab fa-twitter-square fa-fw"></i>Twitter</a>
-    </li>
     
-
-    
-
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://fosstodon.org/@z3ntu" target="_blank"><i class="fab fa-mastodon fa-fw"></i>Mastodon</a>
-    </li>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://linkedin.com/in/luca-weiss" rel="me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></i>LinkedIn</a>
-    </li>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://github.com/z3ntu" rel="me" target="_blank"><i class="fab fa-github-square fa-fw"></i>GitHub</a>
-    </li>
-    
-
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://gitlab.com/z3ntu" rel="me" target="_blank"><i class="fab fa-gitlab fa-fw"></i>GitLab</a>
-    </li>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://sr.ht/~z3ntu" rel="me" target="_blank"><i class="fas fa-code-branch fa-fw"></i>Sourcehut</a>
-    </li>
-    
-  </ul>
-</div>
+    <script>
+      function setTheme() {
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.body.classList.add('dark');
+          return;
+        }
+      }
+    </script>
+  </head>
+  <body class="single">
+    <script>
+      setTheme();
+    </script>
+    <header class="header">
+      <nav class="nav">
+        <p class="logo"><a href="https://blog.z3ntu.xyz">z3ntu</a></p>
+        <ul class="menu">
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/projects/">Projects</a>
+          </li>
+          <li>
+            <a href="/post/">Posts</a>
+          </li>
+          <li>
+            <a href="/about/">About</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
 
 
-  <div>
-  <div class="small-print">
-    <small>&copy; 2020 Luca Weiss</small>
-  </div>
-  <div class="small-print">
-    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
-    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
-  </div>
-</div>
-
-</div>
-
-
-  <div id="main">
-
-
-<div class="header">
-  <h1>Deploying Unity WebGL with Apache</h1>
-  <h2></h2>
-</div>
-<div class="content">
-
-  <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>31 Oct 2015, 12:25</time>
-  </div>
-
-  
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://blog.z3ntu.xyztags/unity3d">unity3d</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://blog.z3ntu.xyztags/tutorial">tutorial</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  <h1 id="deploying-unity-webgl-on-apache">Deploying Unity WebGL on Apache</h1>
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">Deploying Unity WebGL with Apache</h1>
+    <div class="post-meta">October 31, 2015
+    </div>
+  </header>
+  <div class="post-content"><h1 id="deploying-unity-webgl-on-apache">Deploying Unity WebGL on Apache</h1>
 <p>Have you had troubles getting your exported Unity WebGL project to work?</p>
 <blockquote>
 <p>GET /Release/UnityConfig.js <strong>404 (Not Found)</strong></p>
@@ -265,7 +74,7 @@
 <ul>
 <li>
 <p>Export your Unity project as WebGL (probably already did this).
-<!-- raw HTML omitted -->Click for a screenshot of my Build Settings<!-- raw HTML omitted --></p>
+<a href="/images/unity_webgl_export.png" target="_blank">Click for a screenshot of my Build Settings</a></p>
 </li>
 <li>
 <p>Move every file from the <code>Release</code> folder into the <code>Compressed</code> folder. You can now delete the <code>Release</code> folder.
@@ -291,51 +100,25 @@ TemplateData
 </li>
 </ul>
 <p>I hope this helped you!</p>
-
-
-  
-<div class="prev-next-post pure-g">
-  <div class="pure-u-1-24" style="text-align: left;">
-    
-  </div>
-  <div class="pure-u-10-24">
-    
-  </div>
-  <div class="pure-u-2-24">
-    &nbsp;
-  </div>
-  <div class="pure-u-10-24">
-    
-    <nav class="next">
-      <a href="https://blog.z3ntu.xyz/post/2015-11-03-ssh-on-android/">SSH on Android</a>
-    </nav>
-    
-  </div>
-  <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="https://blog.z3ntu.xyz/post/2015-11-03-ssh-on-android/"><i class="fa fa-chevron-right"></i></a>
-    
-  </div>
 </div>
-
-
-
-  
-
-</div>
-
-</div>
-</div>
-<script src="https://blog.z3ntu.xyzjs/ui.js"></script>
-<script src="https://blog.z3ntu.xyzjs/menus.js"></script>
-
-
-
-
-
-
-
-
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://blog.z3ntu.xyz/tags/unity3d">unity3d</a></li>
+      <li><a href="https://blog.z3ntu.xyz/tags/tutorial">tutorial</a></li>
+    </ul>
+  </footer>
+</article></main>
+<footer class="footer">
+  <span>© 2020 Luca Weiss</span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+  <span>&middot;</span>
+  <span>Theme️ <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper</a></span>
+</footer>
+<script src="https://blog.z3ntu.xyz/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
 </body>
 </html>
 

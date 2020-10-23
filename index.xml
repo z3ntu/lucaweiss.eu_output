@@ -6,12 +6,8 @@
     <description>Recent content on z3ntu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2020 Luca Weiss</copyright>
-    <lastBuildDate>Tue, 04 Sep 2018 16:19:00 +0200</lastBuildDate>
-    
-	<atom:link href="https://blog.z3ntu.xyz/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>&amp;copy; {year} Luca Weiss</copyright>
+    <lastBuildDate>Tue, 04 Sep 2018 16:19:00 +0200</lastBuildDate><atom:link href="https://blog.z3ntu.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>iTunes protocol handler on Linux with Wine</title>
       <link>https://blog.z3ntu.xyz/post/2018-09-04-itunes-protocol-handler-on-linux-with-wine/</link>
@@ -116,7 +112,8 @@ Then make sure you have your Android device connected with access to adb! $ adb 
 GET /Release/fileloader.js 404 (Not Found)
 GET /Release/1446299115.js 404 (Not Found)
  I got the instructions here:
-  Export your Unity project as WebGL (probably already did this). Click for a screenshot of my Build Settings  Move every file from the Release folder into the Compressed folder.</description>
+  Export your Unity project as WebGL (probably already did this). Click for a screenshot of my Build Settings
+  Move every file from the Release folder into the Compressed folder.</description>
     </item>
     
     <item>
@@ -126,7 +123,8 @@ GET /Release/1446299115.js 404 (Not Found)
       
       <guid>https://blog.z3ntu.xyz/about/</guid>
       <description>I am a 20-something-year-old guy who likes programming.
-I publish most of what I do on my GitHub profile. See also Projects.</description>
+You can find most things I do on different sites:
+ GitHub GitLab LKML Sourcehut  See also Projects.</description>
     </item>
     
     <item>
@@ -135,7 +133,7 @@ I publish most of what I do on my GitHub profile. See also Projects.</descriptio
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.z3ntu.xyz/projects/</guid>
-      <description>Embedded postmarketOS postmarketOS is a touch-optimized, pre-configured Alpine Linux that can be installed on smartphones and other mobile devices. I have ported postmarketOS to the Fairphone 1, Fairphone 2 and worked on a port for the Pine64 family of devices. Additionally I have contributed many packages and patches to the project. Project Website
+      <description>Embedded postmarketOS postmarketOS is a touch-optimized, pre-configured Alpine Linux that can be installed on smartphones and other mobile devices. I am Core Developer of the project, have ported postmarketOS to the Fairphone 1, Fairphone 2 and worked on a port for the PINE64 family of devices (such as the PinePhone, PineTab, etc). Project Website
 Fairphone 2 mainline kernel Currently most Android devices run a very outdated version of Linux which is modified by SoC manufacturers and OEMs and deviate from official Linux kernel releases quite a lot.</description>
     </item>
     

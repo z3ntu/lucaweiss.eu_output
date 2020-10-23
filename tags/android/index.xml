@@ -6,12 +6,8 @@
     <description>Recent content in android on z3ntu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2020 Luca Weiss</copyright>
-    <lastBuildDate>Fri, 16 Jun 2017 08:55:00 +0200</lastBuildDate>
-    
-	<atom:link href="https://blog.z3ntu.xyz/tags/android/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>&amp;copy; {year} Luca Weiss</copyright>
+    <lastBuildDate>Fri, 16 Jun 2017 08:55:00 +0200</lastBuildDate><atom:link href="https://blog.z3ntu.xyz/tags/android/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Signing boot images for fastboot</title>
       <link>https://blog.z3ntu.xyz/post/2017-06-16-signing-boot-images/</link>

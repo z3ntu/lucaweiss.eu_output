@@ -1,260 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.74.3" />
-
-  <title>Fixing the Unity3D 5.3 startup error on Linux &middot; z3ntu</title>
-
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-
-  
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
-
-  <!--[if lte IE 8]>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
-  <![endif]-->
-  <!--[if gt IE 8]><!-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
-  <!--<![endif]-->
-
-  <!--[if lte IE 8]>
-  <link rel="stylesheet" href="/css/side-menu-old-ie.css">
-  <![endif]-->
-  <!--[if gt IE 8]><!-->
-  <link rel="stylesheet" href="/css/side-menu.css">
-  <!--<![endif]-->
-
-  <link rel="stylesheet" href="/css/blackburn.css">
-
-  
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
-
-  
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
-
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
- 
-  
-
-  
-
-  <link rel="shortcut icon" href="https://blog.z3ntu.xyzimg/favicon.ico" type="image/x-icon" />
-
-  
-  
-
-</head>
-
-
-<body>
-<div id="layout">
-
-  
-<a href="#menu" id="menuLink" class="menu-link">
-  
-  <span></span>
-</a>
-<div id="menu">
-
-  
-  <a class="pure-menu-heading brand" href="/">z3ntu</a>
-
-
-  <div class="pure-menu">
-    <ul class="pure-menu-list">
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="/"><i class='fa fa-home fa-fw'></i>Home</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="/projects/"><i class='fa fa-code fa-fw'></i>Projects</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="/about/"><i class='fa fa-user fa-fw'></i>About</a>
-      
-        </li>
-      
-    </ul>
-  </div>
-
-  <div class="pure-menu social">
-  <ul class="pure-menu-list">
-
+    <title>Fixing the Unity3D 5.3 startup error on Linux - z3ntu</title>
     
-
+    <meta name="description" content="If you experience this error with the newest Unity3D Build on Linux, just do this one simple step:
+   Create the folder ~/.local/share/unity3d and you are good to go!  Now have fun with Unity!
+In more detail, the &ldquo;main&rdquo; error message in ~/.config/unity3d/Editor.log is
+ CopyPackageFile failed, unable to copy /opt/Unity/Editor/Data/Resources/Packages/unity-editor-home-0.0.7.tgz to /home/luca/.local/share/unity3d/Packages/unity-editor-home-0.0.7.tgz
+CopyPackageFile failed, unable to copy /opt/Unity/Editor/Data/Resources/Packages/unityeditor-cloud-hub-0.0.1.tgz to /home/luca/.local/share/unity3d/Packages/unityeditor-cloud-hub-0.0.1.tgz
+ ">
+    <meta name="author" content="">
     
-
+    <link href="https://blog.z3ntu.xyz/an-old-hope.min.css" rel="stylesheet">
+    <link href="https://blog.z3ntu.xyz/style.css" rel="stylesheet">
+    <link href="https://blog.z3ntu.xyz/custom.css" rel="stylesheet">
+    <meta name="generator" content="Hugo 0.76.5" />
     
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://twitter.com/z3ntu" rel="me" target="_blank"><i class="fab fa-twitter-square fa-fw"></i>Twitter</a>
-    </li>
     
-
-    
-
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://fosstodon.org/@z3ntu" target="_blank"><i class="fab fa-mastodon fa-fw"></i>Mastodon</a>
-    </li>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://linkedin.com/in/luca-weiss" rel="me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></i>LinkedIn</a>
-    </li>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://github.com/z3ntu" rel="me" target="_blank"><i class="fab fa-github-square fa-fw"></i>GitHub</a>
-    </li>
-    
-
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://gitlab.com/z3ntu" rel="me" target="_blank"><i class="fab fa-gitlab fa-fw"></i>GitLab</a>
-    </li>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://sr.ht/~z3ntu" rel="me" target="_blank"><i class="fas fa-code-branch fa-fw"></i>Sourcehut</a>
-    </li>
-    
-  </ul>
-</div>
+    <script>
+      function setTheme() {
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.body.classList.add('dark');
+          return;
+        }
+      }
+    </script>
+  </head>
+  <body class="single">
+    <script>
+      setTheme();
+    </script>
+    <header class="header">
+      <nav class="nav">
+        <p class="logo"><a href="https://blog.z3ntu.xyz">z3ntu</a></p>
+        <ul class="menu">
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/projects/">Projects</a>
+          </li>
+          <li>
+            <a href="/post/">Posts</a>
+          </li>
+          <li>
+            <a href="/about/">About</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
 
 
-  <div>
-  <div class="small-print">
-    <small>&copy; 2020 Luca Weiss</small>
-  </div>
-  <div class="small-print">
-    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
-    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
-  </div>
-</div>
-
-</div>
-
-
-  <div id="main">
-
-
-<div class="header">
-  <h1>Fixing the Unity3D 5.3 startup error on Linux</h1>
-  <h2></h2>
-</div>
-<div class="content">
-
-  <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>18 Dec 2015, 19:23</time>
-  </div>
-
-  
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://blog.z3ntu.xyztags/unity3d">unity3d</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://blog.z3ntu.xyztags/tutorial">tutorial</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  <p>If you experience this error with the newest Unity3D Build on Linux, just do this one simple step:</p>
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">Fixing the Unity3D 5.3 startup error on Linux</h1>
+    <div class="post-meta">December 18, 2015
+    </div>
+  </header>
+  <div class="post-content"><p>If you experience this error with the newest Unity3D Build on Linux, just do this one simple step:</p>
 <figure>
     <img src="/images/unity3d_startup_error.png" width="500"/> 
 </figure>
@@ -268,57 +76,25 @@
 <p>CopyPackageFile failed, unable to copy /opt/Unity/Editor/Data/Resources/Packages/unity-editor-home-0.0.7.tgz to /home/luca/.local/share/unity3d/Packages/unity-editor-home-0.0.7.tgz</p>
 <p>CopyPackageFile failed, unable to copy /opt/Unity/Editor/Data/Resources/Packages/unityeditor-cloud-hub-0.0.1.tgz to /home/luca/.local/share/unity3d/Packages/unityeditor-cloud-hub-0.0.1.tgz</p>
 </blockquote>
-
-
-  
-<div class="prev-next-post pure-g">
-  <div class="pure-u-1-24" style="text-align: left;">
-    
-    <a href="https://blog.z3ntu.xyz/post/2015-12-12-cross-compiling-native-linux-applications-for-android/"><i class="fa fa-chevron-left"></i></a>
-    
-  </div>
-  <div class="pure-u-10-24">
-    
-    <nav class="prev">
-      <a href="https://blog.z3ntu.xyz/post/2015-12-12-cross-compiling-native-linux-applications-for-android/">Cross-compiling native Linux applications for Android</a>
-    </nav>
-    
-  </div>
-  <div class="pure-u-2-24">
-    &nbsp;
-  </div>
-  <div class="pure-u-10-24">
-    
-    <nav class="next">
-      <a href="https://blog.z3ntu.xyz/post/2016-07-23-sddm-login-with-yubikey/">SDDM login with a Yubikey on Arch Linux</a>
-    </nav>
-    
-  </div>
-  <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="https://blog.z3ntu.xyz/post/2016-07-23-sddm-login-with-yubikey/"><i class="fa fa-chevron-right"></i></a>
-    
-  </div>
 </div>
-
-
-
-  
-
-</div>
-
-</div>
-</div>
-<script src="https://blog.z3ntu.xyzjs/ui.js"></script>
-<script src="https://blog.z3ntu.xyzjs/menus.js"></script>
-
-
-
-
-
-
-
-
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://blog.z3ntu.xyz/tags/unity3d">unity3d</a></li>
+      <li><a href="https://blog.z3ntu.xyz/tags/tutorial">tutorial</a></li>
+    </ul>
+  </footer>
+</article></main>
+<footer class="footer">
+  <span>© 2020 Luca Weiss</span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+  <span>&middot;</span>
+  <span>Theme️ <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper</a></span>
+</footer>
+<script src="https://blog.z3ntu.xyz/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
 </body>
 </html>
 

@@ -3,6 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.z3ntu.xyz/</loc>
+    <lastmod>2018-09-04T16:19:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.z3ntu.xyz/post/2018-09-04-itunes-protocol-handler-on-linux-with-wine/</loc>
     <lastmod>2018-09-04T16:19:00+02:00</lastmod>
   </url>
@@ -19,11 +25,6 @@
   
   <url>
     <loc>https://blog.z3ntu.xyz/tags/wine/</loc>
-    <lastmod>2018-09-04T16:19:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.z3ntu.xyz/</loc>
     <lastmod>2018-09-04T16:19:00+02:00</lastmod>
   </url>
   

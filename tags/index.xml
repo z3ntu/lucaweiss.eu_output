@@ -6,12 +6,8 @@
     <description>Recent content in Tags on z3ntu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2020 Luca Weiss</copyright>
-    <lastBuildDate>Tue, 04 Sep 2018 16:19:00 +0200</lastBuildDate>
-    
-	<atom:link href="https://blog.z3ntu.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>&amp;copy; {year} Luca Weiss</copyright>
+    <lastBuildDate>Tue, 04 Sep 2018 16:19:00 +0200</lastBuildDate><atom:link href="https://blog.z3ntu.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>wine</title>
       <link>https://blog.z3ntu.xyz/tags/wine/</link>

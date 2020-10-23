@@ -6,12 +6,8 @@
     <description>Recent content in unity3d on z3ntu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2020 Luca Weiss</copyright>
-    <lastBuildDate>Fri, 18 Dec 2015 19:23:00 +0100</lastBuildDate>
-    
-	<atom:link href="https://blog.z3ntu.xyz/tags/unity3d/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>&amp;copy; {year} Luca Weiss</copyright>
+    <lastBuildDate>Fri, 18 Dec 2015 19:23:00 +0100</lastBuildDate><atom:link href="https://blog.z3ntu.xyz/tags/unity3d/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fixing the Unity3D 5.3 startup error on Linux</title>
       <link>https://blog.z3ntu.xyz/post/2015-12-18-fixing-unity-5.3-startup-error-linux/</link>
@@ -37,7 +33,8 @@ CopyPackageFile failed, unable to copy /opt/Unity/Editor/Data/Resources/Packages
 GET /Release/fileloader.js 404 (Not Found)
 GET /Release/1446299115.js 404 (Not Found)
  I got the instructions here:
-  Export your Unity project as WebGL (probably already did this). Click for a screenshot of my Build Settings  Move every file from the Release folder into the Compressed folder.</description>
+  Export your Unity project as WebGL (probably already did this). Click for a screenshot of my Build Settings
+  Move every file from the Release folder into the Compressed folder.</description>
     </item>
     
   </channel>
