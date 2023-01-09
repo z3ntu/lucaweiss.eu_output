@@ -12,10 +12,13 @@ Step 1: Install yubico-pam from [community].
 Step 2: Edit the file /etc/yubikeys and insert text in the following format: &lt;username&gt;:&lt;yubikey_token_id&gt; # eg luca:cclcclcclccl If you don&rsquo;t know what the token ID from your yubikey is, just open a text editor and press the button on your yubikey to create a one time password (=OTP).">
     <meta name="author" content="">
     
+    <link href="https://fosstodon.org/@z3ntu" rel="me">
+    
+    
     <link href="https://blog.z3ntu.xyz/an-old-hope.min.css" rel="stylesheet">
     <link href="https://blog.z3ntu.xyz/style.css" rel="stylesheet">
     <link href="https://blog.z3ntu.xyz/custom.css" rel="stylesheet">
-    <meta name="generator" content="Hugo 0.76.5" />
+    <meta name="generator" content="Hugo 0.109.0">
     
     
     <script>
@@ -63,17 +66,17 @@ Step 2: Edit the file /etc/yubikeys and insert text in the following format: &lt
 <p><strong>Step 1:</strong>
 Install <a href="https://www.archlinux.org/packages/?name=yubico-pam">yubico-pam</a> from [community].</p>
 <p><strong>Step 2:</strong> Edit the file <code>/etc/yubikeys</code> and insert text in the following format:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">&lt;username&gt;:&lt;yubikey_token_id&gt;
-# eg
-luca:cclcclcclccl</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>&lt;username&gt;:&lt;yubikey_token_id&gt;
+</span></span><span style="display:flex;"><span># eg
+</span></span><span style="display:flex;"><span>luca:cclcclcclccl</span></span></code></pre></div>
 If you don&rsquo;t know what the token ID from your yubikey is, just open a text editor and press the button on your yubikey to create a one time password (=OTP). Then take the <strong>first twelve characters</strong> from that string, which is your token id. If you are too lazy to count, you can also press the button multiple times and take the part that stays the same at the beginning.</p>
 <p><strong>Step 3:</strong> Edit the file <code>/etc/pam.d/system-auth</code> that it looks like the following. Note, that by editing this file you allow these users you specified in Step 2 to login nearly everywhere in your system with the yubikey.
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">#%PAM-1.0
-
-auth sufficient pam_yubico.so debug id=1 authfile=/etc/yubikeys
-
-auth required pam_unix.so try_first_pass nullok
-# and more lines</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>#%PAM-1.0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>auth sufficient pam_yubico.so debug id=1 authfile=/etc/yubikeys
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>auth required pam_unix.so try_first_pass nullok
+</span></span><span style="display:flex;"><span># and more lines</span></span></code></pre></div>
 <strong>If you don&rsquo;t want fancy debug lines, remove the &lsquo;debug&rsquo; parameter.
 If you don&rsquo;t want the ability to just login with your yubikey, replace the &lsquo;sufficient&rsquo; parameter with &lsquo;required&rsquo;. But note, that you will be locked out of your system if you lose your yubikey or don&rsquo;t have it with you!</strong></p>
 <p><strong>Step 4:</strong> Now you should be able to use your Yubikey to login into your session, unlock the lockscreen and even use it for <code>sudo</code> access.
@@ -90,7 +93,7 @@ You can also take a look at the <a href="https://fedoraproject.org/wiki/Using_Yu
   </footer>
 </article></main>
 <footer class="footer">
-  <span>© 2020 Luca Weiss</span>
+  <span>© 2023 Luca Weiss</span>
   <span>&middot;</span>
   <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
   <span>&middot;</span>

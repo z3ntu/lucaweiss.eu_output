@@ -10,10 +10,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
     
+    <link href="https://fosstodon.org/@z3ntu" rel="me">
+    
+    
     <link href="https://blog.z3ntu.xyz/an-old-hope.min.css" rel="stylesheet">
     <link href="https://blog.z3ntu.xyz/style.css" rel="stylesheet">
     <link href="https://blog.z3ntu.xyz/custom.css" rel="stylesheet">
-    <meta name="generator" content="Hugo 0.76.5" />
+    <meta name="generator" content="Hugo 0.109.0">
     
     <link rel="alternate" type="application/rss+xml" href="https://blog.z3ntu.xyz/tags/tutorial/index.xml" title="z3ntu" />
     
@@ -73,11 +76,10 @@ Step 2: Edit the file /etc/yubikeys and insert text in the following format: &lt
   </header>
   <section class="entry-content">
    <p>If you experience this error with the newest Unity3D Build on Linux, just do this one simple step:
-   Create the folder ~/.local/share/unity3d and you are good to go!  Now have fun with Unity!
+Create the folder ~/.local/share/unity3d and you are good to go! Now have fun with Unity!
 In more detail, the “main” error message in ~/.config/unity3d/Editor.log is
- CopyPackageFile failed, unable to copy /opt/Unity/Editor/Data/Resources/Packages/unity-editor-home-0.0.7.tgz to /home/luca/.local/share/unity3d/Packages/unity-editor-home-0.0.7.tgz
-CopyPackageFile failed, unable to copy /opt/Unity/Editor/Data/Resources/Packages/unityeditor-cloud-hub-0.0.1.tgz to /home/luca/.local/share/unity3d/Packages/unityeditor-cloud-hub-0.0.1.tgz
- ...</p>
+CopyPackageFile failed, unable to copy /opt/Unity/Editor/Data/Resources/Packages/unity-editor-home-0.0.7.tgz to /home/luca/.local/share/unity3d/Packages/unity-editor-home-0.0.7.tgz
+CopyPackageFile failed, unable to copy /opt/Unity/Editor/Data/Resources/Packages/unityeditor-cloud-hub-0.0.1.tgz to /home/luca/.local/share/unity3d/Packages/unityeditor-cloud-hub-0.0.1.tgz...</p>
   </section>
   <footer class="entry-footer">
     <time>December 18, 2015</time>
@@ -91,7 +93,7 @@ CopyPackageFile failed, unable to copy /opt/Unity/Editor/Data/Resources/Packages
   <section class="entry-content">
    <p>Here’s how you can cross-compile “normal” Linux applications for Android!
 Note, that I cannot give you any help in following this. It worked(tm) when I wrote this but don’t know about now.
- For the android_configure script download this script, place it in your ~/bin folder and (if not already) add ~/bin to your PATH variable. To create a standalone toolchain use something like the following command (run from your NDK root-dir):    Ncurses Add ac_cv_header_locale_h=no to your android_configure script to the line export CC (example: export CC=${CROSS_PATH}/${CROSS_COMPILE}-gcc ac_cv_header_locale_h=no) android_configure --enable-widec make make install...</p>
+For the android_configure script download this script, place it in your ~/bin folder and (if not already) add ~/bin to your PATH variable. To create a standalone toolchain use something like the following command (run from your NDK root-dir): Ncurses Add ac_cv_header_locale_h=no to your android_configure script to the line export CC (example: export CC=${CROSS_PATH}/${CROSS_COMPILE}-gcc ac_cv_header_locale_h=no) android_configure --enable-widec make make install...</p>
   </section>
   <footer class="entry-footer">
     <time>December 12, 2015</time>
@@ -106,8 +108,8 @@ Note, that I cannot give you any help in following this. It worked(tm) when I wr
    <p>So, I think you want to install the Google Play Store &amp; Services with an Android 6.0 Marshmallow Emulator?
 To do that, follow either the long or the short version.
 You need the following three files:
- Genymotion-ARM-Translation_v1.1.zip gapps-L-4-21-15.zip benzo-gapps-M-20151011-signed-chroma-r3.zip.  Short version:
- Download all three files. Create an emulator with the Nexus 5X image and start it. Flash Genymotion-ARM-Translation_v1.1.zip and reboot. Flash gapps-L-4-21-15.zip and reboot. Sign into your Google Account....</p>
+Genymotion-ARM-Translation_v1.1.zip gapps-L-4-21-15.zip benzo-gapps-M-20151011-signed-chroma-r3.zip. Short version:
+Download all three files. Create an emulator with the Nexus 5X image and start it. Flash Genymotion-ARM-Translation_v1.1.zip and reboot. Flash gapps-L-4-21-15.zip and reboot. Sign into your Google Account. Flash benzo-gapps-M-20151011-signed-chroma-r3....</p>
   </section>
   <footer class="entry-footer">
     <time>December 10, 2015</time>
@@ -135,12 +137,12 @@ Then make sure you have your Android device connected with access to adb! $ adb 
   </header>
   <section class="entry-content">
    <p>Deploying Unity WebGL on Apache Have you had troubles getting your exported Unity WebGL project to work?
- GET /Release/UnityConfig.js 404 (Not Found)
+GET /Release/UnityConfig.js 404 (Not Found)
 GET /Release/fileloader.js 404 (Not Found)
 GET /Release/1446299115.js 404 (Not Found)
- I got the instructions here:
-  Export your Unity project as WebGL (probably already did this). Click for a screenshot of my Build Settings
-  Move every file from the Release folder into the Compressed folder....</p>
+I got the instructions here:
+Export your Unity project as WebGL (probably already did this). Click for a screenshot of my Build Settings
+Move every file from the Release folder into the Compressed folder. You can now delete the Release folder....</p>
   </section>
   <footer class="entry-footer">
     <time>October 31, 2015</time>
@@ -148,7 +150,7 @@ GET /Release/1446299115.js 404 (Not Found)
   <a class="entry-link" href="https://blog.z3ntu.xyz/post/2015-10-31-deploying-unity-webgl-with-apache/"></a>
 </article></main>
 <footer class="footer">
-  <span>© 2020 Luca Weiss</span>
+  <span>© 2023 Luca Weiss</span>
   <span>&middot;</span>
   <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
   <span>&middot;</span>

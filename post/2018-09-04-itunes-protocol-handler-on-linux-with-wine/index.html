@@ -11,10 +11,13 @@
 Assuming you already have iTunes installed and are using Firefox, open about:config in Firefox, accept the prompt, right-click and select New -&gt; Boolean.">
     <meta name="author" content="">
     
+    <link href="https://fosstodon.org/@z3ntu" rel="me">
+    
+    
     <link href="https://blog.z3ntu.xyz/an-old-hope.min.css" rel="stylesheet">
     <link href="https://blog.z3ntu.xyz/style.css" rel="stylesheet">
     <link href="https://blog.z3ntu.xyz/custom.css" rel="stylesheet">
-    <meta name="generator" content="Hugo 0.76.5" />
+    <meta name="generator" content="Hugo 0.109.0">
     
     
     <script>
@@ -61,9 +64,9 @@ Assuming you already have iTunes installed and are using Firefox, open about:con
   <div class="post-content"><p>Today I have tried adding my PayPal account to my iTunes (installed with Wine) Account but discovered, that adding my PayPal account as a payment method didn&rsquo;t work. After inspecting the network traffic, I found that my browser (Firefox) was redirected to an <code>itmss://</code> URL, but Firefox didn&rsquo;t know how to handle that and did nothing. To get it working yourself, follow the next steps:</p>
 <p>Assuming you already have iTunes installed and are using Firefox, open <code>about:config</code> in Firefox, accept the prompt, right-click and select New -&gt; Boolean. In the dialog enter <code>network.protocol-handler.expose.itmss</code> as preference name and select <code>false</code> as value. After that, restart Firefox.</p>
 <p>Next, create a new file somewhere (I chose <code>/usr/local/bin/</code>), called for example <code>itunes-url</code> and make it executable (<code>chmod +x filename</code>). Put the following content into the file while adjusting the paths to the Wine prefix and the installation directory.
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/sh
-</span><span style="color:#75715e"></span>
-env WINEPREFIX<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/home/luca/.wine_itunes&#34;</span> wine /home/luca/.wine_itunes/drive_c/Program<span style="color:#ae81ff">\ </span>Files/iTunes/iTunes.exe /url <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>env WINEPREFIX<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/home/luca/.wine_itunes&#34;</span> wine /home/luca/.wine_itunes/drive_c/Program<span style="color:#ae81ff">\ </span>Files/iTunes/iTunes.exe /url <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span></span></span></code></pre></div>
 I found this invocation with Wine regedit.exe under <code>HKEY_CLASSES_ROOT\itmss\shell\open\command</code>, based on <a href="https://support.shotgunsoftware.com/hc/en-us/articles/219031308-Launching-applications-using-custom-browser-protocols">this website</a>.</p>
 <p>Then you can go into iTunes and add your PayPal payment method. Once you&rsquo;ve logged in and accepted the PayPal prompts, you should get a popup from Firefox where you should select the application to handle the <code>itmss</code> URL. Select the <code>itunes-url</code> script, you created before and click &ldquo;Open link&rdquo;. Now iTunes should get the URL from PayPal and you can confirm the new payment method in iTunes.</p>
 <p>Have fun!</p>
@@ -75,7 +78,7 @@ I found this invocation with Wine regedit.exe under <code>HKEY_CLASSES_ROOT\itms
   </footer>
 </article></main>
 <footer class="footer">
-  <span>© 2020 Luca Weiss</span>
+  <span>© 2023 Luca Weiss</span>
   <span>&middot;</span>
   <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
   <span>&middot;</span>

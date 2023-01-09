@@ -28,7 +28,7 @@ Make the script executable chmod +x make_key Generate the key with .</descriptio
       <guid>https://blog.z3ntu.xyz/post/2015-12-12-cross-compiling-native-linux-applications-for-android/</guid>
       <description>Here&amp;rsquo;s how you can cross-compile &amp;ldquo;normal&amp;rdquo; Linux applications for Android!
 Note, that I cannot give you any help in following this. It worked(tm) when I wrote this but don&amp;rsquo;t know about now.
- For the android_configure script download this script, place it in your ~/bin folder and (if not already) add ~/bin to your PATH variable. To create a standalone toolchain use something like the following command (run from your NDK root-dir):    Ncurses Add ac_cv_header_locale_h=no to your android_configure script to the line export CC (example: export CC=${CROSS_PATH}/${CROSS_COMPILE}-gcc ac_cv_header_locale_h=no) android_configure --enable-widec make make install</description>
+For the android_configure script download this script, place it in your ~/bin folder and (if not already) add ~/bin to your PATH variable. To create a standalone toolchain use something like the following command (run from your NDK root-dir): Ncurses Add ac_cv_header_locale_h=no to your android_configure script to the line export CC (example: export CC=${CROSS_PATH}/${CROSS_COMPILE}-gcc ac_cv_header_locale_h=no) android_configure --enable-widec make make install</description>
     </item>
     
     <item>
@@ -40,8 +40,8 @@ Note, that I cannot give you any help in following this. It worked(tm) when I wr
       <description>So, I think you want to install the Google Play Store &amp;amp; Services with an Android 6.0 Marshmallow Emulator?
 To do that, follow either the long or the short version.
 You need the following three files:
- Genymotion-ARM-Translation_v1.1.zip gapps-L-4-21-15.zip benzo-gapps-M-20151011-signed-chroma-r3.zip.  Short version:
- Download all three files. Create an emulator with the Nexus 5X image and start it. Flash Genymotion-ARM-Translation_v1.1.zip and reboot. Flash gapps-L-4-21-15.zip and reboot. Sign into your Google Account.</description>
+Genymotion-ARM-Translation_v1.1.zip gapps-L-4-21-15.zip benzo-gapps-M-20151011-signed-chroma-r3.zip. Short version:
+Download all three files. Create an emulator with the Nexus 5X image and start it. Flash Genymotion-ARM-Translation_v1.1.zip and reboot. Flash gapps-L-4-21-15.zip and reboot. Sign into your Google Account. Flash benzo-gapps-M-20151011-signed-chroma-r3.</description>
     </item>
     
     <item>
