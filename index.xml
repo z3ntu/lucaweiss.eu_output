@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; {year} Luca Weiss</copyright>
-    <lastBuildDate>Tue, 04 Sep 2018 16:19:00 +0200</lastBuildDate><atom:link href="https://blog.z3ntu.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Mar 2023 22:50:00 +0200</lastBuildDate><atom:link href="https://blog.z3ntu.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mounting Android Retrofit Dynamic Partition images</title>
+      <link>https://blog.z3ntu.xyz/post/2023-03-30-retrofit-dynamic-partition/</link>
+      <pubDate>Thu, 30 Mar 2023 22:50:00 +0200</pubDate>
+      
+      <guid>https://blog.z3ntu.xyz/post/2023-03-30-retrofit-dynamic-partition/</guid>
+      <description>Android devices launching with Android 10 and newer use a feature called Dynamic Partitions which essentially combines the system_a, vendor_a and product_a (and all the _b) variants into a single partition simplying the actual partition layout while making it more flexible. Think of it like a single physical partition which contains multiple logical partitions, like with LVM.
+This feature is available on newly launched devices, devices launched with earlier Android versions still have to cope with the rigid partition layout on-disk.</description>
+    </item>
+    
     <item>
       <title>iTunes protocol handler on Linux with Wine</title>
       <link>https://blog.z3ntu.xyz/post/2018-09-04-itunes-protocol-handler-on-linux-with-wine/</link>

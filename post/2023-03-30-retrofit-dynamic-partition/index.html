@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Mounting Android Retrofit Dynamic Partition images - z3ntu</title>
+    
+    <meta name="description" content="Android devices launching with Android 10 and newer use a feature called Dynamic Partitions which essentially combines the system_a, vendor_a and product_a (and all the _b) variants into a single partition simplying the actual partition layout while making it more flexible. Think of it like a single physical partition which contains multiple logical partitions, like with LVM.
+This feature is available on newly launched devices, devices launched with earlier Android versions still have to cope with the rigid partition layout on-disk.">
+    <meta name="author" content="">
+    
+    <link href="https://fosstodon.org/@z3ntu" rel="me">
+    
+    
+    <link href="https://blog.z3ntu.xyz/an-old-hope.min.css" rel="stylesheet">
+    <link href="https://blog.z3ntu.xyz/style.css" rel="stylesheet">
+    <link href="https://blog.z3ntu.xyz/custom.css" rel="stylesheet">
+    <meta name="generator" content="Hugo 0.110.0">
+    
+    
+    <script>
+      function setTheme() {
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.body.classList.add('dark');
+          return;
+        }
+      }
+    </script>
+  </head>
+  <body class="single">
+    <script>
+      setTheme();
+    </script>
+    <header class="header">
+      <nav class="nav">
+        <p class="logo"><a href="https://blog.z3ntu.xyz">z3ntu</a></p>
+        <ul class="menu">
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/projects/">Projects</a>
+          </li>
+          <li>
+            <a href="/post/">Posts</a>
+          </li>
+          <li>
+            <a href="/about/">About</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">Mounting Android Retrofit Dynamic Partition images</h1>
+    <div class="post-meta">March 30, 2023
+    </div>
+  </header>
+  <div class="post-content"><p>Android devices launching with Android 10 and newer use a feature called <a href="https://source.android.com/docs/core/ota/dynamic_partitions">Dynamic Partitions</a> which essentially combines the <code>system_a</code>, <code>vendor_a</code> and <code>product_a</code> (and all the <code>_b</code>) variants into a single partition simplying the actual partition layout while making it more flexible. Think of it like a single physical partition which contains multiple logical partitions, like with LVM.</p>
+<p>This feature is available on newly launched devices, devices launched with earlier Android versions still have to cope with the rigid partition layout on-disk. For this Android has introduced a way to <a href="https://source.android.com/docs/core/ota/dynamic_partitions/implement#upgrading-devices">retrofit dynamic partitions</a> onto exiting the existing partition layout.</p>
+<p>Unfortunately this also makes it a bit more tricky to extract an image that has already been split into separate images that will be flashed on the <code>system_*</code>, <code>vendor_*</code> and <code>product_*</code> partitions, normally called <code>super_system.img</code>, <code>super_vendor.img</code> and <code>super_product.img</code>.</p>
+<p>First, convert all sparse files into raw image files.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ simg2img super_system.img super_system.raw.img
+</span></span><span style="display:flex;"><span>$ simg2img super_vendor.img super_vendor.raw.img
+</span></span><span style="display:flex;"><span>$ simg2img super_product.img super_product.raw.img
+</span></span></code></pre></div><p>Then you can start setting up the loopback devices. Make sure to remember the loop device being printed by the command for later.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ sudo losetup --read-only --find --show super_system.raw.img
+</span></span><span style="display:flex;"><span>/dev/loop0
+</span></span><span style="display:flex;"><span>$ sudo losetup --read-only --find --show super_vendor.raw.img
+</span></span><span style="display:flex;"><span>/dev/loop1
+</span></span><span style="display:flex;"><span>$ sudo losetup --read-only --find --show super_product.raw.img
+</span></span><span style="display:flex;"><span>/dev/loop2
+</span></span></code></pre></div><p>Next, grab the sources for the <code>make-dynpart-mappings</code> tool from GitLab and compile it with the <code>USERSPACE</code> flag.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ git clone https://gitlab.com/flamingradian/make-dynpart-mappings.git
+</span></span><span style="display:flex;"><span>$ cd make-dynpart-mappings/
+</span></span><span style="display:flex;"><span>$ make -B USERSPACE<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><p>Then you can run the tool against the loopback devices you set up before. Make sure you use the correct paths!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ sudo ./make-dynpart-mappings /dev/loop0 <span style="color:#ae81ff">0</span> /dev/loop1 /dev/loop2
+</span></span></code></pre></div><p>Finally you should be able to mount the partitions and do what you please with it!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ sudo mount -o ro /dev/mapper/system_a /mnt/android/system
+</span></span><span style="display:flex;"><span>$ sudo mount -o ro /dev/mapper/system_ext_a /mnt/android/system_ext
+</span></span><span style="display:flex;"><span>$ sudo mount -o ro /dev/mapper/vendor_a /mnt/android/vendor
+</span></span><span style="display:flex;"><span>$ sudo mount -o ro /dev/mapper/product_a /mnt/android/product
+</span></span><span style="display:flex;"><span>$ sudo mount -o ro /dev/mapper/odm_a /mnt/android/odm
+</span></span></code></pre></div></div>
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://blog.z3ntu.xyz/tags/android">android</a></li>
+    </ul>
+  </footer>
+</article></main>
+<footer class="footer">
+  <span>© 2023 Luca Weiss</span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+  <span>&middot;</span>
+  <span>Theme️ <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper</a></span>
+</footer>
+<script src="https://blog.z3ntu.xyz/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+</body>
+</html>
+
