@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>wine on z3ntu</title>
-    <link>https://blog.z3ntu.xyz/tags/wine/</link>
-    <description>Recent content in wine on z3ntu</description>
+    <title>wine on Luca Weiss</title>
+    <link>https://lucaweiss.eu/tags/wine/</link>
+    <description>Recent content in wine on Luca Weiss</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; {year} Luca Weiss</copyright>
-    <lastBuildDate>Tue, 04 Sep 2018 16:19:00 +0200</lastBuildDate><atom:link href="https://blog.z3ntu.xyz/tags/wine/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Sep 2018 16:19:00 +0200</lastBuildDate><atom:link href="https://lucaweiss.eu/tags/wine/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>iTunes protocol handler on Linux with Wine</title>
-      <link>https://blog.z3ntu.xyz/post/2018-09-04-itunes-protocol-handler-on-linux-with-wine/</link>
+      <link>https://lucaweiss.eu/post/2018-09-04-itunes-protocol-handler-on-linux-with-wine/</link>
       <pubDate>Tue, 04 Sep 2018 16:19:00 +0200</pubDate>
       
-      <guid>https://blog.z3ntu.xyz/post/2018-09-04-itunes-protocol-handler-on-linux-with-wine/</guid>
+      <guid>https://lucaweiss.eu/post/2018-09-04-itunes-protocol-handler-on-linux-with-wine/</guid>
       <description>Today I have tried adding my PayPal account to my iTunes (installed with Wine) Account but discovered, that adding my PayPal account as a payment method didn&amp;rsquo;t work. After inspecting the network traffic, I found that my browser (Firefox) was redirected to an itmss:// URL, but Firefox didn&amp;rsquo;t know how to handle that and did nothing. To get it working yourself, follow the next steps:
 Assuming you already have iTunes installed and are using Firefox, open about:config in Firefox, accept the prompt, right-click and select New -&amp;gt; Boolean.</description>
     </item>

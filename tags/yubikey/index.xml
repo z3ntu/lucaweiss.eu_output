@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>yubikey on z3ntu</title>
-    <link>https://blog.z3ntu.xyz/tags/yubikey/</link>
-    <description>Recent content in yubikey on z3ntu</description>
+    <title>yubikey on Luca Weiss</title>
+    <link>https://lucaweiss.eu/tags/yubikey/</link>
+    <description>Recent content in yubikey on Luca Weiss</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; {year} Luca Weiss</copyright>
-    <lastBuildDate>Sat, 23 Jul 2016 11:56:00 +0200</lastBuildDate><atom:link href="https://blog.z3ntu.xyz/tags/yubikey/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Jul 2016 11:56:00 +0200</lastBuildDate><atom:link href="https://lucaweiss.eu/tags/yubikey/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SDDM login with a Yubikey on Arch Linux</title>
-      <link>https://blog.z3ntu.xyz/post/2016-07-23-sddm-login-with-yubikey/</link>
+      <link>https://lucaweiss.eu/post/2016-07-23-sddm-login-with-yubikey/</link>
       <pubDate>Sat, 23 Jul 2016 11:56:00 +0200</pubDate>
       
-      <guid>https://blog.z3ntu.xyz/post/2016-07-23-sddm-login-with-yubikey/</guid>
+      <guid>https://lucaweiss.eu/post/2016-07-23-sddm-login-with-yubikey/</guid>
       <description>If you are wondering how you can login with a Yubikey into your system with SDDM, here are the steps:
 Step 1: Install yubico-pam from [community].
 Step 2: Edit the file /etc/yubikeys and insert text in the following format: &amp;lt;username&amp;gt;:&amp;lt;yubikey_token_id&amp;gt; # eg luca:cclcclcclccl If you don&amp;rsquo;t know what the token ID from your yubikey is, just open a text editor and press the button on your yubikey to create a one time password (=OTP).</description>

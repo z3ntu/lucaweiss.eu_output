@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>android on z3ntu</title>
-    <link>https://blog.z3ntu.xyz/tags/android/</link>
-    <description>Recent content in android on z3ntu</description>
+    <title>android on Luca Weiss</title>
+    <link>https://lucaweiss.eu/tags/android/</link>
+    <description>Recent content in android on Luca Weiss</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; {year} Luca Weiss</copyright>
-    <lastBuildDate>Thu, 30 Mar 2023 22:50:00 +0200</lastBuildDate><atom:link href="https://blog.z3ntu.xyz/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Mar 2023 22:50:00 +0200</lastBuildDate><atom:link href="https://lucaweiss.eu/tags/android/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mounting Android Retrofit Dynamic Partition images</title>
-      <link>https://blog.z3ntu.xyz/post/2023-03-30-retrofit-dynamic-partition/</link>
+      <link>https://lucaweiss.eu/post/2023-03-30-retrofit-dynamic-partition/</link>
       <pubDate>Thu, 30 Mar 2023 22:50:00 +0200</pubDate>
       
-      <guid>https://blog.z3ntu.xyz/post/2023-03-30-retrofit-dynamic-partition/</guid>
+      <guid>https://lucaweiss.eu/post/2023-03-30-retrofit-dynamic-partition/</guid>
       <description>Android devices launching with Android 10 and newer use a feature called Dynamic Partitions which essentially combines the system_a, vendor_a and product_a (and all the _b) variants into a single partition simplying the actual partition layout while making it more flexible. Think of it like a single physical partition which contains multiple logical partitions, like with LVM.
 This feature is available on newly launched devices, devices launched with earlier Android versions still have to cope with the rigid partition layout on-disk.</description>
     </item>
     
     <item>
       <title>Signing boot images for fastboot</title>
-      <link>https://blog.z3ntu.xyz/post/2017-06-16-signing-boot-images/</link>
+      <link>https://lucaweiss.eu/post/2017-06-16-signing-boot-images/</link>
       <pubDate>Fri, 16 Jun 2017 08:55:00 +0200</pubDate>
       
-      <guid>https://blog.z3ntu.xyz/post/2017-06-16-signing-boot-images/</guid>
+      <guid>https://lucaweiss.eu/post/2017-06-16-signing-boot-images/</guid>
       <description>If you have ever seen the error FAILED (remote: bootimage: incomplete or not signed), here&amp;rsquo;s the solution (at least for the Fairphone 2 😉):
 Download the BootSignature.jar file from my server (or compile it yourself from the LineageOS 14.1 tree with the command mka BootSignature). curl -O https://public.z3ntu.xyz/BootSignature.jar
 Download the make_key tool from the LineageOS GitHub. curl -O https://raw.githubusercontent.com/LineageOS/android_development/cm-14.1/tools/make_key
@@ -32,10 +32,10 @@ Make the script executable chmod +x make_key Generate the key with .</descriptio
     
     <item>
       <title>Cross-compiling native Linux applications for Android</title>
-      <link>https://blog.z3ntu.xyz/post/2015-12-12-cross-compiling-native-linux-applications-for-android/</link>
+      <link>https://lucaweiss.eu/post/2015-12-12-cross-compiling-native-linux-applications-for-android/</link>
       <pubDate>Sat, 12 Dec 2015 20:23:00 +0100</pubDate>
       
-      <guid>https://blog.z3ntu.xyz/post/2015-12-12-cross-compiling-native-linux-applications-for-android/</guid>
+      <guid>https://lucaweiss.eu/post/2015-12-12-cross-compiling-native-linux-applications-for-android/</guid>
       <description>Here&amp;rsquo;s how you can cross-compile &amp;ldquo;normal&amp;rdquo; Linux applications for Android!
 Note, that I cannot give you any help in following this. It worked(tm) when I wrote this but don&amp;rsquo;t know about now.
 For the android_configure script download this script, place it in your ~/bin folder and (if not already) add ~/bin to your PATH variable. To create a standalone toolchain use something like the following command (run from your NDK root-dir): Ncurses Add ac_cv_header_locale_h=no to your android_configure script to the line export CC (example: export CC=${CROSS_PATH}/${CROSS_COMPILE}-gcc ac_cv_header_locale_h=no) android_configure --enable-widec make make install</description>
@@ -43,10 +43,10 @@ For the android_configure script download this script, place it in your ~/bin fo
     
     <item>
       <title>Google Play Services with Android 6.0 Marshmallow and Genymotion</title>
-      <link>https://blog.z3ntu.xyz/post/2015-12-10-play-services-with-genymotion/</link>
+      <link>https://lucaweiss.eu/post/2015-12-10-play-services-with-genymotion/</link>
       <pubDate>Thu, 10 Dec 2015 12:24:00 +0100</pubDate>
       
-      <guid>https://blog.z3ntu.xyz/post/2015-12-10-play-services-with-genymotion/</guid>
+      <guid>https://lucaweiss.eu/post/2015-12-10-play-services-with-genymotion/</guid>
       <description>So, I think you want to install the Google Play Store &amp;amp; Services with an Android 6.0 Marshmallow Emulator?
 To do that, follow either the long or the short version.
 You need the following three files:
@@ -56,10 +56,10 @@ Download all three files. Create an emulator with the Nexus 5X image and start i
     
     <item>
       <title>SSH on Android</title>
-      <link>https://blog.z3ntu.xyz/post/2015-11-03-ssh-on-android/</link>
+      <link>https://lucaweiss.eu/post/2015-11-03-ssh-on-android/</link>
       <pubDate>Tue, 03 Nov 2015 10:40:00 +0100</pubDate>
       
-      <guid>https://blog.z3ntu.xyz/post/2015-11-03-ssh-on-android/</guid>
+      <guid>https://lucaweiss.eu/post/2015-11-03-ssh-on-android/</guid>
       <description>Installing the SSH binary on Android (for use with adb shell):
 Install SSHDroid
 Launch SSHDroid and accept the superuser request
