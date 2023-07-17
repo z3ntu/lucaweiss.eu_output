@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; {year} Luca Weiss</copyright>
-    <lastBuildDate>Thu, 30 Mar 2023 22:50:00 +0200</lastBuildDate><atom:link href="https://lucaweiss.eu/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 17 Jul 2023 11:00:00 +0300</lastBuildDate><atom:link href="https://lucaweiss.eu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Taking the Grimaldi Lines ferry from Brindisi to Igoumenitsa</title>
+      <link>https://lucaweiss.eu/post/2023-07-17-ferry-brindisi-igoumenitsa/</link>
+      <pubDate>Mon, 17 Jul 2023 11:00:00 +0300</pubDate>
+      
+      <guid>https://lucaweiss.eu/post/2023-07-17-ferry-brindisi-igoumenitsa/</guid>
+      <description>All information as of July 2023.
+Taking the Grimaldi lines ferry from Brindisi to Igoumenitsa (Ηγουμενίτσα) as a pedestrian sounds easy enough. You can easily book the tickets online (don&amp;rsquo;t forget about the Interrail discount if you have a pass) but after booking it becomes a little bit more tricky.
+Step 1: Get to the ferry terminal You will want to go to the bus station named &amp;ldquo;Costa Morena&amp;rdquo; (OpenStreetMap, Google Maps).</description>
+    </item>
+    
     <item>
       <title>Mounting Android Retrofit Dynamic Partition images</title>
       <link>https://lucaweiss.eu/post/2023-03-30-retrofit-dynamic-partition/</link>

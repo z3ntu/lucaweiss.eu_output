@@ -3,15 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://lucaweiss.eu/</loc>
-    <lastmod>2023-03-30T22:50:00+02:00</lastmod>
+    <lastmod>2023-07-17T11:00:00+03:00</lastmod>
+  </url><url>
+    <loc>https://lucaweiss.eu/post/</loc>
+    <lastmod>2023-07-17T11:00:00+03:00</lastmod>
+  </url><url>
+    <loc>https://lucaweiss.eu/post/2023-07-17-ferry-brindisi-igoumenitsa/</loc>
+    <lastmod>2023-07-17T11:00:00+03:00</lastmod>
   </url><url>
     <loc>https://lucaweiss.eu/tags/android/</loc>
     <lastmod>2023-03-30T22:50:00+02:00</lastmod>
   </url><url>
     <loc>https://lucaweiss.eu/post/2023-03-30-retrofit-dynamic-partition/</loc>
-    <lastmod>2023-03-30T22:50:00+02:00</lastmod>
-  </url><url>
-    <loc>https://lucaweiss.eu/post/</loc>
     <lastmod>2023-03-30T22:50:00+02:00</lastmod>
   </url><url>
     <loc>https://lucaweiss.eu/tags/</loc>
