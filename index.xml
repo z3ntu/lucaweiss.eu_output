@@ -157,5 +157,21 @@ GitHub GitLab LKML Sourcehut See also Projects.</description>
 Fairphone 2 mainline kernel Currently most Android devices run a very outdated version of Linux which is modified by SoC manufacturers and OEMs and deviate from official Linux kernel releases quite a lot.</description>
     </item>
     
+    <item>
+      <title>Talks</title>
+      <link>https://lucaweiss.eu/talks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucaweiss.eu/talks/</guid>
+      <description>FSiC 2023 Title: Open Source for Sustainable and Long lasting Phones
+Location: Sorbonne Université, Paris, France
+Date: 2023-07-11
+Conference website (slides, recording) Talk recording (YouTube) FOSDEM 2023 Title: Mainline Linux on recent Qualcomm SoCs: Fairphone 4
+Subtitle: A look into the work of getting a modern Qualcomm SoC into mainline Linux.
+Location: ULB Solbosch Campus, Brussels, Belgium
+Date: 2023-02-04
+Conference website (slides, recording) Talk recording (YouTube) Ubuntu Summit 2022 Title: OpenRazer - The past, the present and the future</description>
+    </item>
+    
   </channel>
 </rss>
