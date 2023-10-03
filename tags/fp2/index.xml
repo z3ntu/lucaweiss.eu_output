@@ -15,7 +15,7 @@
       
       <guid>https://lucaweiss.eu/post/2017-06-16-signing-boot-images/</guid>
       <description>If you have ever seen the error FAILED (remote: bootimage: incomplete or not signed), here&amp;rsquo;s the solution (at least for the Fairphone 2 😉):
-Download the BootSignature.jar file from my server (or compile it yourself from the LineageOS 14.1 tree with the command mka BootSignature). curl -O https://public.z3ntu.xyz/BootSignature.jar
+Download the BootSignature.jar file from my server (or compile it yourself from the LineageOS 14.1 tree with the command mka BootSignature). curl -O https://public.lucaweiss.eu/BootSignature.jar
 Download the make_key tool from the LineageOS GitHub. curl -O https://raw.githubusercontent.com/LineageOS/android_development/cm-14.1/tools/make_key
 Make the script executable chmod +x make_key Generate the key with .</description>
     </item>

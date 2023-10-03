@@ -8,7 +8,7 @@
     <title>Signing boot images for fastboot - Luca Weiss</title>
     
     <meta name="description" content="If you have ever seen the error FAILED (remote: bootimage: incomplete or not signed), here&rsquo;s the solution (at least for the Fairphone 2 😉):
-Download the BootSignature.jar file from my server (or compile it yourself from the LineageOS 14.1 tree with the command mka BootSignature). curl -O https://public.z3ntu.xyz/BootSignature.jar
+Download the BootSignature.jar file from my server (or compile it yourself from the LineageOS 14.1 tree with the command mka BootSignature). curl -O https://public.lucaweiss.eu/BootSignature.jar
 Download the make_key tool from the LineageOS GitHub. curl -O https://raw.githubusercontent.com/LineageOS/android_development/cm-14.1/tools/make_key
 Make the script executable chmod &#43;x make_key Generate the key with .">
     <meta name="author" content="">
@@ -68,7 +68,7 @@ Make the script executable chmod &#43;x make_key Generate the key with .">
   </header>
   <div class="post-content"><p>If you have ever seen the error <code>FAILED (remote: bootimage: incomplete or not signed)</code>, here&rsquo;s the solution (at least for the Fairphone 2 😉):</p>
 <p>Download the <code>BootSignature.jar</code> file from my server (or compile it yourself from the LineageOS 14.1 tree with the command <code>mka BootSignature</code>).
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>curl -O https://public.z3ntu.xyz/BootSignature.jar</span></span></code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>curl -O https://public.lucaweiss.eu/BootSignature.jar</span></span></code></pre></div></p>
 <p>Download the <code>make_key</code> tool from the LineageOS GitHub.
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>curl -O https://raw.githubusercontent.com/LineageOS/android_development/cm-14.1/tools/make_key</span></span></code></pre></div></p>
 <p>Make the script executable
