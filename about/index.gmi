@@ -10,7 +10,7 @@ You can find most things I do on different sites:
 => https://codeberg.org/lucaweiss Codeberg
 => https://lore.kernel.org/all/?q=f%3A%22Luca+Weiss%22 Linux Kernel Mailing List
 
-See also Projects.
+See also:
 
-=> /projects Projects 
+=> /projects/ Projects
 
