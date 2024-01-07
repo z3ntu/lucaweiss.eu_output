@@ -8,9 +8,10 @@
     <title>Signing boot images for fastboot - Luca Weiss</title>
     
     <meta name="description" content="If you have ever seen the error FAILED (remote: bootimage: incomplete or not signed), here&rsquo;s the solution (at least for the Fairphone 2 😉):
-Download the BootSignature.jar file from my server (or compile it yourself from the LineageOS 14.1 tree with the command mka BootSignature). curl -O https://public.lucaweiss.eu/BootSignature.jar
-Download the make_key tool from the LineageOS GitHub. curl -O https://raw.githubusercontent.com/LineageOS/android_development/cm-14.1/tools/make_key
-Make the script executable chmod &#43;x make_key Generate the key with .">
+Download the BootSignature.jar file from my server (or compile it yourself from the LineageOS 14.1 tree with the command mka BootSignature).
+curl -O https://public.lucaweiss.eu/BootSignature.jar Download the make_key tool from the LineageOS GitHub.
+curl -O https://raw.githubusercontent.com/LineageOS/android_development/cm-14.1/tools/make_key Make the script executable
+chmod &#43;x make_key Generate the key with">
     <meta name="author" content="">
     
     <link href="https://fosstodon.org/@z3ntu" rel="me">
@@ -67,17 +68,17 @@ Make the script executable chmod &#43;x make_key Generate the key with .">
     </div>
   </header>
   <div class="post-content"><p>If you have ever seen the error <code>FAILED (remote: bootimage: incomplete or not signed)</code>, here&rsquo;s the solution (at least for the Fairphone 2 😉):</p>
-<p>Download the <code>BootSignature.jar</code> file from my server (or compile it yourself from the LineageOS 14.1 tree with the command <code>mka BootSignature</code>).
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>curl -O https://public.lucaweiss.eu/BootSignature.jar</span></span></code></pre></div></p>
-<p>Download the <code>make_key</code> tool from the LineageOS GitHub.
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>curl -O https://raw.githubusercontent.com/LineageOS/android_development/cm-14.1/tools/make_key</span></span></code></pre></div></p>
-<p>Make the script executable
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>chmod +x make_key</span></span></code></pre></div>
-Generate the key with
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>./make_key keystore <span style="color:#e6db74">&#39;/C=US/ST=California/L=Mountain View/O=Android/OU=Android/CN=Android/emailAddress=android@android.com&#39;</span></span></span></code></pre></div>
-Put the <code>BootSignature.jar</code>, <code>keystore.pk8</code> and <code>keystore.x509.pem</code> in a directory of your choice.</p>
+<p>Download the <code>BootSignature.jar</code> file from my server (or compile it yourself from the LineageOS 14.1 tree with the command <code>mka BootSignature</code>).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>curl -O https://public.lucaweiss.eu/BootSignature.jar
+</span></span></code></pre></div><p>Download the <code>make_key</code> tool from the LineageOS GitHub.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>curl -O https://raw.githubusercontent.com/LineageOS/android_development/cm-14.1/tools/make_key
+</span></span></code></pre></div><p>Make the script executable</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>chmod +x make_key
+</span></span></code></pre></div><p>Generate the key with</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>./make_key keystore <span style="color:#e6db74">&#39;/C=US/ST=California/L=Mountain View/O=Android/OU=Android/CN=Android/emailAddress=android@android.com&#39;</span>
+</span></span></code></pre></div><p>Put the <code>BootSignature.jar</code>, <code>keystore.pk8</code> and <code>keystore.x509.pem</code> in a directory of your choice.</p>
 <p>Put the following script into a location in the PATH (<code>~/bin</code> or <code>/usr/local/bin</code> should be good) <strong>and replace the first variable with the location you put the three files in</strong>:</p>
-<p><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
 </span></span><span style="display:flex;"><span>KEYSTORE_TOOLS<span style="color:#f92672">=</span>/location/to/jar_and_certs
 </span></span><span style="display:flex;"><span>
@@ -88,11 +89,11 @@ Put the <code>BootSignature.jar</code>, <code>keystore.pk8</code> and <code>keys
 </span></span><span style="display:flex;"><span>  exit <span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>java -jar $KEYSTORE_TOOLS/BootSignature.jar /boot $IMGFILE $KEYSTORE_TOOLS/keystore.pk8 $KEYSTORE_TOOLS/keystore.x509.pem $IMGFILE.signed</span></span></code></pre></div>
-Don&rsquo;t forget to make that script executable! (<code>chmod +x</code>)</p>
-<p>Now you can use the script to sign your images and then boot it
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sign_img boot.img <span style="color:#f92672">&amp;&amp;</span> fastboot boot boot.img.signed</span></span></code></pre></div></p>
-<p>Have fun!</p>
+</span></span><span style="display:flex;"><span>java -jar $KEYSTORE_TOOLS/BootSignature.jar /boot $IMGFILE $KEYSTORE_TOOLS/keystore.pk8 $KEYSTORE_TOOLS/keystore.x509.pem $IMGFILE.signed
+</span></span></code></pre></div><p>Don&rsquo;t forget to make that script executable! (<code>chmod +x</code>)</p>
+<p>Now you can use the script to sign your images and then boot it</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sign_img boot.img <span style="color:#f92672">&amp;&amp;</span> fastboot boot boot.img.signed
+</span></span></code></pre></div><p>Have fun!</p>
 </div>
   <footer class="post-footer">
     <ul class="post-tags">

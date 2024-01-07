@@ -9,7 +9,7 @@
     
     <meta name="description" content="Here&rsquo;s how you can cross-compile &ldquo;normal&rdquo; Linux applications for Android!
 Note, that I cannot give you any help in following this. It worked(tm) when I wrote this but don&rsquo;t know about now.
-For the android_configure script download this script, place it in your ~/bin folder and (if not already) add ~/bin to your PATH variable. To create a standalone toolchain use something like the following command (run from your NDK root-dir): Ncurses Add ac_cv_header_locale_h=no to your android_configure script to the line export CC (example: export CC=${CROSS_PATH}/${CROSS_COMPILE}-gcc ac_cv_header_locale_h=no) android_configure --enable-widec make make install">
+For the android_configure script download this script, place it in your ~/bin folder and (if not already) add ~/bin to your PATH variable. To create a standalone toolchain use something like the following command (run from your NDK root-dir): build/tools/make_standalone_toolchain.">
     <meta name="author" content="">
     
     <link href="https://fosstodon.org/@z3ntu" rel="me">
@@ -69,68 +69,67 @@ For the android_configure script download this script, place it in your ~/bin fo
 <p><strong>Note, that I cannot give you any help in following this. It worked(tm) when I wrote this but don&rsquo;t know about now.</strong></p>
 <ul>
 <li>For the <code>android_configure</code> script download <a href="https://gist.github.com/z3ntu/57b95b02ebe8e153d5a8">this script</a>, place it in your <code>~/bin</code> folder and (if not already) add <code>~/bin</code> to your <code>PATH</code> variable.</li>
-<li>To create a standalone toolchain use something like the following command (run from your NDK root-dir):
-<script src="https://gist.github.com/z3ntu/4285eb6fd4327caa6fd8.js"></script>
-</li>
+<li>To create a standalone toolchain use something like the following command (run from your NDK root-dir):</li>
 </ul>
-<h3 id="ncurses">Ncurses</h3>
-<p>Add <code>ac_cv_header_locale_h=no</code> to your <code>android_configure</code> script to the line <code>export CC</code> (example: <code>export CC=${CROSS_PATH}/${CROSS_COMPILE}-gcc ac_cv_header_locale_h=no</code>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>build/tools/make_standalone_toolchain.py --arch arm --api <span style="color:#ae81ff">21</span> --stl gnustl -v --install-dir /home/luca/Android/standalone-toolchain
+</span></span></code></pre></div><h3 id="ncurses">Ncurses</h3>
+<p>Add <code>ac_cv_header_locale_h=no</code> to your <code>android_configure</code> script to the line <code>export CC</code> (example: <code>export CC=${CROSS_PATH}/${CROSS_COMPILE}-gcc ac_cv_header_locale_h=no</code>)</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>android_configure --enable-widec
 </span></span><span style="display:flex;"><span>make
-</span></span><span style="display:flex;"><span>make install</span></span></code></pre></div></p>
-<h3 id="htop">Htop</h3>
+</span></span><span style="display:flex;"><span>make install
+</span></span></code></pre></div><h3 id="htop">Htop</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>android_configure
 </span></span><span style="display:flex;"><span>make
-</span></span><span style="display:flex;"><span>make install</span></span></code></pre></div>
-<h3 id="gnutls">GnuTLS</h3>
+</span></span><span style="display:flex;"><span>make install
+</span></span></code></pre></div><h3 id="gnutls">GnuTLS</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>android_configure --without-p11-kit
 </span></span><span style="display:flex;"><span>make
-</span></span><span style="display:flex;"><span>make install</span></span></code></pre></div>
-<h3 id="wget">Wget</h3>
+</span></span><span style="display:flex;"><span>make install
+</span></span></code></pre></div><h3 id="wget">Wget</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>android_configure
 </span></span><span style="display:flex;"><span>patch src/gnutls.c &lt; ../TOOLS/gnutls.c.patch
 </span></span><span style="display:flex;"><span>make
-</span></span><span style="display:flex;"><span>make install</span></span></code></pre></div>
-<h3 id="curl">Curl</h3>
+</span></span><span style="display:flex;"><span>make install
+</span></span></code></pre></div><h3 id="curl">Curl</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>android_configure
 </span></span><span style="display:flex;"><span>make
-</span></span><span style="display:flex;"><span>make install</span></span></code></pre></div>
-<h3 id="libiconv">Libiconv</h3>
+</span></span><span style="display:flex;"><span>make install
+</span></span></code></pre></div><h3 id="libiconv">Libiconv</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>android_configure --host<span style="color:#f92672">=</span>arm-linux
 </span></span><span style="display:flex;"><span>make
-</span></span><span style="display:flex;"><span>make install</span></span></code></pre></div>
-<h3 id="git">Git</h3>
-<p>Comment out the parts in <code>configure.ac</code> with <code>ac_cv_fread_reads_directories</code> and <code>ac_cv_snprintf_returns_bogus</code>. Currently on Line 854.
+</span></span><span style="display:flex;"><span>make install
+</span></span></code></pre></div><h3 id="git">Git</h3>
+<p>Comment out the parts in <code>configure.ac</code> with <code>ac_cv_fread_reads_directories</code> and <code>ac_cv_snprintf_returns_bogus</code>. Currently on Line 854.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>make configure
 </span></span><span style="display:flex;"><span>android_configure
-</span></span><span style="display:flex;"><span>make NO_NSEC<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span></span></span></code></pre></div></p>
-<h3 id="binutils">Binutils</h3>
+</span></span><span style="display:flex;"><span>make NO_NSEC<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><h3 id="binutils">Binutils</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>android_configure
 </span></span><span style="display:flex;"><span>make
-</span></span><span style="display:flex;"><span>make install</span></span></code></pre></div>
-<h3 id="python-not-complete">Python (not complete)</h3>
+</span></span><span style="display:flex;"><span>make install
+</span></span></code></pre></div><h3 id="python-not-complete">Python (not complete)</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>android_configure --host<span style="color:#f92672">=</span>arm-linux --build<span style="color:#f92672">=</span>arm
-</span></span><span style="display:flex;"><span>not complete!</span></span></code></pre></div>
-<hr>
+</span></span><span style="display:flex;"><span>not complete!
+</span></span></code></pre></div><hr>
 <h2 id="gcc">GCC</h2>
 <h3 id="gmp">GMP</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>android_configure --host<span style="color:#f92672">=</span>arm-linux
 </span></span><span style="display:flex;"><span>make
-</span></span><span style="display:flex;"><span>make install</span></span></code></pre></div>
-<h3 id="mpfr">MPFR</h3>
+</span></span><span style="display:flex;"><span>make install
+</span></span></code></pre></div><h3 id="mpfr">MPFR</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>android_configure --host<span style="color:#f92672">=</span>arm-linux
 </span></span><span style="display:flex;"><span>make
-</span></span><span style="display:flex;"><span>make install</span></span></code></pre></div>
-<h3 id="mpc">MPC</h3>
+</span></span><span style="display:flex;"><span>make install
+</span></span></code></pre></div><h3 id="mpc">MPC</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>android_configure --host<span style="color:#f92672">=</span>arm-linux
 </span></span><span style="display:flex;"><span>make
-</span></span><span style="display:flex;"><span>make install</span></span></code></pre></div>
-<h3 id="gcc-1">GCC</h3>
-<p>Add <code>-I&lt;YOUR_NDK_ROOT&gt;/sources/android/support/include</code> to your CFLAGS (android_configure script)
+</span></span><span style="display:flex;"><span>make install
+</span></span></code></pre></div><h3 id="gcc-1">GCC</h3>
+<p>Add <code>-I&lt;YOUR_NDK_ROOT&gt;/sources/android/support/include</code> to your CFLAGS (android_configure script)</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>android_configure
 </span></span><span style="display:flex;"><span>make
-</span></span><span style="display:flex;"><span>make install</span></span></code></pre></div></p>
-<p>Thanks for reading!</p>
+</span></span><span style="display:flex;"><span>make install
+</span></span></code></pre></div><p>Thanks for reading!</p>
 </div>
   <footer class="post-footer">
     <ul class="post-tags">

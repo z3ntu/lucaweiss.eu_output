@@ -66,7 +66,8 @@
   <section class="entry-content">
    <p>If you are wondering how you can login with a Yubikey into your system with SDDM, here are the steps:
 Step 1: Install yubico-pam from [community].
-Step 2: Edit the file /etc/yubikeys and insert text in the following format: &lt;username&gt;:&lt;yubikey_token_id&gt; # eg luca:cclcclcclccl If you don’t know what the token ID from your yubikey is, just open a text editor and press the button on your yubikey to create a one time password (=OTP)....</p>
+Step 2: Edit the file /etc/yubikeys and insert text in the following format:
+&lt;username&gt;:&lt;yubikey_token_id&gt; # eg luca:cclcclcclccl If you don’t know what the token ID from your yubikey is, just open a text editor and press the button on your yubikey to create a one time password (=OTP)....</p>
   </section>
   <footer class="entry-footer">
     <time>July 23, 2016</time>
@@ -96,7 +97,7 @@ CopyPackageFile failed, unable to copy /opt/Unity/Editor/Data/Resources/Packages
   <section class="entry-content">
    <p>Here’s how you can cross-compile “normal” Linux applications for Android!
 Note, that I cannot give you any help in following this. It worked(tm) when I wrote this but don’t know about now.
-For the android_configure script download this script, place it in your ~/bin folder and (if not already) add ~/bin to your PATH variable. To create a standalone toolchain use something like the following command (run from your NDK root-dir): Ncurses Add ac_cv_header_locale_h=no to your android_configure script to the line export CC (example: export CC=${CROSS_PATH}/${CROSS_COMPILE}-gcc ac_cv_header_locale_h=no) android_configure --enable-widec make make install...</p>
+For the android_configure script download this script, place it in your ~/bin folder and (if not already) add ~/bin to your PATH variable. To create a standalone toolchain use something like the following command (run from your NDK root-dir): build/tools/make_standalone_toolchain....</p>
   </section>
   <footer class="entry-footer">
     <time>December 12, 2015</time>
@@ -111,7 +112,7 @@ For the android_configure script download this script, place it in your ~/bin fo
    <p>So, I think you want to install the Google Play Store &amp; Services with an Android 6.0 Marshmallow Emulator?
 To do that, follow either the long or the short version.
 You need the following three files:
-Genymotion-ARM-Translation_v1.1.zip gapps-L-4-21-15.zip benzo-gapps-M-20151011-signed-chroma-r3.zip. Short version:
+Genymotion-ARM-Translation_v1.1.zip gapps-L-4-21-15.zip benzo-gapps-M-20151011-signed-chroma-r3.zip Short version:
 Download all three files. Create an emulator with the Nexus 5X image and start it. Flash Genymotion-ARM-Translation_v1.1.zip and reboot. Flash gapps-L-4-21-15.zip and reboot. Sign into your Google Account. Flash benzo-gapps-M-20151011-signed-chroma-r3....</p>
   </section>
   <footer class="entry-footer">
@@ -127,7 +128,8 @@ Download all three files. Create an emulator with the Nexus 5X image and start i
    <p>Installing the SSH binary on Android (for use with adb shell):
 Install SSHDroid
 Launch SSHDroid and accept the superuser request
-Then make sure you have your Android device connected with access to adb! $ adb shell $ su $ mount -o rw,remount /system $ cp /data/data/berserker.android.apps.sshdroid/dropbear/ssh /system/bin/ssh...</p>
+Then make sure you have your Android device connected with access to adb!
+$ adb shell $ su $ mount -o rw,remount /system $ cp /data/data/berserker.android.apps.sshdroid/dropbear/ssh /system/bin/ssh ...</p>
   </section>
   <footer class="entry-footer">
     <time>November 3, 2015</time>
@@ -139,13 +141,12 @@ Then make sure you have your Android device connected with access to adb! $ adb 
     <h2>Deploying Unity WebGL with Apache</h2>
   </header>
   <section class="entry-content">
-   <p>Deploying Unity WebGL on Apache Have you had troubles getting your exported Unity WebGL project to work?
+   <p>Have you had troubles getting your exported Unity WebGL project to work?
 GET /Release/UnityConfig.js 404 (Not Found)
 GET /Release/fileloader.js 404 (Not Found)
 GET /Release/1446299115.js 404 (Not Found)
 I got the instructions here:
-Export your Unity project as WebGL (probably already did this). Click for a screenshot of my Build Settings
-Move every file from the Release folder into the Compressed folder. You can now delete the Release folder....</p>
+Export your Unity project as WebGL (probably already did this). Move every file from the Release folder into the Compressed folder. You can now delete the Release folder. Your folder structure should look like this: .htaccess index.html Compressed * many files (....</p>
   </section>
   <footer class="entry-footer">
     <time>October 31, 2015</time>

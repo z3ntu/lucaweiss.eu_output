@@ -21,7 +21,7 @@
       <link>https://lucaweiss.eu/post/2015-10-31-deploying-unity-webgl-with-apache/</link>
       <pubDate>Sat, 31 Oct 2015 12:25:57 +0100</pubDate>
       <guid>https://lucaweiss.eu/post/2015-10-31-deploying-unity-webgl-with-apache/</guid>
-      <description>Deploying Unity WebGL on Apache Have you had troubles getting your exported Unity WebGL project to work?&#xA;GET /Release/UnityConfig.js 404 (Not Found)&#xA;GET /Release/fileloader.js 404 (Not Found)&#xA;GET /Release/1446299115.js 404 (Not Found)&#xA;I got the instructions here:&#xA;Export your Unity project as WebGL (probably already did this). Click for a screenshot of my Build Settings&#xA;Move every file from the Release folder into the Compressed folder. You can now delete the Release folder.</description>
+      <description>Have you had troubles getting your exported Unity WebGL project to work?&#xA;GET /Release/UnityConfig.js 404 (Not Found)&#xA;GET /Release/fileloader.js 404 (Not Found)&#xA;GET /Release/1446299115.js 404 (Not Found)&#xA;I got the instructions here:&#xA;Export your Unity project as WebGL (probably already did this). Move every file from the Release folder into the Compressed folder. You can now delete the Release folder. Your folder structure should look like this: .htaccess index.html Compressed * many files (.</description>
     </item>
   </channel>
 </rss>

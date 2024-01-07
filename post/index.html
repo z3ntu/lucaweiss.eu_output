@@ -105,9 +105,10 @@ Assuming you already have iTunes installed and are using Firefox, open about:con
   </header>
   <section class="entry-content">
    <p>If you have ever seen the error FAILED (remote: bootimage: incomplete or not signed), here’s the solution (at least for the Fairphone 2 😉):
-Download the BootSignature.jar file from my server (or compile it yourself from the LineageOS 14.1 tree with the command mka BootSignature). curl -O https://public.lucaweiss.eu/BootSignature.jar
-Download the make_key tool from the LineageOS GitHub. curl -O https://raw.githubusercontent.com/LineageOS/android_development/cm-14.1/tools/make_key
-Make the script executable chmod &#43;x make_key Generate the key with ....</p>
+Download the BootSignature.jar file from my server (or compile it yourself from the LineageOS 14.1 tree with the command mka BootSignature).
+curl -O https://public.lucaweiss.eu/BootSignature.jar Download the make_key tool from the LineageOS GitHub.
+curl -O https://raw.githubusercontent.com/LineageOS/android_development/cm-14.1/tools/make_key Make the script executable
+chmod &#43;x make_key Generate the key with...</p>
   </section>
   <footer class="entry-footer">
     <time>June 16, 2017</time>
@@ -134,7 +135,8 @@ How to install (FP2) Download the EFIDroid Manager app from Google Play: https:/
   <section class="entry-content">
    <p>If you are wondering how you can login with a Yubikey into your system with SDDM, here are the steps:
 Step 1: Install yubico-pam from [community].
-Step 2: Edit the file /etc/yubikeys and insert text in the following format: &lt;username&gt;:&lt;yubikey_token_id&gt; # eg luca:cclcclcclccl If you don’t know what the token ID from your yubikey is, just open a text editor and press the button on your yubikey to create a one time password (=OTP)....</p>
+Step 2: Edit the file /etc/yubikeys and insert text in the following format:
+&lt;username&gt;:&lt;yubikey_token_id&gt; # eg luca:cclcclcclccl If you don’t know what the token ID from your yubikey is, just open a text editor and press the button on your yubikey to create a one time password (=OTP)....</p>
   </section>
   <footer class="entry-footer">
     <time>July 23, 2016</time>
@@ -164,7 +166,7 @@ CopyPackageFile failed, unable to copy /opt/Unity/Editor/Data/Resources/Packages
   <section class="entry-content">
    <p>Here’s how you can cross-compile “normal” Linux applications for Android!
 Note, that I cannot give you any help in following this. It worked(tm) when I wrote this but don’t know about now.
-For the android_configure script download this script, place it in your ~/bin folder and (if not already) add ~/bin to your PATH variable. To create a standalone toolchain use something like the following command (run from your NDK root-dir): Ncurses Add ac_cv_header_locale_h=no to your android_configure script to the line export CC (example: export CC=${CROSS_PATH}/${CROSS_COMPILE}-gcc ac_cv_header_locale_h=no) android_configure --enable-widec make make install...</p>
+For the android_configure script download this script, place it in your ~/bin folder and (if not already) add ~/bin to your PATH variable. To create a standalone toolchain use something like the following command (run from your NDK root-dir): build/tools/make_standalone_toolchain....</p>
   </section>
   <footer class="entry-footer">
     <time>December 12, 2015</time>
@@ -179,7 +181,7 @@ For the android_configure script download this script, place it in your ~/bin fo
    <p>So, I think you want to install the Google Play Store &amp; Services with an Android 6.0 Marshmallow Emulator?
 To do that, follow either the long or the short version.
 You need the following three files:
-Genymotion-ARM-Translation_v1.1.zip gapps-L-4-21-15.zip benzo-gapps-M-20151011-signed-chroma-r3.zip. Short version:
+Genymotion-ARM-Translation_v1.1.zip gapps-L-4-21-15.zip benzo-gapps-M-20151011-signed-chroma-r3.zip Short version:
 Download all three files. Create an emulator with the Nexus 5X image and start it. Flash Genymotion-ARM-Translation_v1.1.zip and reboot. Flash gapps-L-4-21-15.zip and reboot. Sign into your Google Account. Flash benzo-gapps-M-20151011-signed-chroma-r3....</p>
   </section>
   <footer class="entry-footer">
@@ -195,7 +197,8 @@ Download all three files. Create an emulator with the Nexus 5X image and start i
    <p>Installing the SSH binary on Android (for use with adb shell):
 Install SSHDroid
 Launch SSHDroid and accept the superuser request
-Then make sure you have your Android device connected with access to adb! $ adb shell $ su $ mount -o rw,remount /system $ cp /data/data/berserker.android.apps.sshdroid/dropbear/ssh /system/bin/ssh...</p>
+Then make sure you have your Android device connected with access to adb!
+$ adb shell $ su $ mount -o rw,remount /system $ cp /data/data/berserker.android.apps.sshdroid/dropbear/ssh /system/bin/ssh ...</p>
   </section>
   <footer class="entry-footer">
     <time>November 3, 2015</time>

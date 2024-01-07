@@ -14,7 +14,7 @@
       <link>https://lucaweiss.eu/post/2015-11-03-ssh-on-android/</link>
       <pubDate>Tue, 03 Nov 2015 10:40:00 +0100</pubDate>
       <guid>https://lucaweiss.eu/post/2015-11-03-ssh-on-android/</guid>
-      <description>Installing the SSH binary on Android (for use with adb shell):&#xA;Install SSHDroid&#xA;Launch SSHDroid and accept the superuser request&#xA;Then make sure you have your Android device connected with access to adb! $ adb shell $ su $ mount -o rw,remount /system $ cp /data/data/berserker.android.apps.sshdroid/dropbear/ssh /system/bin/ssh</description>
+      <description>Installing the SSH binary on Android (for use with adb shell):&#xA;Install SSHDroid&#xA;Launch SSHDroid and accept the superuser request&#xA;Then make sure you have your Android device connected with access to adb!&#xA;$ adb shell $ su $ mount -o rw,remount /system $ cp /data/data/berserker.android.apps.sshdroid/dropbear/ssh /system/bin/ssh </description>
     </item>
   </channel>
 </rss>
