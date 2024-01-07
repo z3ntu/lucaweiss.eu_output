@@ -6,6 +6,7 @@
     <description>Recent content in Categories on Luca Weiss</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; {year} Luca Weiss</copyright><atom:link href="https://lucaweiss.eu/categories/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy; {year} Luca Weiss</copyright>
+    <atom:link href="https://lucaweiss.eu/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

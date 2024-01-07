@@ -7,134 +7,84 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; {year} Luca Weiss</copyright>
-    <lastBuildDate>Mon, 17 Jul 2023 11:00:00 +0300</lastBuildDate><atom:link href="https://lucaweiss.eu/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 17 Jul 2023 11:00:00 +0300</lastBuildDate>
+    <atom:link href="https://lucaweiss.eu/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Taking the Grimaldi Lines ferry from Brindisi to Igoumenitsa</title>
       <link>https://lucaweiss.eu/post/2023-07-17-ferry-brindisi-igoumenitsa/</link>
       <pubDate>Mon, 17 Jul 2023 11:00:00 +0300</pubDate>
-      
       <guid>https://lucaweiss.eu/post/2023-07-17-ferry-brindisi-igoumenitsa/</guid>
-      <description>All information as of July 2023.
-Taking the Grimaldi lines ferry from Brindisi to Igoumenitsa (Ηγουμενίτσα) as a pedestrian sounds easy enough. You can easily book the tickets online (don&amp;rsquo;t forget about the Interrail discount if you have a pass) but after booking it becomes a little bit more tricky.
-Step 1: Get to the ferry terminal You will want to go to the bus station named &amp;ldquo;Costa Morena&amp;rdquo; (OpenStreetMap, Google Maps).</description>
+      <description>All information as of July 2023.&#xA;Taking the Grimaldi lines ferry from Brindisi to Igoumenitsa (Ηγουμενίτσα) as a pedestrian sounds easy enough. You can easily book the tickets online (don&amp;rsquo;t forget about the Interrail discount if you have a pass) but after booking it becomes a little bit more tricky.&#xA;Step 1: Get to the ferry terminal You will want to go to the bus station named &amp;ldquo;Costa Morena&amp;rdquo; (OpenStreetMap, Google Maps).</description>
     </item>
-    
     <item>
       <title>Mounting Android Retrofit Dynamic Partition images</title>
       <link>https://lucaweiss.eu/post/2023-03-30-retrofit-dynamic-partition/</link>
       <pubDate>Thu, 30 Mar 2023 22:50:00 +0200</pubDate>
-      
       <guid>https://lucaweiss.eu/post/2023-03-30-retrofit-dynamic-partition/</guid>
-      <description>Android devices launching with Android 10 and newer use a feature called Dynamic Partitions which essentially combines the system_a, vendor_a and product_a (and all the _b) variants into a single partition simplying the actual partition layout while making it more flexible. Think of it like a single physical partition which contains multiple logical partitions, like with LVM.
-This feature is available on newly launched devices, devices launched with earlier Android versions still have to cope with the rigid partition layout on-disk.</description>
+      <description>Android devices launching with Android 10 and newer use a feature called Dynamic Partitions which essentially combines the system_a, vendor_a and product_a (and all the _b) variants into a single partition simplying the actual partition layout while making it more flexible. Think of it like a single physical partition which contains multiple logical partitions, like with LVM.&#xA;This feature is available on newly launched devices, devices launched with earlier Android versions still have to cope with the rigid partition layout on-disk.</description>
     </item>
-    
     <item>
       <title>iTunes protocol handler on Linux with Wine</title>
       <link>https://lucaweiss.eu/post/2018-09-04-itunes-protocol-handler-on-linux-with-wine/</link>
       <pubDate>Tue, 04 Sep 2018 16:19:00 +0200</pubDate>
-      
       <guid>https://lucaweiss.eu/post/2018-09-04-itunes-protocol-handler-on-linux-with-wine/</guid>
-      <description>Today I have tried adding my PayPal account to my iTunes (installed with Wine) Account but discovered, that adding my PayPal account as a payment method didn&amp;rsquo;t work. After inspecting the network traffic, I found that my browser (Firefox) was redirected to an itmss:// URL, but Firefox didn&amp;rsquo;t know how to handle that and did nothing. To get it working yourself, follow the next steps:
-Assuming you already have iTunes installed and are using Firefox, open about:config in Firefox, accept the prompt, right-click and select New -&amp;gt; Boolean.</description>
+      <description>Today I have tried adding my PayPal account to my iTunes (installed with Wine) Account but discovered, that adding my PayPal account as a payment method didn&amp;rsquo;t work. After inspecting the network traffic, I found that my browser (Firefox) was redirected to an itmss:// URL, but Firefox didn&amp;rsquo;t know how to handle that and did nothing. To get it working yourself, follow the next steps:&#xA;Assuming you already have iTunes installed and are using Firefox, open about:config in Firefox, accept the prompt, right-click and select New -&amp;gt; Boolean.</description>
     </item>
-    
     <item>
       <title>Signing boot images for fastboot</title>
       <link>https://lucaweiss.eu/post/2017-06-16-signing-boot-images/</link>
       <pubDate>Fri, 16 Jun 2017 08:55:00 +0200</pubDate>
-      
       <guid>https://lucaweiss.eu/post/2017-06-16-signing-boot-images/</guid>
-      <description>If you have ever seen the error FAILED (remote: bootimage: incomplete or not signed), here&amp;rsquo;s the solution (at least for the Fairphone 2 😉):
-Download the BootSignature.jar file from my server (or compile it yourself from the LineageOS 14.1 tree with the command mka BootSignature). curl -O https://public.lucaweiss.eu/BootSignature.jar
-Download the make_key tool from the LineageOS GitHub. curl -O https://raw.githubusercontent.com/LineageOS/android_development/cm-14.1/tools/make_key
-Make the script executable chmod +x make_key Generate the key with .</description>
+      <description>If you have ever seen the error FAILED (remote: bootimage: incomplete or not signed), here&amp;rsquo;s the solution (at least for the Fairphone 2 😉):&#xA;Download the BootSignature.jar file from my server (or compile it yourself from the LineageOS 14.1 tree with the command mka BootSignature). curl -O https://public.lucaweiss.eu/BootSignature.jar&#xA;Download the make_key tool from the LineageOS GitHub. curl -O https://raw.githubusercontent.com/LineageOS/android_development/cm-14.1/tools/make_key&#xA;Make the script executable chmod +x make_key Generate the key with .</description>
     </item>
-    
     <item>
       <title>Install and configure EFIDroid on the Fairphone 2</title>
       <link>https://lucaweiss.eu/post/2016-11-01-install-and-configure-efidroid/</link>
       <pubDate>Tue, 01 Nov 2016 15:27:00 +0100</pubDate>
-      
       <guid>https://lucaweiss.eu/post/2016-11-01-install-and-configure-efidroid/</guid>
-      <description>Table of contents: About EFIDroid How to install (FP2) Add a new ROM Add a system to the new ROM Booting into your new ROM About EFIDroid EFIDroid is a relatively new multiboot solution for mobile devices. It is based on the EFI implementation by Intel (EDK2). For more information and support, please visit to the Fairphone Forum thread.
-How to install (FP2) Download the EFIDroid Manager app from Google Play: https://play.</description>
+      <description>Table of contents: About EFIDroid How to install (FP2) Add a new ROM Add a system to the new ROM Booting into your new ROM About EFIDroid EFIDroid is a relatively new multiboot solution for mobile devices. It is based on the EFI implementation by Intel (EDK2). For more information and support, please visit to the Fairphone Forum thread.&#xA;How to install (FP2) Download the EFIDroid Manager app from Google Play: https://play.</description>
     </item>
-    
     <item>
       <title>SDDM login with a Yubikey on Arch Linux</title>
       <link>https://lucaweiss.eu/post/2016-07-23-sddm-login-with-yubikey/</link>
       <pubDate>Sat, 23 Jul 2016 11:56:00 +0200</pubDate>
-      
       <guid>https://lucaweiss.eu/post/2016-07-23-sddm-login-with-yubikey/</guid>
-      <description>If you are wondering how you can login with a Yubikey into your system with SDDM, here are the steps:
-Step 1: Install yubico-pam from [community].
-Step 2: Edit the file /etc/yubikeys and insert text in the following format: &amp;lt;username&amp;gt;:&amp;lt;yubikey_token_id&amp;gt; # eg luca:cclcclcclccl If you don&amp;rsquo;t know what the token ID from your yubikey is, just open a text editor and press the button on your yubikey to create a one time password (=OTP).</description>
+      <description>If you are wondering how you can login with a Yubikey into your system with SDDM, here are the steps:&#xA;Step 1: Install yubico-pam from [community].&#xA;Step 2: Edit the file /etc/yubikeys and insert text in the following format: &amp;lt;username&amp;gt;:&amp;lt;yubikey_token_id&amp;gt; # eg luca:cclcclcclccl If you don&amp;rsquo;t know what the token ID from your yubikey is, just open a text editor and press the button on your yubikey to create a one time password (=OTP).</description>
     </item>
-    
     <item>
       <title>Fixing the Unity3D 5.3 startup error on Linux</title>
       <link>https://lucaweiss.eu/post/2015-12-18-fixing-unity-5.3-startup-error-linux/</link>
       <pubDate>Fri, 18 Dec 2015 19:23:00 +0100</pubDate>
-      
       <guid>https://lucaweiss.eu/post/2015-12-18-fixing-unity-5.3-startup-error-linux/</guid>
-      <description>If you experience this error with the newest Unity3D Build on Linux, just do this one simple step:
-Create the folder ~/.local/share/unity3d and you are good to go! Now have fun with Unity!
-In more detail, the &amp;ldquo;main&amp;rdquo; error message in ~/.config/unity3d/Editor.log is
-CopyPackageFile failed, unable to copy /opt/Unity/Editor/Data/Resources/Packages/unity-editor-home-0.0.7.tgz to /home/luca/.local/share/unity3d/Packages/unity-editor-home-0.0.7.tgz
-CopyPackageFile failed, unable to copy /opt/Unity/Editor/Data/Resources/Packages/unityeditor-cloud-hub-0.0.1.tgz to /home/luca/.local/share/unity3d/Packages/unityeditor-cloud-hub-0.0.1.tgz</description>
+      <description>If you experience this error with the newest Unity3D Build on Linux, just do this one simple step:&#xA;Create the folder ~/.local/share/unity3d and you are good to go! Now have fun with Unity!&#xA;In more detail, the &amp;ldquo;main&amp;rdquo; error message in ~/.config/unity3d/Editor.log is&#xA;CopyPackageFile failed, unable to copy /opt/Unity/Editor/Data/Resources/Packages/unity-editor-home-0.0.7.tgz to /home/luca/.local/share/unity3d/Packages/unity-editor-home-0.0.7.tgz&#xA;CopyPackageFile failed, unable to copy /opt/Unity/Editor/Data/Resources/Packages/unityeditor-cloud-hub-0.0.1.tgz to /home/luca/.local/share/unity3d/Packages/unityeditor-cloud-hub-0.0.1.tgz</description>
     </item>
-    
     <item>
       <title>Cross-compiling native Linux applications for Android</title>
       <link>https://lucaweiss.eu/post/2015-12-12-cross-compiling-native-linux-applications-for-android/</link>
       <pubDate>Sat, 12 Dec 2015 20:23:00 +0100</pubDate>
-      
       <guid>https://lucaweiss.eu/post/2015-12-12-cross-compiling-native-linux-applications-for-android/</guid>
-      <description>Here&amp;rsquo;s how you can cross-compile &amp;ldquo;normal&amp;rdquo; Linux applications for Android!
-Note, that I cannot give you any help in following this. It worked(tm) when I wrote this but don&amp;rsquo;t know about now.
-For the android_configure script download this script, place it in your ~/bin folder and (if not already) add ~/bin to your PATH variable. To create a standalone toolchain use something like the following command (run from your NDK root-dir): Ncurses Add ac_cv_header_locale_h=no to your android_configure script to the line export CC (example: export CC=${CROSS_PATH}/${CROSS_COMPILE}-gcc ac_cv_header_locale_h=no) android_configure --enable-widec make make install</description>
+      <description>Here&amp;rsquo;s how you can cross-compile &amp;ldquo;normal&amp;rdquo; Linux applications for Android!&#xA;Note, that I cannot give you any help in following this. It worked(tm) when I wrote this but don&amp;rsquo;t know about now.&#xA;For the android_configure script download this script, place it in your ~/bin folder and (if not already) add ~/bin to your PATH variable. To create a standalone toolchain use something like the following command (run from your NDK root-dir): Ncurses Add ac_cv_header_locale_h=no to your android_configure script to the line export CC (example: export CC=${CROSS_PATH}/${CROSS_COMPILE}-gcc ac_cv_header_locale_h=no) android_configure --enable-widec make make install</description>
     </item>
-    
     <item>
       <title>Google Play Services with Android 6.0 Marshmallow and Genymotion</title>
       <link>https://lucaweiss.eu/post/2015-12-10-play-services-with-genymotion/</link>
       <pubDate>Thu, 10 Dec 2015 12:24:00 +0100</pubDate>
-      
       <guid>https://lucaweiss.eu/post/2015-12-10-play-services-with-genymotion/</guid>
-      <description>So, I think you want to install the Google Play Store &amp;amp; Services with an Android 6.0 Marshmallow Emulator?
-To do that, follow either the long or the short version.
-You need the following three files:
-Genymotion-ARM-Translation_v1.1.zip gapps-L-4-21-15.zip benzo-gapps-M-20151011-signed-chroma-r3.zip. Short version:
-Download all three files. Create an emulator with the Nexus 5X image and start it. Flash Genymotion-ARM-Translation_v1.1.zip and reboot. Flash gapps-L-4-21-15.zip and reboot. Sign into your Google Account. Flash benzo-gapps-M-20151011-signed-chroma-r3.</description>
+      <description>So, I think you want to install the Google Play Store &amp;amp; Services with an Android 6.0 Marshmallow Emulator?&#xA;To do that, follow either the long or the short version.&#xA;You need the following three files:&#xA;Genymotion-ARM-Translation_v1.1.zip gapps-L-4-21-15.zip benzo-gapps-M-20151011-signed-chroma-r3.zip. Short version:&#xA;Download all three files. Create an emulator with the Nexus 5X image and start it. Flash Genymotion-ARM-Translation_v1.1.zip and reboot. Flash gapps-L-4-21-15.zip and reboot. Sign into your Google Account. Flash benzo-gapps-M-20151011-signed-chroma-r3.</description>
     </item>
-    
     <item>
       <title>SSH on Android</title>
       <link>https://lucaweiss.eu/post/2015-11-03-ssh-on-android/</link>
       <pubDate>Tue, 03 Nov 2015 10:40:00 +0100</pubDate>
-      
       <guid>https://lucaweiss.eu/post/2015-11-03-ssh-on-android/</guid>
-      <description>Installing the SSH binary on Android (for use with adb shell):
-Install SSHDroid
-Launch SSHDroid and accept the superuser request
-Then make sure you have your Android device connected with access to adb! $ adb shell $ su $ mount -o rw,remount /system $ cp /data/data/berserker.android.apps.sshdroid/dropbear/ssh /system/bin/ssh</description>
+      <description>Installing the SSH binary on Android (for use with adb shell):&#xA;Install SSHDroid&#xA;Launch SSHDroid and accept the superuser request&#xA;Then make sure you have your Android device connected with access to adb! $ adb shell $ su $ mount -o rw,remount /system $ cp /data/data/berserker.android.apps.sshdroid/dropbear/ssh /system/bin/ssh</description>
     </item>
-    
     <item>
       <title>Deploying Unity WebGL with Apache</title>
       <link>https://lucaweiss.eu/post/2015-10-31-deploying-unity-webgl-with-apache/</link>
       <pubDate>Sat, 31 Oct 2015 12:25:57 +0100</pubDate>
-      
       <guid>https://lucaweiss.eu/post/2015-10-31-deploying-unity-webgl-with-apache/</guid>
-      <description>Deploying Unity WebGL on Apache Have you had troubles getting your exported Unity WebGL project to work?
-GET /Release/UnityConfig.js 404 (Not Found)
-GET /Release/fileloader.js 404 (Not Found)
-GET /Release/1446299115.js 404 (Not Found)
-I got the instructions here:
-Export your Unity project as WebGL (probably already did this). Click for a screenshot of my Build Settings
-Move every file from the Release folder into the Compressed folder. You can now delete the Release folder.</description>
+      <description>Deploying Unity WebGL on Apache Have you had troubles getting your exported Unity WebGL project to work?&#xA;GET /Release/UnityConfig.js 404 (Not Found)&#xA;GET /Release/fileloader.js 404 (Not Found)&#xA;GET /Release/1446299115.js 404 (Not Found)&#xA;I got the instructions here:&#xA;Export your Unity project as WebGL (probably already did this). Click for a screenshot of my Build Settings&#xA;Move every file from the Release folder into the Compressed folder. You can now delete the Release folder.</description>
     </item>
-    
   </channel>
 </rss>

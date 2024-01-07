@@ -7,28 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; {year} Luca Weiss</copyright>
-    <lastBuildDate>Fri, 16 Jun 2017 08:55:00 +0200</lastBuildDate><atom:link href="https://lucaweiss.eu/tags/fp2/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Jun 2017 08:55:00 +0200</lastBuildDate>
+    <atom:link href="https://lucaweiss.eu/tags/fp2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Signing boot images for fastboot</title>
       <link>https://lucaweiss.eu/post/2017-06-16-signing-boot-images/</link>
       <pubDate>Fri, 16 Jun 2017 08:55:00 +0200</pubDate>
-      
       <guid>https://lucaweiss.eu/post/2017-06-16-signing-boot-images/</guid>
-      <description>If you have ever seen the error FAILED (remote: bootimage: incomplete or not signed), here&amp;rsquo;s the solution (at least for the Fairphone 2 😉):
-Download the BootSignature.jar file from my server (or compile it yourself from the LineageOS 14.1 tree with the command mka BootSignature). curl -O https://public.lucaweiss.eu/BootSignature.jar
-Download the make_key tool from the LineageOS GitHub. curl -O https://raw.githubusercontent.com/LineageOS/android_development/cm-14.1/tools/make_key
-Make the script executable chmod +x make_key Generate the key with .</description>
+      <description>If you have ever seen the error FAILED (remote: bootimage: incomplete or not signed), here&amp;rsquo;s the solution (at least for the Fairphone 2 😉):&#xA;Download the BootSignature.jar file from my server (or compile it yourself from the LineageOS 14.1 tree with the command mka BootSignature). curl -O https://public.lucaweiss.eu/BootSignature.jar&#xA;Download the make_key tool from the LineageOS GitHub. curl -O https://raw.githubusercontent.com/LineageOS/android_development/cm-14.1/tools/make_key&#xA;Make the script executable chmod +x make_key Generate the key with .</description>
     </item>
-    
     <item>
       <title>Install and configure EFIDroid on the Fairphone 2</title>
       <link>https://lucaweiss.eu/post/2016-11-01-install-and-configure-efidroid/</link>
       <pubDate>Tue, 01 Nov 2016 15:27:00 +0100</pubDate>
-      
       <guid>https://lucaweiss.eu/post/2016-11-01-install-and-configure-efidroid/</guid>
-      <description>Table of contents: About EFIDroid How to install (FP2) Add a new ROM Add a system to the new ROM Booting into your new ROM About EFIDroid EFIDroid is a relatively new multiboot solution for mobile devices. It is based on the EFI implementation by Intel (EDK2). For more information and support, please visit to the Fairphone Forum thread.
-How to install (FP2) Download the EFIDroid Manager app from Google Play: https://play.</description>
+      <description>Table of contents: About EFIDroid How to install (FP2) Add a new ROM Add a system to the new ROM Booting into your new ROM About EFIDroid EFIDroid is a relatively new multiboot solution for mobile devices. It is based on the EFI implementation by Intel (EDK2). For more information and support, please visit to the Fairphone Forum thread.&#xA;How to install (FP2) Download the EFIDroid Manager app from Google Play: https://play.</description>
     </item>
-    
   </channel>
 </rss>

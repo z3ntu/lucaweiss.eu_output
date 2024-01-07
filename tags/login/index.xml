@@ -7,17 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; {year} Luca Weiss</copyright>
-    <lastBuildDate>Sat, 23 Jul 2016 11:56:00 +0200</lastBuildDate><atom:link href="https://lucaweiss.eu/tags/login/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Jul 2016 11:56:00 +0200</lastBuildDate>
+    <atom:link href="https://lucaweiss.eu/tags/login/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SDDM login with a Yubikey on Arch Linux</title>
       <link>https://lucaweiss.eu/post/2016-07-23-sddm-login-with-yubikey/</link>
       <pubDate>Sat, 23 Jul 2016 11:56:00 +0200</pubDate>
-      
       <guid>https://lucaweiss.eu/post/2016-07-23-sddm-login-with-yubikey/</guid>
-      <description>If you are wondering how you can login with a Yubikey into your system with SDDM, here are the steps:
-Step 1: Install yubico-pam from [community].
-Step 2: Edit the file /etc/yubikeys and insert text in the following format: &amp;lt;username&amp;gt;:&amp;lt;yubikey_token_id&amp;gt; # eg luca:cclcclcclccl If you don&amp;rsquo;t know what the token ID from your yubikey is, just open a text editor and press the button on your yubikey to create a one time password (=OTP).</description>
+      <description>If you are wondering how you can login with a Yubikey into your system with SDDM, here are the steps:&#xA;Step 1: Install yubico-pam from [community].&#xA;Step 2: Edit the file /etc/yubikeys and insert text in the following format: &amp;lt;username&amp;gt;:&amp;lt;yubikey_token_id&amp;gt; # eg luca:cclcclcclccl If you don&amp;rsquo;t know what the token ID from your yubikey is, just open a text editor and press the button on your yubikey to create a one time password (=OTP).</description>
     </item>
-    
   </channel>
 </rss>
