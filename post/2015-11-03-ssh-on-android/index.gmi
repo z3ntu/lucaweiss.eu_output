@@ -1,0 +1,17 @@
+# SSH on Android
+**Installing the SSH binary on Android (for use with adb shell):**
+
+Install
+
+=> https://play.google.com/store/apps/details?id=berserker.android.apps.sshdroid SSHDroid
+
+Launch SSHDroid and accept the superuser request
+
+Then make sure you have your Android device connected with access to adb!
+```shell
+$ adb shell
+$ su
+$ mount -o rw,remount /system
+$ cp /data/data/berserker.android.apps.sshdroid/dropbear/ssh /system/bin/ssh
+```
+

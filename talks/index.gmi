@@ -1,0 +1,71 @@
+# Talks
+
+## FOSDEM 2024
+
+**Title:** From phone hardware to mobile Linux  
+**Location:** ULB Solbosch Campus, Brussels, Belgium  
+**Date:** 2024-02-03  
+
+=> https://fosdem.org/2024/schedule/event/fosdem-2024-2234-from-phone-hardware-to-mobile-linux/ Conference website
+
+## Capitole du Libre 2023
+
+**Title:** Mainline Linux on Fairphone? Yes, please!  
+**Location:** ENSEEIHT, Toulouse, France  
+**Date:** 2023-11-19  
+
+=> https://cfp.capitoledulibre.org/cdl-2023/talk/77EAF7/ Conference website
+
+**Title:** Open Source for Sustainable and Long lasting Phones  
+**Co-hosted:** Agnès Crepet  
+**Location:** ENSEEIHT, Toulouse, France  
+**Date:** 2023-11-19  
+
+=> https://cfp.capitoledulibre.org/cdl-2023/talk/H8PBDM/ Conference website
+
+## Ubuntu Summit 2023
+
+**Title:** Open Source for Sustainable and Long lasting Phones  
+**Location:** Radisson Blu Latvija, Riga, Latvia  
+**Date:** 2023-11-05  
+
+=> https://events.canonical.com/event/31/contributions/175/ Conference website (slides)
+=> https://www.youtube.com/watch?v=8ycIop9nrJk Talk recording (YouTube)
+
+## FSiC 2023
+
+**Title:** Open Source for Sustainable and Long lasting Phones  
+**Location:** Sorbonne Université, Paris, France  
+**Date:** 2023-07-11  
+
+=> https://wiki.f-si.org/index.php?title=Open_Source_for_Sustainable_and_Long_lasting_Phones Conference website (slides, recording)
+=> https://www.youtube.com/watch?v=_tbUGUWOiwU Talk recording (YouTube)
+
+## FOSDEM 2023
+
+**Title:** Mainline Linux on recent Qualcomm SoCs: Fairphone 4  
+**Subtitle:** A look into the work of getting a modern Qualcomm SoC into mainline Linux.  
+**Location:** ULB Solbosch Campus, Brussels, Belgium  
+**Date:** 2023-02-04  
+
+=> https://archive.fosdem.org/2023/schedule/event/mainline_on_the_fairphone4/ Conference website (slides, recording)
+=> https://www.youtube.com/watch?v=9ezKkyujKWQ Talk recording (YouTube)
+
+## Ubuntu Summit 2022
+
+**Title:** OpenRazer - The past, the present and the future  
+**Location:** Hilton Prague, Prague, Czechia  
+**Date:** 2022-11-09  
+
+=> https://events.canonical.com/event/2/contributions/120/ Conference website (slides)
+=> https://www.youtube.com/watch?v=vfDwCUc3c_o Talk recording (YouTube)
+
+## FOSDEM 2022
+
+**Title:** Porting mainline Linux to mobile phones  
+**Location:** Online  
+**Date:** 2022-02-05  
+
+=> https://archive.fosdem.org/2022/schedule/event/mobile_kernel_mainline/ Conference website (slides, recording)
+=> https://www.youtube.com/watch?v=-2UYZrXJaIA Talk recording (YouTube)
+

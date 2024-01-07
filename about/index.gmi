@@ -1,0 +1,16 @@
+# About
+
+Just a guy who likes programming.
+
+You can find most things I do on different sites:
+=> https://fosstodon.org/@z3ntu Mastodon
+=> https://github.com/z3ntu GitHub
+=> https://gitlab.com/z3ntu GitLab
+=> https://git.sr.ht/~z3ntu Sourcehut
+=> https://codeberg.org/lucaweiss Codeberg
+=> https://lore.kernel.org/all/?q=f%3A%22Luca+Weiss%22 Linux Kernel Mailing List
+
+See also Projects.
+
+=> /projects Projects 
+

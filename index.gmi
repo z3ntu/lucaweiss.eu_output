@@ -1,0 +1,20 @@
+# Luca Weiss
+
+## Menu
+=> /projects/ Projects
+=> /talks/ Talks
+=> /about/ About
+
+## Posts
+=> /post/2023-07-17-ferry-brindisi-igoumenitsa/index.gmi 2023-07-17 - Taking the Grimaldi Lines ferry from Brindisi to Igoumenitsa
+=> /post/2023-03-30-retrofit-dynamic-partition/index.gmi 2023-03-30 - Mounting Android Retrofit Dynamic Partition images
+=> /post/2018-09-04-itunes-protocol-handler-on-linux-with-wine/index.gmi 2018-09-04 - iTunes protocol handler on Linux with Wine
+=> /post/2017-06-16-signing-boot-images/index.gmi 2017-06-16 - Signing boot images for fastboot
+=> /post/2016-11-01-install-and-configure-efidroid/index.gmi 2016-11-01 - Install and configure EFIDroid on the Fairphone 2
+=> /post/2016-07-23-sddm-login-with-yubikey/index.gmi 2016-07-23 - SDDM login with a Yubikey on Arch Linux
+=> /post/2015-12-18-fixing-unity-5.3-startup-error-linux/index.gmi 2015-12-18 - Fixing the Unity3D 5.3 startup error on Linux
+=> /post/2015-12-12-cross-compiling-native-linux-applications-for-android/index.gmi 2015-12-12 - Cross-compiling native Linux applications for Android
+=> /post/2015-12-10-play-services-with-genymotion/index.gmi 2015-12-10 - Google Play Services with Android 6.0 Marshmallow and Genymotion
+=> /post/2015-11-03-ssh-on-android/index.gmi 2015-11-03 - SSH on Android
+=> /post/2015-10-31-deploying-unity-webgl-with-apache/index.gmi 2015-10-31 - Deploying Unity WebGL with Apache
+
