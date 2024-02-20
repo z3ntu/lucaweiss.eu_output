@@ -1,19 +1,27 @@
 # Talks
 
+## How.Camp 2024
+
+**Title:** Open source operating systems for phones  
+**Location:** Gabrovo, Bulgaria  
+**Date:** 2024-07-27  
+
+=> https://how.camp/ Conference website
+
 ## FOSDEM 2024
 
 **Title:** From phone hardware to mobile Linux  
 **Location:** H.1309 (Van Rijn), ULB Solbosch Campus, Brussels, Belgium  
 **Date:** 2024-02-03  
 
-=> https://fosdem.org/2024/schedule/event/fosdem-2024-2234-from-phone-hardware-to-mobile-linux/ Conference website
+=> https://fosdem.org/2024/schedule/event/fosdem-2024-2234-from-phone-hardware-to-mobile-linux/ Conference website (slides, recording)
 
 **Title:** Open Source for Sustainable and Long lasting Phones  
 **Co-hosted:** Agnès Crepet  
 **Location:** Janson, ULB Solbosch Campus, Brussels, Belgium  
 **Date:** 2024-02-04  
 
-=> https://fosdem.org/2024/schedule/event/fosdem-2024-3362-open-source-for-sustainable-and-long-lasting-phones/ Conference website
+=> https://fosdem.org/2024/schedule/event/fosdem-2024-3362-open-source-for-sustainable-and-long-lasting-phones/ Conference website (slides, recording)
 
 ## Capitole du Libre 2023
 
@@ -21,14 +29,14 @@
 **Location:** ENSEEIHT, Toulouse, France  
 **Date:** 2023-11-19  
 
-=> https://cfp.capitoledulibre.org/cdl-2023/talk/77EAF7/ Conference website
+=> https://cfp.capitoledulibre.org/cdl-2023/talk/77EAF7/ Conference website (slides)
 
 **Title:** Open Source for Sustainable and Long lasting Phones  
 **Co-hosted:** Agnès Crepet  
 **Location:** ENSEEIHT, Toulouse, France  
 **Date:** 2023-11-19  
 
-=> https://cfp.capitoledulibre.org/cdl-2023/talk/H8PBDM/ Conference website
+=> https://cfp.capitoledulibre.org/cdl-2023/talk/H8PBDM/ Conference website (slides)
 
 ## Ubuntu Summit 2023
 
