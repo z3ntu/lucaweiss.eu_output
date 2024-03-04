@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>The little NAS under my bed - Luca Weiss</title>
+    
+    <meta name="description" content="In April 2023 I&rsquo;ve built myself a new NAS box to replace a rather old HPE ProLiant MicroServer Gen8 at my parents place. Since I don&rsquo;t really have any good space in my apartment it needed to fit under my bed and be reasonably quiet.
+After hearing good things about the ODROID H3&#43; I&rsquo;ve decided to order one with a case, hard drives and everything else necessary to fulfil this purpose.">
+    <meta name="author" content="">
+    
+    <link href="https://fosstodon.org/@z3ntu" rel="me">
+    
+    
+    <link href="https://lucaweiss.eu/an-old-hope.min.css" rel="stylesheet">
+    <link href="https://lucaweiss.eu/style.css" rel="stylesheet">
+    <link href="https://lucaweiss.eu/custom.css" rel="stylesheet">
+    <meta name="generator" content="Hugo 0.123.7">
+    
+    <link rel="alternate" type="text/gemini" href="gemini://lucaweiss.eu/post/2024-03-04-the-little-nas/index.gmi" title="Luca Weiss" />
+    
+    <script>
+      function setTheme() {
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.body.classList.add('dark');
+          return;
+        }
+      }
+    </script>
+  </head>
+  <body class="single">
+    <script>
+      setTheme();
+    </script>
+    <header class="header">
+      <nav class="nav">
+        <p class="logo"><a href="https://lucaweiss.eu/">Luca Weiss</a></p>
+        <ul class="menu">
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/projects/">Projects</a>
+          </li>
+          <li>
+            <a href="/talks/">Talks</a>
+          </li>
+          <li>
+            <a href="/post/">Posts</a>
+          </li>
+          <li>
+            <a href="/about/">About</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">The little NAS under my bed</h1>
+    <div class="post-meta">March 4, 2024
+    </div>
+  </header>
+  <div class="post-content"><p>In April 2023 I&rsquo;ve built myself a new NAS box to replace a rather old HPE
+ProLiant MicroServer Gen8 at my parents place. Since I don&rsquo;t really have any
+good space in my apartment it needed to fit under my bed and be reasonably
+quiet.</p>
+<p>After hearing good things about the ODROID H3+ I&rsquo;ve decided to order one with a
+case, hard drives and everything else necessary to fulfil this purpose.</p>
+<h1 id="hardware-specs">Hardware specs</h1>
+<ul>
+<li>ODROID H3+ (Intel Celeron N6005)</li>
+<li>32 GB SODIMM RAM</li>
+<li>1 TB NVMe</li>
+<li>2x 8 TB HDD</li>
+<li>ODROID-H3 Case Type 1</li>
+<li>19V/7A Power Supply</li>
+</ul>
+<p>(and I&rsquo;ve also ordered 2x SATA cable for the HDDs; plus an RTC backup battery
+but this was unnecessary because one was already included with the ODROID)</p>
+<h1 id="software">Software</h1>
+<p>From software side I&rsquo;ve installed Debian Linux on the NVMe as boot drive and
+the HDDs are in a RAID1 using ZFS which host all the data.</p>
+<p>The Debian install is managed using Ansible using some playbooks I&rsquo;ve written
+which installs the necessary packages and does a little bit of setup where
+required.</p>
+<p>To run the services like Jellyfin, Nextcloud, Immich, etc. I&rsquo;m using
+docker-compose with a Traefik reverse proxy in front.</p>
+<p>The whole box is only accessible via Tailscale (I&rsquo;m not 100% fan of it, some
+components are surprisingly buggy but it works well enough, and it has some
+useful features like custom DNS entries which I like).</p>
+<p>So all the services can only be accessed from the VPN network, and for the
+custom subdomains you can easily get LetsEncrypt certificates using the DNS
+challenge. That way the browser is always happy with a green lock, no matter
+what device you&rsquo;re accessing it from.</p>
+<h1 id="my-review">My review</h1>
+<p>The box is working really well, I haven&rsquo;t had any problems with it since I
+started using it. The only real downtime it had was once when I was travelling
+there was a power outage at home so after the power came back the box was still
+off and I couldn&rsquo;t turn it on remotely. After coming back home I enabled the
+turn-on-after-power-outage feature in the BIOS so this shouldn&rsquo;t happen again.</p>
+<p>I cannot complain about the performance at all, Jellyfin is streaming even 4K
+content well - even when it has to transcode it thanks for Intel QuickSync.
+Immich has no problems even when uploading a bunch of photos and when it&rsquo;s
+doing its machine learning tasks on them.</p>
+<p>The fan from the case is not really noticable, the only thing that&rsquo;s bothering
+me a bit is that the hardware drives make some noise when the drive head is
+seeking (I think?) but it&rsquo;s not really solvable I think apart from buying
+pricey SSDs. But it&rsquo;s very quickly drowned out by any other sounds - either by
+sounds from inside the room or from outside, and it&rsquo;s also never been a problem
+while sleeping.</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>For about €800 you can get a very capable NAS that is reasonably quiet, doesn&rsquo;t
+consume a lot of power and is generally nice to have around.</p>
+<p>I definitely recommend this for others, especially if they can put it in a
+closet somewhere where the hard drive noise doesn&rsquo;t matter. Or keep less data
+and buy some SATA SSDs instead, then it&rsquo;s nearly quiet.</p>
+</div>
+</article></main>
+<footer class="footer">
+  <span>© 2024 Luca Weiss</span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+  <span>&middot;</span>
+  <span>Theme️ <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper</a></span>
+</footer>
+<script src="https://lucaweiss.eu/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+</body>
+</html>
+

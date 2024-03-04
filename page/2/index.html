@@ -16,7 +16,7 @@
     <link href="https://lucaweiss.eu/an-old-hope.min.css" rel="stylesheet">
     <link href="https://lucaweiss.eu/style.css" rel="stylesheet">
     <link href="https://lucaweiss.eu/custom.css" rel="stylesheet">
-    <meta name="generator" content="Hugo 0.123.0">
+    <meta name="generator" content="Hugo 0.123.7">
     
     <link rel="alternate" type="application/rss+xml" href="https://lucaweiss.eu/index.xml" title="Luca Weiss" />
     <link rel="alternate" type="text/gemini" href="gemini://lucaweiss.eu/index.gmi" title="Luca Weiss" />
@@ -58,6 +58,22 @@
     </header>
     <main class="main">
 
+<article class="post-entry">
+  <header class="entry-header">
+    <h2>SSH on Android</h2>
+  </header>
+  <section class="entry-content">
+   <p>Installing the SSH binary on Android (for use with adb shell):
+Install SSHDroid
+Launch SSHDroid and accept the superuser request
+Then make sure you have your Android device connected with access to adb!
+$ adb shell $ su $ mount -o rw,remount /system $ cp /data/data/berserker.android.apps.sshdroid/dropbear/ssh /system/bin/ssh ...</p>
+  </section>
+  <footer class="entry-footer">
+    <time>November 3, 2015</time>
+  </footer>
+  <a class="entry-link" href="https://lucaweiss.eu/post/2015-11-03-ssh-on-android/"></a>
+</article>
 <article class="post-entry">
   <header class="entry-header">
     <h2>Deploying Unity WebGL with Apache</h2>

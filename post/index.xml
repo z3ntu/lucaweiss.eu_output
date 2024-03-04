@@ -7,8 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; {year} Luca Weiss</copyright>
-    <lastBuildDate>Mon, 17 Jul 2023 11:00:00 +0300</lastBuildDate>
+    <lastBuildDate>Mon, 04 Mar 2024 11:00:00 +0100</lastBuildDate>
     <atom:link href="https://lucaweiss.eu/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The little NAS under my bed</title>
+      <link>https://lucaweiss.eu/post/2024-03-04-the-little-nas/</link>
+      <pubDate>Mon, 04 Mar 2024 11:00:00 +0100</pubDate>
+      <guid>https://lucaweiss.eu/post/2024-03-04-the-little-nas/</guid>
+      <description>In April 2023 I&amp;rsquo;ve built myself a new NAS box to replace a rather old HPE ProLiant MicroServer Gen8 at my parents place. Since I don&amp;rsquo;t really have any good space in my apartment it needed to fit under my bed and be reasonably quiet.&#xA;After hearing good things about the ODROID H3+ I&amp;rsquo;ve decided to order one with a case, hard drives and everything else necessary to fulfil this purpose.</description>
+    </item>
     <item>
       <title>Taking the Grimaldi Lines ferry from Brindisi to Igoumenitsa</title>
       <link>https://lucaweiss.eu/post/2023-07-17-ferry-brindisi-igoumenitsa/</link>
