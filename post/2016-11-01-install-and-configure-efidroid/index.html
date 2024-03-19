@@ -17,7 +17,7 @@ How to install (FP2) Download the EFIDroid Manager app from Google Play: https:/
     <link href="https://lucaweiss.eu/an-old-hope.min.css" rel="stylesheet">
     <link href="https://lucaweiss.eu/style.css" rel="stylesheet">
     <link href="https://lucaweiss.eu/custom.css" rel="stylesheet">
-    <meta name="generator" content="Hugo 0.123.7">
+    <meta name="generator" content="Hugo 0.124.0">
     
     <link rel="alternate" type="text/gemini" href="gemini://lucaweiss.eu/post/2016-11-01-install-and-configure-efidroid/index.gmi" title="Luca Weiss" />
     
@@ -81,15 +81,15 @@ For more information and support, please visit to the <a href="https://forum.fai
 <ul>
 <li>Download the EFIDroid Manager app from Google Play: <a href="https://play.google.com/store/apps/details?id=org.efidroid.efidroidmanager">https://play.google.com/store/apps/details?id=org.efidroid.efidroidmanager</a>.</li>
 <li>Go to <strong>Install/Update</strong>
-<figure class="toggle-image"><img src="/images/efidroid/sidebar.png" width="300"/>
+<figure class="toggle-image"><img src="/images/efidroid/sidebar.png" width="300">
 </figure>
 </li>
 <li>Click <strong>Install</strong>:
-<figure class="toggle-image"><img src="/images/efidroid/install.png" width="300"/>
+<figure class="toggle-image"><img src="/images/efidroid/install.png" width="300">
 </figure>
 </li>
 <li>It should be successfully installed!
-<figure class="toggle-image"><img src="/images/efidroid/installed.png" width="300"/>
+<figure class="toggle-image"><img src="/images/efidroid/installed.png" width="300">
 </figure>
 </li>
 </ul>
@@ -97,27 +97,27 @@ For more information and support, please visit to the <a href="https://forum.fai
 <ul>
 <li>Before you do any of this you should download a ROM .zip file (for example <a href="http://storage.googleapis.com/fairphone-updates/7114445d-6560-440c-9c9f-44639808f7a7/fp2-sibon-16.09.0-ota-userdebug.zip">FP Open 16.09</a>) and put it on your SD card (<code>/storage/sdcard1/</code> and <strong>!!NOT!!</strong> <code>/sdcard</code>!).</li>
 <li>To add a ROM click the <strong>FAB</strong> (Floating Action Button)
-<figure class="toggle-image"><img src="/images/efidroid/mgr_systems_empty.png" width="300"/>
+<figure class="toggle-image"><img src="/images/efidroid/mgr_systems_empty.png" width="300">
 </figure>
 </li>
 <li>Choose in the screen <code>/data/media/0/multiboot</code> as location.
-<figure class="toggle-image"><img src="/images/efidroid/mgr_rom_new.png" width="300"/>
+<figure class="toggle-image"><img src="/images/efidroid/mgr_rom_new.png" width="300">
 </figure>
 </li>
 <li>Enter a <strong>name</strong> for the ROM
-<figure class="toggle-image"><img src="/images/efidroid/mgr_rom_configured.png" width="300"/>
+<figure class="toggle-image"><img src="/images/efidroid/mgr_rom_configured.png" width="300">
 </figure>
 </li>
 <li>You can leave the partitions as they are (Schema <code>LoopSystem + BindOther</code>) and press the <strong>tick</strong> in the top right corner.
-<figure class="toggle-image"><img src="/images/efidroid/mgr_rom_partitions_finished.png" width="300"/>
+<figure class="toggle-image"><img src="/images/efidroid/mgr_rom_partitions_finished.png" width="300">
 </figure>
 </li>
 <li>Now you can see that your newly created ROM is in the list.
-<figure class="toggle-image"><img src="/images/efidroid/mgr_systems_one.png" width="300"/>
+<figure class="toggle-image"><img src="/images/efidroid/mgr_systems_one.png" width="300">
 </figure>
 </li>
 <li>Then <strong>reboot</strong>
-<figure class="toggle-image"><img src="/images/efidroid/reboot.png" width="300"/>
+<figure class="toggle-image"><img src="/images/efidroid/reboot.png" width="300">
 </figure>
 </li>
 </ul>
@@ -125,39 +125,39 @@ For more information and support, please visit to the <a href="https://forum.fai
 <p>Once you are in the <strong>UEFI</strong>, you can navigate around with <strong>volume down</strong> to go down, <strong>volume up</strong> to go up and the <strong>power</strong> button to confirm your selection.</p>
 <ul>
 <li>To flash a ROM the empty slot, select <strong>TWRP (Internal)</strong> and press <strong>power</strong>.
-<figure class="toggle-image"><img src="/images/efidroid/uefi_twrp.png" width="300"/>
+<figure class="toggle-image"><img src="/images/efidroid/uefi_twrp.png" width="300">
 </figure>
 </li>
 <li>Next select your newly created ROM
-<figure class="toggle-image"><img src="/images/efidroid/uefi_twrp_os.png" width="300"/>
+<figure class="toggle-image"><img src="/images/efidroid/uefi_twrp_os.png" width="300">
 </figure>
 </li>
 <li>You will land in <strong>TWRP</strong> and be greeted with a warning about keeping the system partition <strong>readonly</strong>. Swipe the slider at the bottom to acknowledge it.</li>
 <li>Click <strong>Install</strong>, select the <strong>Micro SDcard</strong> at the top.
-<figure class="toggle-image"><img src="/images/efidroid/twrp_2.png" width="300"/>
+<figure class="toggle-image"><img src="/images/efidroid/twrp_2.png" width="300">
 </figure>
 </li>
 <li>Select for example the file <code>fp2-sibon-16.09.0-ota-userdebug.zip</code>.
-<figure class="toggle-image"><img src="/images/efidroid/twrp_3.png" width="300"/>
+<figure class="toggle-image"><img src="/images/efidroid/twrp_3.png" width="300">
 </figure>
 </li>
 <li>Disable the <strong>Zip file signature verification</strong> and slide the confirmation bar.
-<figure class="toggle-image"><img src="/images/efidroid/twrp_4.png" width="300"/>
+<figure class="toggle-image"><img src="/images/efidroid/twrp_4.png" width="300">
 </figure>
 </li>
 <li>Everything should be good and you can reboot!
-<figure class="toggle-image"><img src="/images/efidroid/twrp_5.png" width="300"/>
+<figure class="toggle-image"><img src="/images/efidroid/twrp_5.png" width="300">
 </figure>
 </li>
 </ul>
 <h2 id="booting-into-your-new-rom">Booting into your new ROM</h2>
 <ul>
 <li><strong>Select</strong> your new ROM and press the <strong>power</strong> button. <em>Do not be put off because of the long &ldquo;Booting &lt;romname&gt;&rdquo; screen as FP Open plays the boot animation very late (unfortunately).</em>
-<figure class="toggle-image"><img src="/images/efidroid/boot_secondary.png" width="300"/>
+<figure class="toggle-image"><img src="/images/efidroid/boot_secondary.png" width="300">
 </figure>
 </li>
 <li><strong>Aaaand we are in!</strong>
-<figure class="toggle-image"><img src="/images/efidroid/booted.png" width="300"/>
+<figure class="toggle-image"><img src="/images/efidroid/booted.png" width="300">
 </figure>
 </li>
 </ul>
