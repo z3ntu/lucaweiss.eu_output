@@ -37,6 +37,10 @@ Over the past couple of months I've been working on enabling the management of
 eSIMs on Qualcomm phones running postmarketOS, and today I'm happy to announce
 that version 0.1 of my eSIM Manager is available!
 
+This should work on any phone with Qualcomm SoC (unless it's very old and not
+using QRTR) which has an eSIM chip built-in or with a removable eSIM card
+inserted.
+
 The source code can be found on
 Codeberg and the package is now also
 
@@ -103,5 +107,7 @@ project](https://github.com/estkme-group/lpac) which is doing all the heavy
 lifting in this, I've 'only' adapted it to work on Qualcomm devices and made a
 GUI for it.
 
-If you have any questions or comments, feel free to send me an e-mail!
+If you have any questions or comments, feel free to send me an e-mail or
+comment on [the Fediverse (Mastodon)
+post](https://fosstodon.org/@z3ntu/112671374903329787)!
 
