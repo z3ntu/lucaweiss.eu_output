@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PostmarketOS on Luca Weiss</title>
+    <link>https://lucaweiss.eu/tags/postmarketos/</link>
+    <description>Recent content in PostmarketOS on Luca Weiss</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; {year} Luca Weiss</copyright>
+    <lastBuildDate>Mon, 24 Jun 2024 13:15:00 +0200</lastBuildDate>
+    <atom:link href="https://lucaweiss.eu/tags/postmarketos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>An eSIM manager for Mobile Linux</title>
+      <link>https://lucaweiss.eu/post/2024-06-24-esim-manager-for-mobile-linux/</link>
+      <pubDate>Mon, 24 Jun 2024 13:15:00 +0200</pubDate>
+      <guid>https://lucaweiss.eu/post/2024-06-24-esim-manager-for-mobile-linux/</guid>
+      <description>For a while eSIM management on Mobile Linux, such as postmarketOS, was just a dream. Now it&amp;rsquo;s real!&#xA;Background Nowadays many smartphones and other devices have a so-called eSIM - or eUICC - built-in to the device. This eSIM is essentially a chip on the PCB of the device that allows an end user to download a SIM profile - essentially all the data of a SIM card - to said chip and then the modem of the device can use that chip the same way as it would use any physical SIM card you insert.</description>
+    </item>
+  </channel>
+</rss>
