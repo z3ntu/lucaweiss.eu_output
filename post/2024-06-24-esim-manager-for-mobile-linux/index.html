@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>An eSIM manager for Mobile Linux - Luca Weiss</title>
+    
+    <meta name="description" content="For a while eSIM management on Mobile Linux, such as postmarketOS, was just a dream. Now it&rsquo;s real!
+Background Nowadays many smartphones and other devices have a so-called eSIM - or eUICC - built-in to the device. This eSIM is essentially a chip on the PCB of the device that allows an end user to download a SIM profile - essentially all the data of a SIM card - to said chip and then the modem of the device can use that chip the same way as it would use any physical SIM card you insert.">
+    <meta name="author" content="">
+    
+    <link href="https://fosstodon.org/@z3ntu" rel="me">
+    
+    
+    <link href="https://lucaweiss.eu/an-old-hope.min.css" rel="stylesheet">
+    <link href="https://lucaweiss.eu/style.css" rel="stylesheet">
+    <link href="https://lucaweiss.eu/custom.css" rel="stylesheet">
+    <meta name="generator" content="Hugo 0.127.0">
+    
+    <link rel="alternate" type="text/gemini" href="gemini://lucaweiss.eu/post/2024-06-24-esim-manager-for-mobile-linux/index.gmi" title="Luca Weiss" />
+    
+    <script>
+      function setTheme() {
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.body.classList.add('dark');
+          return;
+        }
+      }
+    </script>
+  </head>
+  <body class="single">
+    <script>
+      setTheme();
+    </script>
+    <header class="header">
+      <nav class="nav">
+        <p class="logo"><a href="https://lucaweiss.eu/">Luca Weiss</a></p>
+        <ul class="menu">
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/projects/">Projects</a>
+          </li>
+          <li>
+            <a href="/talks/">Talks</a>
+          </li>
+          <li>
+            <a href="/post/">Posts</a>
+          </li>
+          <li>
+            <a href="/about/">About</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">An eSIM manager for Mobile Linux</h1>
+    <div class="post-meta">June 24, 2024
+    </div>
+  </header>
+  <div class="post-content"><p>For a while eSIM management on Mobile Linux, such as postmarketOS, was just a
+dream. <strong>Now it&rsquo;s real!</strong></p>
+<h2 id="background">Background</h2>
+<p>Nowadays many smartphones and other devices have a so-called eSIM - or eUICC -
+built-in to the device. This eSIM is essentially a chip on the PCB of the
+device that allows an end user to download a SIM profile - essentially all the
+data of a SIM card - to said chip and then the modem of the device can use that
+chip the same way as it would use any physical SIM card you insert.</p>
+<p>This allows for example convenient SIM swapping since you can just download a
+profile from your new operator and use it immediately without waiting for a
+physical SIM card to arrive by mail.</p>
+<p>Similarly there&rsquo;s plenty of &ldquo;travel eSIM&rdquo; providers where you can buy e.g. a
+30-day data-only eSIM for the country you are travelling to and you can
+directly install it on your phone.</p>
+<p>Sidenote, while the name might suggest otherwise, there&rsquo;s also removable eSIM
+cards in the usual 2FF (mini-SIM), 3FF (micro-SIM), 4FF (nano-SIM) form factor
+that you know, such as the ones from <a href="https://esim.me/">eSIM.me</a>,
+<a href="https://esim.5ber.com/">5ber</a> or
+<a href="https://shop.sysmocom.de/sysmoEUICC1-eUICC-for-consumer-eSIM-RSP/sysmoEUICC1">sysmocom</a>.</p>
+<h2 id="time-to-introduce-esim-manager">Time to introduce: eSIM Manager!</h2>
+<p>Over the past couple of months I&rsquo;ve been working on enabling the management of
+eSIMs on Qualcomm phones running postmarketOS, and today I&rsquo;m happy to announce
+that version 0.1 of my eSIM Manager is available!</p>
+<p>The source code can be found on
+<a href="https://codeberg.org/lucaweiss/lpa-gtk">Codeberg</a> and the package is now also
+available in <a href="https://pkgs.alpinelinux.org/packages?name=lpa-gtk&amp;branch=edge&amp;repo=&amp;arch=&amp;maintainer=">Alpine Linux
+edge</a>,
+so you can install it on any device running postmarketOS edge today!</p>
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+<figure class="left"><img src="/images/lpa-gtk-overview.png" width="200">
+</figure>
+
+<figure class="left"><img src="/images/lpa-gtk-detail.png" width="200">
+</figure>
+
+<figure class="left"><img src="/images/lpa-gtk-download.png" width="200">
+</figure>
+
+</div>
+<br>
+<p>In the backend this app is using a project called
+<a href="https://github.com/estkme-group/lpac">lpac</a> which is handling the
+actual communication with the eSIM chip.</p>
+<p>For lpac I have developed a driver so that lpac can work on Qualcomm phones
+(&ldquo;QMI-over-QRTR&rdquo;). These changes are included in lpac since version
+<a href="https://github.com/estkme-group/lpac/releases/tag/v2.0.2">v2.0.2</a>.</p>
+<p>The app is built using GTK4 and Libadwaita and uses the Blueprint markup
+language for building the UI. The code is written in Python.</p>
+<h2 id="technical-details">Technical Details</h2>
+<p>I&rsquo;m going to spare the details how SIM cards and eSIM cards work in general and
+explain only the management-communication side of it since that&rsquo;s what&rsquo;s really
+relevant for this project:</p>
+<p>In order to do any operation e.g. enable a profile the steps done are the
+following:</p>
+<ol>
+<li>Open a communication channel (&ldquo;logical channel&rdquo;) with the chip</li>
+<li>Send a request APDU and receive response APDU
+<ul>
+<li>These request/response messages are defined in GSMA standards, so this is
+generic to any eSIM chip</li>
+<li>The content of these APDUs and the message handling is handled by the
+lpac core</li>
+</ul>
+</li>
+<li>Close the communication channel</li>
+</ol>
+<p>This works the same regardless to whether the eSIM chip is built-in or on a
+removable SIM card, from a software-perspective there&rsquo;s no difference.</p>
+<p>And for regular SIM card usage, once a profile is enabled via this &ldquo;management
+API&rdquo; the eSIM can be used like any regular SIM card using the regular &ldquo;APIs&rdquo;
+the modem uses for authenticating to the network and anything else that a SIM
+card does.</p>
+<h2 id="thanks">Thanks</h2>
+<p>This project couldn&rsquo;t have been possible without <a href="https://chaos.social/@LaF0rge">Harald Welte
+(LaForge)</a> getting me curious about eSIMs and
+posting lots of useful information for understanding it.</p>
+<p>Additionally since everything is built on top of the <a href="https://github.com/estkme-group/lpac">lpac
+project</a> which is doing all the heavy
+lifting in this, I&rsquo;ve &lsquo;only&rsquo; adapted it to work on Qualcomm devices and made a
+GUI for it.</p>
+<p>If you have any questions or comments, feel free to send me an e-mail!</p>
+</div>
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://lucaweiss.eu/tags/postmarketos">postmarketOS</a></li>
+      <li><a href="https://lucaweiss.eu/tags/alpine-linux">Alpine Linux</a></li>
+      <li><a href="https://lucaweiss.eu/tags/qualcomm">Qualcomm</a></li>
+      <li><a href="https://lucaweiss.eu/tags/esim">eSIM</a></li>
+    </ul>
+  </footer>
+</article></main>
+<footer class="footer">
+  <span>© 2024 Luca Weiss</span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+  <span>&middot;</span>
+  <span>Theme️ <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper</a></span>
+</footer>
+<script src="https://lucaweiss.eu/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+</body>
+</html>
+
