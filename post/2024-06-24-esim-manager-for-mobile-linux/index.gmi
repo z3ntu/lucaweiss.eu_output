@@ -102,10 +102,17 @@ This project couldn't have been possible without [Harald Welte
 (LaForge)](https://chaos.social/@LaF0rge) getting me curious about eSIMs and
 posting lots of useful information for understanding it.
 
-Additionally since everything is built on top of the [lpac
+Additionally everything is built on top of the [lpac
 project](https://github.com/estkme-group/lpac) which is doing all the heavy
 lifting in this, I've 'only' adapted it to work on Qualcomm devices and made a
 GUI for it.
+
+And of course thanks to Fairphone, my employer,
+
+=> https://www.fairphone.com/ Fairphone 
+for allowing me to spend time on this project, both for figuring out how eSIM
+works in general on Qualcomm devices and spending many more hours adding
+support to lpac and building this app.
 
 If you have any questions or comments, feel free to send me an e-mail or
 comment on [the Fediverse (Mastodon)
