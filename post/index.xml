@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>&amp;copy; {year} Luca Weiss</copyright>
-    <lastBuildDate>Mon, 24 Jun 2024 13:15:00 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 18 Aug 2024 22:45:00 +0200</lastBuildDate>
     <atom:link href="https://lucaweiss.eu/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My website and blog is available via Gemini</title>
+      <link>https://lucaweiss.eu/post/2024-08-18-blog-gemini/</link>
+      <pubDate>Sun, 18 Aug 2024 22:45:00 +0200</pubDate>
+      <guid>https://lucaweiss.eu/post/2024-08-18-blog-gemini/</guid>
+      <description>Gemini is a neat piece of technology. The Gemini protocol somewhat comparable to HTTP and the Gemtext file format comparable to HTML. But it&amp;rsquo;s simple. Like so simple that writing a client or server is actually doable.&#xA;All popular web browsers (Chromium and its skins - and Firefox) have their roots in the 1990&amp;rsquo;s and there hasn&amp;rsquo;t been any new web browser becoming usable in many years. Not because people haven&amp;rsquo;t tried - I&amp;rsquo;m sure many people have - but because the standards around the modern web are so gigantic that it&amp;rsquo;s just not feasable to develop a web browser from scratch.</description>
+    </item>
     <item>
       <title>An eSIM manager for Mobile Linux</title>
       <link>https://lucaweiss.eu/post/2024-06-24-esim-manager-for-mobile-linux/</link>

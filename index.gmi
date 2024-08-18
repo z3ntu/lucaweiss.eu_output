@@ -6,6 +6,7 @@
 => /about/ About
 
 ## Posts
+=> /post/2024-08-18-blog-gemini/index.gmi 2024-08-18 - My website and blog is available via Gemini
 => /post/2024-06-24-esim-manager-for-mobile-linux/index.gmi 2024-06-24 - An eSIM manager for Mobile Linux
 => /post/2024-03-04-the-little-nas/index.gmi 2024-03-04 - The little NAS under my bed
 => /post/2023-07-17-ferry-brindisi-igoumenitsa/index.gmi 2023-07-17 - Taking the Grimaldi Lines ferry from Brindisi to Igoumenitsa

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>My website and blog is available via Gemini - Luca Weiss</title>
+    
+    <meta name="description" content="Gemini is a neat piece of technology. The Gemini protocol somewhat comparable to HTTP and the Gemtext file format comparable to HTML. But it&rsquo;s simple. Like so simple that writing a client or server is actually doable.
+All popular web browsers (Chromium and its skins - and Firefox) have their roots in the 1990&rsquo;s and there hasn&rsquo;t been any new web browser becoming usable in many years. Not because people haven&rsquo;t tried - I&rsquo;m sure many people have - but because the standards around the modern web are so gigantic that it&rsquo;s just not feasable to develop a web browser from scratch.">
+    <meta name="author" content="">
+    
+    <link href="https://fosstodon.org/@z3ntu" rel="me">
+    
+    
+    <link href="https://lucaweiss.eu/an-old-hope.min.css" rel="stylesheet">
+    <link href="https://lucaweiss.eu/style.css" rel="stylesheet">
+    <link href="https://lucaweiss.eu/custom.css" rel="stylesheet">
+    <meta name="generator" content="Hugo 0.132.2">
+    
+    <link rel="alternate" type="text/gemini" href="gemini://lucaweiss.eu/post/2024-08-18-blog-gemini/index.gmi" title="Luca Weiss" />
+    
+    <script>
+      function setTheme() {
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.body.classList.add('dark');
+          return;
+        }
+      }
+    </script>
+  </head>
+  <body class="single">
+    <script>
+      setTheme();
+    </script>
+    <header class="header">
+      <nav class="nav">
+        <p class="logo"><a href="https://lucaweiss.eu/">Luca Weiss</a></p>
+        <ul class="menu">
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/projects/">Projects</a>
+          </li>
+          <li>
+            <a href="/talks/">Talks</a>
+          </li>
+          <li>
+            <a href="/post/">Posts</a>
+          </li>
+          <li>
+            <a href="/about/">About</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">My website and blog is available via Gemini</h1>
+    <div class="post-meta">August 18, 2024
+    </div>
+  </header>
+  <div class="post-content"><p><a href="https://geminiprotocol.net/">Gemini</a> is a neat piece of technology. The Gemini
+protocol somewhat comparable to HTTP and the Gemtext file format comparable to
+HTML. But it&rsquo;s simple. Like so simple that writing a client or server is
+actually doable.</p>
+<p>All popular web browsers (Chromium and its skins - and Firefox) have their
+roots in the 1990&rsquo;s and there hasn&rsquo;t been any new web browser becoming usable
+in many years. Not because people haven&rsquo;t tried - I&rsquo;m sure many people have -
+but because the standards around the modern web are so gigantic that it&rsquo;s just
+not feasable to develop a web browser from scratch.</p>
+<p>The best (and only?) attempt I&rsquo;ve seen is <a href="https://ladybird.dev/">Ladybird</a>,
+which is &ldquo;an ongoing project to build a truly independent web browser from
+scratch&rdquo;. And I&rsquo;m very happy to see this project continuing to get better, but
+it&rsquo;s still far from a usable web browser for everything you want to do in life.</p>
+<p>So, back to Gemini!</p>
+<p>Earlier in 2024 I&rsquo;ve installed a Gemini server on the same host which is
+running Apache2 for serving my website/blog and after a few commands for setup
+it was running.</p>
+<p>Since my website content is written in Markdown and built using Hugo, it was
+not a difficult exercise to add &ldquo;Gemtext generation&rdquo; to the build pipeline and
+using a few regex replacements we can generate a version of the website that
+mostly resembles Gemtext.</p>
+<p>Of course, that generated version is definitely not perfect and sometimes some
+Markdown-isms or HTML bits slip through, but for being essentially zero
+maintenance it&rsquo;s pretty great. Manually polishing a separate Gemtext version
+would be better of course but for now this version will do.</p>
+<p>For viewing Gemini pages you can find clients for most platforms, notably I
+like &ldquo;Lagrange&rdquo; on Linux and &ldquo;Buran&rdquo; on Android. Of course there&rsquo;s plenty other
+clients as well, including clients for your terminal and everything else.</p>
+<p>Hope you enjoy!</p>
+<p><img src="/images/gemini-website.png" alt="Screenshot of my website in the Lagrange client"></p>
+</div>
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://lucaweiss.eu/tags/gemini">Gemini</a></li>
+    </ul>
+  </footer>
+</article></main>
+<footer class="footer">
+  <span>© 2024 Luca Weiss</span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+  <span>&middot;</span>
+  <span>Theme️ <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper</a></span>
+</footer>
+<script src="https://lucaweiss.eu/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+</body>
+</html>
+
