@@ -8,9 +8,13 @@
     <title>SDDM login with a Yubikey on Arch Linux - Luca Weiss</title>
     
     <meta name="description" content="If you are wondering how you can login with a Yubikey into your system with SDDM, here are the steps:
-Step 1: Install yubico-pam from [community].
+Step 1:
+Install yubico-pam from [community].
 Step 2: Edit the file /etc/yubikeys and insert text in the following format:
-&lt;username&gt;:&lt;yubikey_token_id&gt; # eg luca:cclcclcclccl If you don&rsquo;t know what the token ID from your yubikey is, just open a text editor and press the button on your yubikey to create a one time password (=OTP).">
+&lt;username&gt;:&lt;yubikey_token_id&gt;
+# eg
+luca:cclcclcclccl
+If you don&rsquo;t know what the token ID from your yubikey is, just open a text editor and press the button on your yubikey to create a one time password (=OTP). Then take the first twelve characters from that string, which is your token id. If you are too lazy to count, you can also press the button multiple times and take the part that stays the same at the beginning.">
     <meta name="author" content="">
     
     <link href="https://fosstodon.org/@z3ntu" rel="me">
@@ -19,7 +23,7 @@ Step 2: Edit the file /etc/yubikeys and insert text in the following format:
     <link href="https://lucaweiss.eu/an-old-hope.min.css" rel="stylesheet">
     <link href="https://lucaweiss.eu/style.css" rel="stylesheet">
     <link href="https://lucaweiss.eu/custom.css" rel="stylesheet">
-    <meta name="generator" content="Hugo 0.132.2">
+    <meta name="generator" content="Hugo 0.138.0">
     
     <link rel="alternate" type="text/gemini" href="gemini://lucaweiss.eu/post/2016-07-23-sddm-login-with-yubikey/index.gmi" title="Luca Weiss" />
     

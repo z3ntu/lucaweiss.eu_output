@@ -16,7 +16,7 @@
     <link href="https://lucaweiss.eu/an-old-hope.min.css" rel="stylesheet">
     <link href="https://lucaweiss.eu/style.css" rel="stylesheet">
     <link href="https://lucaweiss.eu/custom.css" rel="stylesheet">
-    <meta name="generator" content="Hugo 0.132.2">
+    <meta name="generator" content="Hugo 0.138.0">
     
     <link rel="alternate" type="application/rss+xml" href="https://lucaweiss.eu/tags/android/index.xml" title="Luca Weiss" />
     
@@ -65,7 +65,8 @@
   </header>
   <section class="entry-content">
    <p>Android devices launching with Android 10 and newer use a feature called Dynamic Partitions which essentially combines the system_a, vendor_a and product_a (and all the _b) variants into a single partition simplying the actual partition layout while making it more flexible. Think of it like a single physical partition which contains multiple logical partitions, like with LVM.
-This feature is available on newly launched devices, devices launched with earlier Android versions still have to cope with the rigid partition layout on-disk....</p>
+This feature is available on newly launched devices, devices launched with earlier Android versions still have to cope with the rigid partition layout on-disk. For this Android has introduced a way to retrofit dynamic partitions onto exiting the existing partition layout.
+...</p>
   </section>
   <footer class="entry-footer">
     <time>March 30, 2023</time>
@@ -81,7 +82,8 @@ This feature is available on newly launched devices, devices launched with earli
 Download the BootSignature.jar file from my server (or compile it yourself from the LineageOS 14.1 tree with the command mka BootSignature).
 curl -O https://public.lucaweiss.eu/BootSignature.jar Download the make_key tool from the LineageOS GitHub.
 curl -O https://raw.githubusercontent.com/LineageOS/android_development/cm-14.1/tools/make_key Make the script executable
-chmod &#43;x make_key Generate the key with...</p>
+chmod &#43;x make_key Generate the key with
+...</p>
   </section>
   <footer class="entry-footer">
     <time>June 16, 2017</time>
@@ -95,7 +97,8 @@ chmod &#43;x make_key Generate the key with...</p>
   <section class="entry-content">
    <p>Here’s how you can cross-compile “normal” Linux applications for Android!
 Note, that I cannot give you any help in following this. It worked(tm) when I wrote this but don’t know about now.
-For the android_configure script download this script, place it in your ~/bin folder and (if not already) add ~/bin to your PATH variable. To create a standalone toolchain use something like the following command (run from your NDK root-dir): build/tools/make_standalone_toolchain....</p>
+For the android_configure script download this script, place it in your ~/bin folder and (if not already) add ~/bin to your PATH variable. To create a standalone toolchain use something like the following command (run from your NDK root-dir): build/tools/make_standalone_toolchain.py --arch arm --api 21 --stl gnustl -v --install-dir /home/luca/Android/standalone-toolchain Ncurses Add ac_cv_header_locale_h=no to your android_configure script to the line export CC (example: export CC=${CROSS_PATH}/${CROSS_COMPILE}-gcc ac_cv_header_locale_h=no)
+...</p>
   </section>
   <footer class="entry-footer">
     <time>December 12, 2015</time>
@@ -111,7 +114,8 @@ For the android_configure script download this script, place it in your ~/bin fo
 To do that, follow either the long or the short version.
 You need the following three files:
 Genymotion-ARM-Translation_v1.1.zip gapps-L-4-21-15.zip benzo-gapps-M-20151011-signed-chroma-r3.zip Short version:
-Download all three files. Create an emulator with the Nexus 5X image and start it. Flash Genymotion-ARM-Translation_v1.1.zip and reboot. Flash gapps-L-4-21-15.zip and reboot. Sign into your Google Account. Flash benzo-gapps-M-20151011-signed-chroma-r3....</p>
+Download all three files. Create an emulator with the Nexus 5X image and start it. Flash Genymotion-ARM-Translation_v1.1.zip and reboot. Flash gapps-L-4-21-15.zip and reboot. Sign into your Google Account. Flash benzo-gapps-M-20151011-signed-chroma-r3.zip and reboot. You are finished! Long version:
+...</p>
   </section>
   <footer class="entry-footer">
     <time>December 10, 2015</time>

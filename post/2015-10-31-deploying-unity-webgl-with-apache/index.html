@@ -8,11 +8,29 @@
     <title>Deploying Unity WebGL with Apache - Luca Weiss</title>
     
     <meta name="description" content="Have you had troubles getting your exported Unity WebGL project to work?
+
 GET /Release/UnityConfig.js 404 (Not Found)
 GET /Release/fileloader.js 404 (Not Found)
 GET /Release/1446299115.js 404 (Not Found)
+
 I got the instructions here:
-Export your Unity project as WebGL (probably already did this). Move every file from the Release folder into the Compressed folder. You can now delete the Release folder. Your folder structure should look like this: .htaccess index.html Compressed * many files (.">
+
+Export your Unity project as WebGL (probably already did this).
+
+
+
+Move every file from the Release folder into the Compressed folder. You can now delete the Release folder.
+Your folder structure should look like this:
+
+.htaccess
+index.html
+Compressed
+* many files (.datagz, .jsgz, .memgz)
+TemplateData
+* many image files, 1 .css &amp; 1 .js file
+
+
+Enter sudo a2enmod rewrite in the terminal (to activate the rewrite Apache module).">
     <meta name="author" content="">
     
     <link href="https://fosstodon.org/@z3ntu" rel="me">
@@ -21,7 +39,7 @@ Export your Unity project as WebGL (probably already did this). Move every file 
     <link href="https://lucaweiss.eu/an-old-hope.min.css" rel="stylesheet">
     <link href="https://lucaweiss.eu/style.css" rel="stylesheet">
     <link href="https://lucaweiss.eu/custom.css" rel="stylesheet">
-    <meta name="generator" content="Hugo 0.132.2">
+    <meta name="generator" content="Hugo 0.138.0">
     
     <link rel="alternate" type="text/gemini" href="gemini://lucaweiss.eu/post/2015-10-31-deploying-unity-webgl-with-apache/index.gmi" title="Luca Weiss" />
     

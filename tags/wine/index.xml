@@ -14,7 +14,7 @@
       <link>https://lucaweiss.eu/post/2018-09-04-itunes-protocol-handler-on-linux-with-wine/</link>
       <pubDate>Tue, 04 Sep 2018 16:19:00 +0200</pubDate>
       <guid>https://lucaweiss.eu/post/2018-09-04-itunes-protocol-handler-on-linux-with-wine/</guid>
-      <description>Today I have tried adding my PayPal account to my iTunes (installed with Wine) Account but discovered, that adding my PayPal account as a payment method didn&amp;rsquo;t work. After inspecting the network traffic, I found that my browser (Firefox) was redirected to an itmss:// URL, but Firefox didn&amp;rsquo;t know how to handle that and did nothing. To get it working yourself, follow the next steps:&#xA;Assuming you already have iTunes installed and are using Firefox, open about:config in Firefox, accept the prompt, right-click and select New -&amp;gt; Boolean.</description>
+      <description>&lt;p&gt;Today I have tried adding my PayPal account to my iTunes (installed with Wine) Account but discovered, that adding my PayPal account as a payment method didn&amp;rsquo;t work. After inspecting the network traffic, I found that my browser (Firefox) was redirected to an &lt;code&gt;itmss://&lt;/code&gt; URL, but Firefox didn&amp;rsquo;t know how to handle that and did nothing. To get it working yourself, follow the next steps:&lt;/p&gt;&#xA;&lt;p&gt;Assuming you already have iTunes installed and are using Firefox, open &lt;code&gt;about:config&lt;/code&gt; in Firefox, accept the prompt, right-click and select New -&amp;gt; Boolean. In the dialog enter &lt;code&gt;network.protocol-handler.expose.itmss&lt;/code&gt; as preference name and select &lt;code&gt;false&lt;/code&gt; as value. After that, restart Firefox.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

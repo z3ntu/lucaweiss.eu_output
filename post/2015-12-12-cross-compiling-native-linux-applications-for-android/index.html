@@ -9,7 +9,13 @@
     
     <meta name="description" content="Here&rsquo;s how you can cross-compile &ldquo;normal&rdquo; Linux applications for Android!
 Note, that I cannot give you any help in following this. It worked(tm) when I wrote this but don&rsquo;t know about now.
-For the android_configure script download this script, place it in your ~/bin folder and (if not already) add ~/bin to your PATH variable. To create a standalone toolchain use something like the following command (run from your NDK root-dir): build/tools/make_standalone_toolchain.">
+
+For the android_configure script download this script, place it in your ~/bin folder and (if not already) add ~/bin to your PATH variable.
+To create a standalone toolchain use something like the following command (run from your NDK root-dir):
+
+build/tools/make_standalone_toolchain.py --arch arm --api 21 --stl gnustl -v --install-dir /home/luca/Android/standalone-toolchain
+Ncurses
+Add ac_cv_header_locale_h=no to your android_configure script to the line export CC (example: export CC=${CROSS_PATH}/${CROSS_COMPILE}-gcc ac_cv_header_locale_h=no)">
     <meta name="author" content="">
     
     <link href="https://fosstodon.org/@z3ntu" rel="me">
@@ -18,7 +24,7 @@ For the android_configure script download this script, place it in your ~/bin fo
     <link href="https://lucaweiss.eu/an-old-hope.min.css" rel="stylesheet">
     <link href="https://lucaweiss.eu/style.css" rel="stylesheet">
     <link href="https://lucaweiss.eu/custom.css" rel="stylesheet">
-    <meta name="generator" content="Hugo 0.132.2">
+    <meta name="generator" content="Hugo 0.138.0">
     
     <link rel="alternate" type="text/gemini" href="gemini://lucaweiss.eu/post/2015-12-12-cross-compiling-native-linux-applications-for-android/index.gmi" title="Luca Weiss" />
     
