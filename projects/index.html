@@ -7,15 +7,12 @@
     
     <title>Projects - Luca Weiss</title>
     
-    <meta name="description" content="Embedded
+    <meta name="description" content="A non-exhaustive list of activities around open-source software. You can find links to some of the code forges I&rsquo;m active on the About page.
+Embedded
 postmarketOS
-postmarketOS is a touch-optimized, pre-configured Alpine Linux that can be installed on smartphones and other mobile devices. I am Core Developer of the project, have ported postmarketOS to the Fairphone 1, Fairphone 2 and worked on a port for the PINE64 family of devices (such as the PinePhone, PineTab, etc).
-
-Project Website
-
-Fairphone 2 mainline kernel
-Currently most Android devices run a very outdated version of Linux which is modified by SoC manufacturers and OEMs and deviate from official Linux kernel releases quite a lot. Work has been work by different organisations, companies and people to upstream these changes to mainline Linux so a smartphone or tablet, which originally came with e.g. Linux 3.4, can also boot a non-modified version of the Linux kernel. That way security and features come directly to a device without the OEM being in the way.
-For the Fairphone 2 currently only a limited amount of hardware works but that hopefully can be improved in the future.">
+postmarketOS is a Linux distribution for mobile devices and more. It&rsquo;s based on Alpine Linux and can be installed on smartphones and many other mobile devices.
+I&rsquo;m part of the &lsquo;Core Contributors&rsquo; of the project, and part of the infrastructure team which manages the hosting of the website, wiki, Matrix server etc.
+Amongst other things I&rsquo;ve ported postmarketOS to many devices, including all generations of Fairphone (1, 2, 3, 4 &amp; 5), several Qualcomm Snapdragon 801 devices, several Snapdragon 400-based smartwatches, and in the past I&rsquo;ve also worked on the PINE64 family of devices (such as the PinePhone, PineTab, etc).">
     <meta name="author" content="">
     
     <link href="https://fosstodon.org/@z3ntu" rel="me">
@@ -24,7 +21,7 @@ For the Fairphone 2 currently only a limited amount of hardware works but that h
     <link href="https://lucaweiss.eu/an-old-hope.min.css" rel="stylesheet">
     <link href="https://lucaweiss.eu/style.css" rel="stylesheet">
     <link href="https://lucaweiss.eu/custom.css" rel="stylesheet">
-    <meta name="generator" content="Hugo 0.138.0">
+    <meta name="generator" content="Hugo 0.139.4">
     
     <link rel="alternate" type="text/gemini" href="gemini://lucaweiss.eu/projects/index.gmi" title="Luca Weiss" />
     
@@ -72,26 +69,57 @@ For the Fairphone 2 currently only a limited amount of hardware works but that h
     <div class="post-meta">
     </div>
   </header>
-  <div class="post-content"><h2 id="embedded">Embedded</h2>
+  <div class="post-content"><p>A non-exhaustive list of activities around open-source software. You can find links to some of the code forges I&rsquo;m active on the <a href="/about/">About</a> page.</p>
+<h2 id="embedded">Embedded</h2>
 <h3 id="postmarketos">postmarketOS</h3>
-<p>postmarketOS is a touch-optimized, pre-configured Alpine Linux that can be installed on smartphones and other mobile devices. I am Core Developer of the project, have ported postmarketOS to the Fairphone 1, Fairphone 2 and worked on a port for the PINE64 family of devices (such as the PinePhone, PineTab, etc).</p>
+<p>postmarketOS is a Linux distribution for mobile devices and more. It&rsquo;s based on Alpine Linux and can be installed on smartphones and many other mobile devices.
+I&rsquo;m part of the &lsquo;Core Contributors&rsquo; of the project, and part of the infrastructure team which manages the hosting of the website, wiki, Matrix server etc.
+Amongst other things I&rsquo;ve ported postmarketOS to many devices, including all generations of Fairphone (1, 2, 3, 4 &amp; 5), several Qualcomm Snapdragon 801 devices, several Snapdragon 400-based smartwatches, and in the past I&rsquo;ve also worked on the PINE64 family of devices (such as the PinePhone, PineTab, etc).</p>
 <ul>
 <li><a href="https://postmarketos.org/">Project Website</a></li>
+<li><a href="https://postmarketos.org/core-contributors/#luca-weiss-z3ntu">Team Page</a></li>
 </ul>
-<h3 id="fairphone-2-mainline-kernel">Fairphone 2 mainline kernel</h3>
-<p>Currently most Android devices run a very outdated version of Linux which is modified by SoC manufacturers and OEMs and deviate from official Linux kernel releases quite a lot. Work has been work by different organisations, companies and people to upstream these changes to mainline Linux so a smartphone or tablet, which originally came with e.g. Linux 3.4, can also boot a non-modified version of the Linux kernel. That way security and features come directly to a device without the OEM being in the way.
-For the Fairphone 2 currently only a limited amount of hardware works but that hopefully can be improved in the future.</p>
+<h3 id="linux-kernel-development">Linux kernel development</h3>
+<p>Currently most Android devices run a very outdated version of Linux which is modified by SoC manufacturers and OEMs and deviate from official Linux kernel releases quite a lot. Work has been work by different organisations, companies and people to upstream changes to mainline Linux so that a smartphone, tablet or smartwatch, which originally came with old and heavily modified Linux versions, can also boot a non-modified version of the Linux kernel. That way security and features come directly to a device without the SoC manufacturer or OEM being in the way.</p>
+<p>My work is primarily focused around device and driver bringup for the various Fairphone devices but also devices from other OEMs using similar chipsets.</p>
 <ul>
-<li><a href="https://github.com/z3ntu/linux">GitHub Link</a></li>
-<li><a href="https://patchwork.kernel.org/bundle/z3ntu/FP2-initial/?archive=both&amp;state=*">kernel.org Patchwork (initial support)</a></li>
-<li><a href="https://patchwork.kernel.org/bundle/z3ntu/gpio-vibra/?state=%2A&amp;archive=both">kernel.org Patchwork (gpio vibra)</a></li>
+<li><a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/log/?qt=author&amp;q=Luca+Weiss">Commits in upstream Linux</a></li>
+<li><a href="https://github.com/sc7280-mainline/linux">SC7280-mainline repository</a></li>
+<li><a href="https://github.com/sm6350-mainline/linux">SM6350-mainline repository</a></li>
+<li><a href="https://github.com/msm8974-mainline/linux">MSM8974-mainline repository</a></li>
+<li><a href="https://github.com/msm8226-mainline/linux">MSM8226-mainline repository</a></li>
 </ul>
-<h3 id="twrp-3x-for-fairphone-2-with-data-decryption-support">TWRP 3.X for Fairphone 2 with <code>/data</code> decryption support</h3>
-<p>Team Win Recovery Project (TWRP) is a popular custom recovery for Android devices with touchscreen support. Ported to the Fairphone 2, included crypto support and submitted it to upstream (now getting official builds as they are released).</p>
+<h3 id="offical-twrp-builds-for-fairphone-2-4-and-5">Offical TWRP builds for Fairphone 2, 4 and 5</h3>
+<p>Team Win Recovery Project (TWRP) is a popular custom recovery for Android devices with touchscreen support. The Fairphone 2, Fairphone 4 and Fairphone 5 builds are maintained by me.</p>
 <ul>
-<li><a href="https://github.com/TeamWin/android_device_fairphone_fp2">GitHub Link</a></li>
-<li><a href="https://twrp.me/devices/fairphone2.html">Official download</a></li>
+<li><a href="https://github.com/TeamWin/android_device_fairphone_FP2">GitHub Link - Fairphone 2</a></li>
+<li><a href="https://twrp.me/fairphone/fairphone2.html">Official download - Fairphone 2</a></li>
+<li><a href="https://github.com/TeamWin/android_device_fairphone_FP4">GitHub Link - Fairphone 4</a></li>
+<li><a href="https://twrp.me/fairphone/fairphone4.html">Official download - Fairphone 4</a></li>
+<li><a href="https://github.com/TeamWin/android_device_fairphone_FP5">GitHub Link - Fairphone 5</a></li>
+<li><a href="https://twrp.me/fairphone/fairphone5.html">Official download - Fairphone 5</a></li>
 </ul>
+<h2 id="razer">Razer</h2>
+<h3 id="openrazer">OpenRazer</h3>
+<p>OpenRazer is an open-source driver and user-space daemon that allows you to manage your Razer peripherals on GNU/Linux. I&rsquo;m the maintainer for the project - developing it, handling issues, reviewing changes and packaging the software for many different Linux distributions. Written in C and Python.</p>
+<ul>
+<li><a href="https://github.com/openrazer/openrazer">GitHub Link</a></li>
+<li><a href="https://openrazer.github.io/">Project Website</a></li>
+</ul>
+<h3 id="razergenie">RazerGenie</h3>
+<p>An open-source Qt-based application which is a UI for interacting with the <a href="#openrazer">OpenRazer</a> daemon. Written in C++ and Qt.</p>
+<ul>
+<li><a href="https://github.com/z3ntu/RazerGenie">GitHub Link</a></li>
+</ul>
+<h3 id="razer_test">razer_test</h3>
+<p>An experimental replacement for the <a href="#openrazer">OpenRazer</a> project which aims to solve design issues present in OpenRazer. Works on Linux, FreeBSD, macOS and Windows. Written in C++.</p>
+<ul>
+<li><a href="https://github.com/z3ntu/razer_test">GitHub Link</a></li>
+</ul>
+<hr>
+<h1 id="archive">Archive</h1>
+<p>These are some projects I&rsquo;ve worked on in the past but due to various reasons do not maintain anymore.</p>
+<h2 id="embedded-1">Embedded</h2>
 <h3 id="cwm-v6012-for-the-zte-racer-ii">CWM v6.0.1.2 for the ZTE Racer II</h3>
 <p>ClockworkMod Recovery (CWM) is a custom recovery for Android devices, made by Koushik &ldquo;Koush&rdquo; Dutta. Ported to the ZTE Racer II.</p>
 <ul>
@@ -101,23 +129,6 @@ For the Fairphone 2 currently only a limited amount of hardware works but that h
 <p>An UEFI-based second-stage bootloader which supports multiboot. Ported to the Fairphone 2.</p>
 <ul>
 <li><a href="https://github.com/efidroid/device/tree/fairphone/fp2">GitHub Link</a></li>
-</ul>
-<h2 id="razer">Razer</h2>
-<h3 id="openrazer">OpenRazer</h3>
-<p>OpenRazer is an open-source driver and user-space daemon that allows you to manage your Razer peripherals on GNU/Linux. I am developing it, handling issues and packaging the software for many different Linux distributions. Written in C and Python</p>
-<ul>
-<li><a href="https://github.com/openrazer/openrazer">GitHub Link</a></li>
-<li><a href="https://openrazer.github.io/">Project Website</a></li>
-</ul>
-<h3 id="razergenie">RazerGenie</h3>
-<p>An open-source Qt-based application which is UI for interacting with the <a href="#openrazer">OpenRazer</a> daemon. Written in C++ and Qt.</p>
-<ul>
-<li><a href="https://github.com/z3ntu/RazerGenie">GitHub Link</a></li>
-</ul>
-<h3 id="razer_test">razer_test</h3>
-<p>A work-in-progress replacement for the <a href="#openrazer">OpenRazer</a> project which aims to solve design issues present in OpenRazer. Works on Linux, FreeBSD, macOS and Windows. Written in C++.</p>
-<ul>
-<li><a href="https://github.com/z3ntu/razer_test">GitHub Link</a></li>
 </ul>
 <h2 id="android-apps">Android Apps</h2>
 <h3 id="nextcloud-news">Nextcloud News</h3>
@@ -162,8 +173,6 @@ For the Fairphone 2 currently only a limited amount of hardware works but that h
 <p>A WebExtension (compatible with Chrome and Firefox 57+) that adds a <strong>Download</strong> button to educational videos on <a href="http://griesmayer.com/">griesmayer.com</a> which need Flash to play.</p>
 <ul>
 <li><a href="https://github.com/z3ntu/GriesmayerNoFlash">GitHub Link</a></li>
-<li><a href="https://chrome.google.com/webstore/detail/griesmayernoflash/hcaikojphmgkkdcpcohmmnloolhkjihp">Chrome Web Store</a></li>
-<li><a href="https://addons.mozilla.org/en-US/firefox/addon/griesmayernoflash/">Firefox Add-on</a></li>
 </ul>
 <h2 id="others">Others</h2>
 <h3 id="robotpi">RobotPi</h3>
