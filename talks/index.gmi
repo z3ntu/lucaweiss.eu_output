@@ -7,6 +7,8 @@
 **Date:** 2025-05-15  
 
 => https://www.kitefor.events/events/linaro-connect-2025/submissions/323 Conference website
+=> https://resources.linaro.org/en/resource/tSoFTmuxMgx5hv9xWJPVV5 Linaro Resources Hub (slides, recording)
+=> https://www.youtube.com/watch?v=xR-PlOlWRz8 Talk recording (YouTube)
 
 ## FOSDEM 2025
 
@@ -67,7 +69,7 @@
 **Date:** 2023-11-19  
 
 => https://cfp.capitoledulibre.org/cdl-2023/talk/H8PBDM/ Conference website (slides)
-* Talk recording (YouTube): coming soon
+=> https://www.youtube.com/watch?v=A13Du7pYjAQ Talk recording (YouTube)
 
 ## Ubuntu Summit 2023
 
