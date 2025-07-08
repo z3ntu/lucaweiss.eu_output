@@ -1,5 +1,5 @@
 # Mounting Android Retrofit Dynamic Partition images
-Android devices launching with Android 10 and newer use a feature called Dynamic Partitions which essentially combines the `system_a`, `vendor_a` and `product_a` (and all the `_b`) variants into a single partition simplying the actual partition layout while making it more flexible. Think of it like a single physical partition which contains multiple logical partitions, like with LVM.
+Android devices launching with Android 10 and newer use a feature called Dynamic Partitions which essentially combines the `system_a`, `vendor_a` and `product_a` (and all the `_b`) variants into a single partition simplifying the actual partition layout while making it more flexible. Think of it like a single physical partition which contains multiple logical partitions, like with LVM.
 
 => https://source.android.com/docs/core/ota/dynamic_partitions Dynamic Partitions 
 

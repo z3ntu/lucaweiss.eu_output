@@ -7,7 +7,7 @@
     
     <title>Mounting Android Retrofit Dynamic Partition images - Luca Weiss</title>
     
-    <meta name="description" content="Android devices launching with Android 10 and newer use a feature called Dynamic Partitions which essentially combines the system_a, vendor_a and product_a (and all the _b) variants into a single partition simplying the actual partition layout while making it more flexible. Think of it like a single physical partition which contains multiple logical partitions, like with LVM.
+    <meta name="description" content="Android devices launching with Android 10 and newer use a feature called Dynamic Partitions which essentially combines the system_a, vendor_a and product_a (and all the _b) variants into a single partition simplifying the actual partition layout while making it more flexible. Think of it like a single physical partition which contains multiple logical partitions, like with LVM.
 This feature is available on newly launched devices, devices launched with earlier Android versions still have to cope with the rigid partition layout on-disk. For this Android has introduced a way to retrofit dynamic partitions onto exiting the existing partition layout.">
     <meta name="author" content="Luca Weiss">
     
@@ -68,7 +68,7 @@ This feature is available on newly launched devices, devices launched with earli
     <div class="post-meta">March 30, 2023
     </div>
   </header>
-  <div class="post-content"><p>Android devices launching with Android 10 and newer use a feature called <a href="https://source.android.com/docs/core/ota/dynamic_partitions">Dynamic Partitions</a> which essentially combines the <code>system_a</code>, <code>vendor_a</code> and <code>product_a</code> (and all the <code>_b</code>) variants into a single partition simplying the actual partition layout while making it more flexible. Think of it like a single physical partition which contains multiple logical partitions, like with LVM.</p>
+  <div class="post-content"><p>Android devices launching with Android 10 and newer use a feature called <a href="https://source.android.com/docs/core/ota/dynamic_partitions">Dynamic Partitions</a> which essentially combines the <code>system_a</code>, <code>vendor_a</code> and <code>product_a</code> (and all the <code>_b</code>) variants into a single partition simplifying the actual partition layout while making it more flexible. Think of it like a single physical partition which contains multiple logical partitions, like with LVM.</p>
 <p>This feature is available on newly launched devices, devices launched with earlier Android versions still have to cope with the rigid partition layout on-disk. For this Android has introduced a way to <a href="https://source.android.com/docs/core/ota/dynamic_partitions/implement#upgrading-devices">retrofit dynamic partitions</a> onto exiting the existing partition layout.</p>
 <p>Unfortunately this also makes it a bit more tricky to extract an image that has already been split into separate images that will be flashed on the <code>system_*</code>, <code>vendor_*</code> and <code>product_*</code> partitions, normally called <code>super_system.img</code>, <code>super_vendor.img</code> and <code>super_product.img</code>.</p>
 <p>First, convert all sparse files into raw image files.</p>

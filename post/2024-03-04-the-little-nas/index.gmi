@@ -54,7 +54,7 @@ content well - even when it has to transcode it thanks for Intel QuickSync.
 Immich has no problems even when uploading a bunch of photos and when it's
 doing its machine learning tasks on them.
 
-The fan from the case is not really noticable, the only thing that's bothering
+The fan from the case is not really noticeable, the only thing that's bothering
 me a bit is that the hardware drives make some noise when the drive head is
 seeking (I think?) but it's not really solvable I think apart from buying
 pricey SSDs. But it's very quickly drowned out by any other sounds - either by

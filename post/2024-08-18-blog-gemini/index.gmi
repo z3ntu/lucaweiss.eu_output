@@ -11,7 +11,7 @@ All popular web browsers (Chromium and its skins - and Firefox) have their
 roots in the 1990's and there hasn't been any new web browser becoming usable
 in many years. Not because people haven't tried - I'm sure many people have -
 but because the standards around the modern web are so gigantic that it's just
-not feasable to develop a web browser from scratch.
+not feasible to develop a web browser from scratch.
 
 The best (and only?) attempt I've seen is Ladybird,
 
