@@ -15,6 +15,7 @@
 **Date:** 2025-12-10  
 
 => https://ossjapan2025.sched.com/event/29Fpa Conference website
+=> https://lwn.net/Articles/1055391/ LWN.net article
 
 ## FrOSCon 2025
 
@@ -41,7 +42,7 @@
 **Location:** H.2214, ULB Solbosch Campus, Brussels, Belgium  
 **Date:** 2025-02-01  
 
-=> https://fosdem.org/2025/schedule/event/fosdem-2025-4836-kernel-support-for-mobile-linux-the-missing-20-/ Conference website (slides, recording)
+=> https://archive.fosdem.org/2025/schedule/event/fosdem-2025-4836-kernel-support-for-mobile-linux-the-missing-20-/ Conference website (slides, recording)
 => https://www.youtube.com/watch?v=DdHPwc9RRJY Talk recording (YouTube)
 
 ## Linux Plumbers Conference 2024
