@@ -1,5 +1,11 @@
 # Talks
 
+## FrOSCon 2026
+
+**Title:** Automated testing of a phone operating system  
+**Location:** TBD, Hochschule Bonn-Rhein-Sieg, Sankt Augustin, Germany  
+**Date:** 2026-08-15 / 2026-08-16  
+
 ## FOSDEM 2026
 
 **Title:** Mainline kernel for Fairphones - 2026 update  

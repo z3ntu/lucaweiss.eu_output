@@ -20,7 +20,7 @@ Assuming you already have iTunes installed and are using Firefox, open about:con
     <link href="https://lucaweiss.eu/an-old-hope.min.css" rel="stylesheet">
     <link href="https://lucaweiss.eu/style.css" rel="stylesheet">
     <link href="https://lucaweiss.eu/custom.css" rel="stylesheet">
-    <meta name="generator" content="Hugo 0.154.5">
+    <meta name="generator" content="Hugo 0.162.1">
     
     <link rel="alternate" type="text/gemini" href="gemini://lucaweiss.eu/post/2018-09-04-itunes-protocol-handler-on-linux-with-wine/index.gmi" title="Luca Weiss" />
     
@@ -71,7 +71,7 @@ Assuming you already have iTunes installed and are using Firefox, open about:con
   <div class="post-content"><p>Today I have tried adding my PayPal account to my iTunes (installed with Wine) Account but discovered, that adding my PayPal account as a payment method didn&rsquo;t work. After inspecting the network traffic, I found that my browser (Firefox) was redirected to an <code>itmss://</code> URL, but Firefox didn&rsquo;t know how to handle that and did nothing. To get it working yourself, follow the next steps:</p>
 <p>Assuming you already have iTunes installed and are using Firefox, open <code>about:config</code> in Firefox, accept the prompt, right-click and select New -&gt; Boolean. In the dialog enter <code>network.protocol-handler.expose.itmss</code> as preference name and select <code>false</code> as value. After that, restart Firefox.</p>
 <p>Next, create a new file somewhere (I chose <code>/usr/local/bin/</code>), called for example <code>itunes-url</code> and make it executable (<code>chmod +x filename</code>). Put the following content into the file while adjusting the paths to the Wine prefix and the installation directory.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
 </span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>env WINEPREFIX<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/home/luca/.wine_itunes&#34;</span> wine /home/luca/.wine_itunes/drive_c/Program<span style="color:#ae81ff">\ </span>Files/iTunes/iTunes.exe /url <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span>
 </span></span></code></pre></div><p>I found this invocation with Wine regedit.exe under <code>HKEY_CLASSES_ROOT\itmss\shell\open\command</code>, based on <a href="https://support.shotgunsoftware.com/hc/en-us/articles/219031308-Launching-applications-using-custom-browser-protocols">this website</a>.</p>
