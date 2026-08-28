@@ -15,6 +15,7 @@
 **Date:** 2026-01-31  
 
 => https://fosdem.org/2026/schedule/event/ZNAAZX-mainline_kernel_for_fairphones_-_2026_update/ Conference website
+=> https://www.youtube.com/watch?v=UnvKm3mzasI Talk recording (YouTube)
 
 ## Open Source Summit Japan 2025
 
